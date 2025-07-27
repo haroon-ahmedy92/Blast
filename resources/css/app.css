@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    
+    /* Custom Colors for Tanzania Jobs Portal */
+    --color-primary-core: #1E40AF;
+    --color-secondary-core: #EFF6FF;
+    --color-accent: #FACC15;
+    --color-secondary-accent: #FEF9C3;
+    --color-green-accent: #166534;
+    --color-secondary-green: #DCFCE7;
+}

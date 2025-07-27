@@ -1,0 +1,34 @@
+<div class="flex flex-col items-center py-16">
+    <div class="max-w-4xl w-full px-8 text-center">
+        <div class="text-blue-800 text-2xl md:text-3xl font-bold mt-6 mb-2" style="color: #1E40AF;">
+            Real News. Real Jobs. Real Opportunities.
+        </div>
+        
+        <div class="text-blue-800 text-xl md:text-2xl mb-8" style="color: #1E40AF;">
+            The more the information, the better your life becomes.
+        </div>
+        
+        <div class="text-gray-700 text-base md:text-lg max-w-3xl mx-auto mb-8 leading-relaxed">
+            Project X connects you with opportunities in Tanzania 
+            and beyond — from jobs and tenders to scholarships and 
+            programs that empower all people.
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <button class="px-6 py-3 rounded text-white font-medium text-base transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1" 
+                    style="background-color: #1E40AF;">
+                Explore Opportunity
+            </button>
+            <button class="px-6 py-3 rounded border border-gray-700 text-gray-700 font-medium text-base bg-white transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 hover:bg-gray-50">
+                Get Started Now
+            </button>
+        </div>
+        
+        <div class="w-full max-w-4xl mx-auto p-4 md:p-6 rounded text-sm md:text-base leading-relaxed text-gray-700" 
+             style="background-color: #EFF6FF;">
+            Looking for Nafasi za kazi mpya Leo 2025, Jobs in Tanzania, Nafasi za kazi Tanzania, Ajira Tanzania, 
+            Nafasi za kazi utumishi, Nafasi za kazi serikalini, Nafasi za kazi halmashauri, or ajira mpya in general? 
+            Project X is your perfect destination for all academic and employment goals for Jobs in All African Countries.
+        </div>
+    </div>
+</div>
