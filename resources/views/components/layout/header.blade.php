@@ -13,7 +13,7 @@
             <div class="nav-content">
                 <div class="nav-links">
                     <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">HOME</a>
-                    <a href="#" class="nav-link">TANZANIA-JOBS</a>
+                    <a href="{{ route('tanzania-jobs') }}" class="nav-link {{ request()->routeIs('tanzania-jobs') ? 'active' : '' }}">TANZANIA-JOBS</a>
                     <a href="#" class="nav-link">ALL-JOBS</a>
                     <a href="#" class="nav-link">TENDER</a>
                     <a href="#" class="nav-link">POST</a>
