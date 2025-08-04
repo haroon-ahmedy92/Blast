@@ -177,6 +177,122 @@
         </div>
     </div>
 
+    <!-- Featured Jobs Section -->
+    <div class="py-8">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="max-w-4xl mx-auto mb-8">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold" style="color: #1E40AF;">Featured Jobs</h2>
+                    <a href="#" class="text-sm hover:underline transition-colors" style="color: #1E40AF;">View More</a>
+                </div>
+            </div>
+            
+            <!-- Job Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Job Card 1: Senior Software Engineer -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 hover:shadow-lg">
+                    <!-- Star Icon -->
+                    <div class="absolute top-4 right-4 w-5 h-5 text-yellow-500">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    
+                    <h3 class="text-lg font-semibold mb-2" style="color: #1E40AF;">Senior Software Engineer</h3>
+                    <p class="text-gray-700 font-medium mb-2">Microsoft Corporation</p>
+                    <p class="text-gray-600 text-sm mb-3">
+                        <i class="fas fa-map-marker-alt mr-1"></i>
+                        🇹🇿 Tanzania - Dar es Salaam
+                    </p>
+                    
+                    <div class="flex gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-medium text-white" style="background-color: #1E40AF;">Full Time</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-medium text-white" style="background-color: #166534;">Remote</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <p class="text-sm font-medium" style="color: #1E40AF;">$80K - $120K</p>
+                        <p class="text-xs text-gray-500">Posted 2 days ago</p>
+                    </div>
+                </div>
+
+                <!-- Job Card 2: Marketing Director -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 hover:shadow-lg">
+                    <!-- Star Icon -->
+                    <div class="absolute top-4 right-4 w-5 h-5 text-yellow-500">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    
+                    <h3 class="text-lg font-semibold mb-2" style="color: #1E40AF;">Marketing Director</h3>
+                    <p class="text-gray-700 font-medium mb-2">CRDB Bank</p>
+                    <p class="text-gray-600 text-sm mb-3">
+                        <i class="fas fa-map-marker-alt mr-1"></i>
+                        🇹🇿 Arusha, Tanzania
+                    </p>
+                    
+                    <div class="flex gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-medium text-white" style="background-color: #1E40AF;">Full Time</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-medium text-white" style="background-color: #166534;">Remote</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <p class="text-sm font-medium" style="color: #1E40AF;">$80K - $120K</p>
+                        <p class="text-xs text-gray-500">Posted 2 days ago</p>
+                    </div>
+                </div>
+
+                <!-- Job Card 3: Health Research Officer -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 hover:shadow-lg">
+                    <!-- Star Icon -->
+                    <div class="absolute top-4 right-4 w-5 h-5 text-yellow-500">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    
+                    <h3 class="text-lg font-semibold mb-2" style="color: #1E40AF;">Health Research Officer</h3>
+                    <p class="text-gray-700 font-medium mb-2">WHO Tanzania</p>
+                    <p class="text-gray-600 text-sm mb-3">
+                        <i class="fas fa-map-marker-alt mr-1"></i>
+                        🇹🇿 Dodoma, Tanzania
+                    </p>
+                    
+                    <div class="flex gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-medium text-white" style="background-color: #1E40AF;">Full Time</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-medium text-white" style="background-color: #166534;">Remote</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <p class="text-sm font-medium" style="color: #1E40AF;">$80K - $120K</p>
+                        <p class="text-xs text-gray-500">Posted 2 days ago</p>
+                    </div>
+                </div>
+
+                <!-- Job Card 4: Clinical Officer -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 hover:shadow-lg">
+                    <!-- Star Icon -->
+                    <div class="absolute top-4 right-4 w-5 h-5 text-yellow-500">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    
+                    <h3 class="text-lg font-semibold mb-2" style="color: #1E40AF;">Clinical Officer</h3>
+                    <p class="text-gray-700 font-medium mb-2">AGHAKHAN Tanzania</p>
+                    <p class="text-gray-600 text-sm mb-3">
+                        <i class="fas fa-map-marker-alt mr-1"></i>
+                        🇹🇿 Dar, Tanzania
+                    </p>
+                    
+                    <div class="flex gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-medium text-white" style="background-color: #1E40AF;">Full Time</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-medium text-white" style="background-color: #166534;">Remote</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <p class="text-sm font-medium" style="color: #1E40AF;">$80K - $120K</p>
+                        <p class="text-xs text-gray-500">Posted 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- All Jobs JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -267,46 +383,6 @@
                     this.style.transform = 'translateY(0)';
                 });
             });
-
-            // Animate elements on page load
-            const elements = document.querySelectorAll('h1, p, .w-full.max-w-4xl');
-            elements.forEach((element, index) => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(30px)';
-                element.style.transition = 'all 0.6s ease';
-                
-                setTimeout(() => {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }, index * 200);
-            });
-
-            // Animate category cards on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe category cards for animation
-            setTimeout(() => {
-                const categoryCards = document.querySelectorAll('.grid .bg-white');
-                categoryCards.forEach((card, index) => {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(30px)';
-                    card.style.transition = 'all 0.6s ease';
-                    card.style.transitionDelay = `${index * 100}ms`;
-                    observer.observe(card);
-                });
-            }, 500);
         });
     </script>
 @endsection
