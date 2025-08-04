@@ -13,3 +13,7 @@ Route::get('/about', function () {
 Route::get('/tanzania-jobs', function () {
     return view('pages.tanzania-jobs');
 })->name('tanzania-jobs');
+
+Route::get('/all-jobs', function () {
+    return view('pages.all-jobs');
+})->name('all-jobs');
