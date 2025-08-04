@@ -457,6 +457,89 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Top Employers in Tanzania Section -->
+                    <div class="mt-12">
+                        <!-- Section Header -->
+                        <div class="p-4 rounded-lg mb-8" style="background-color: #EFF6FF;">
+                            <h2 class="text-xl font-semibold" style="color: #1E40AF;">Top Employers in Tanzania</h2>
+                        </div>
+                        
+                        <!-- Employers Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- Airtel Tanzania -->
+                            <div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between">
+                                <div>
+                                    <div class="mx-auto mb-4 rounded-lg flex items-center justify-center p-2" style="width: 120px; height: 60px;">
+                                        <img src="{{ asset('assets/logos/airtel.svg') }}" alt="Airtel Tanzania Logo" class="h-full w-full object-contain">
+                                    </div>
+                                    <div class="text-lg font-semibold text-gray-800 mb-2">Airtel Tanzania</div>
+                                    <div class="text-sm text-gray-600 mb-3">11 open positions</div>
+                                </div>
+                                <a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                            </div>
+                            
+                            <!-- Vodacom Tz -->
+                            <div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between">
+                                <div>
+                                    <div class="w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center font-bold text-sm text-white" style="width: 120px; height: 60px;);">
+                                        <img src="{{ asset('assets/logos/vodacom.svg') }}" alt="Vodacom Tanzania Logo" class="h-full w-full object-contain">
+                                    </div>
+                                    <div class="text-lg font-semibold text-gray-800 mb-2">Vodacom Tz</div>
+                                    <div class="text-sm text-gray-600 mb-3">26 open positions</div>
+                                </div>
+                                <a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                            </div>
+                            
+                            <!-- Muhimbili Hosp -->
+                            <div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between">
+                                <div>
+                                    <div class="w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center font-bold text-sm text-white" style="width: 60px; height: 60px; background: linear-gradient(45deg, #3182ce, #2c5282);">
+                                        <img src="{{ asset('companies/muhimbili.png') }}" alt="Muhimbili Hospital Tanzania Logo" class="h-full w-full object-contain">
+                                    </div>
+                                    <div class="text-lg font-semibold text-gray-800 mb-2">Muhimbili Hosp</div>
+                                    <div class="text-sm text-gray-600 mb-3">13 open positions</div>
+                                </div>
+                                <a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                            </div>
+                            
+                            <!-- Tanzania Brew -->
+                            <div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between">
+                                <div>
+                                    <div class="w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center font-bold text-sm text-white" style="width: 60px; height: 60px;">
+                                        <img src="{{ asset('companies/tzBreweries.png') }}" alt="Tanzania Breweries Logo" class="h-full w-full object-contain">
+                                    </div>
+                                    <div class="text-lg font-semibold text-gray-800 mb-2">Tanzania Brew</div>
+                                    <div class="text-sm text-gray-600 mb-3">21 open positions</div>
+                                </div>
+                                <a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                            </div>
+                            
+                            <!-- NMB Bank -->
+                            <div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between">
+                                <div>
+                                    <div class="w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center font-bold text-sm text-white" style="width: 60px; height: 60px;">
+                                        <img src="{{ asset('companies/nmb.png') }}" alt="NMB Tanzania Logo" class="h-full w-full object-contain">
+                                    </div>
+                                    <div class="text-lg font-semibold text-gray-800 mb-2">NMB Bank</div>
+                                    <div class="text-sm text-gray-600 mb-3">31 open positions</div>
+                                </div>
+                                <a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                            </div>
+                            
+                            <!-- Tanzania Petroleum Development -->
+                            <div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between">
+                                <div>
+                                    <div class="w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center font-bold text-sm text-white" style="width: 60px; height: 60px;">
+                                        <img src="{{ asset('companies/Tanzania Petroleum Development.png') }}" alt="Tanzania Petroleum Development Tanzania Logo" class="h-full w-full object-contain">
+                                    </div>
+                                    <div class="text-lg font-semibold text-gray-800 mb-2">Tanzania Petroleum Development</div>
+                                    <div class="text-sm text-gray-600 mb-3">11 open positions</div>
+                                </div>
+                                <a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
