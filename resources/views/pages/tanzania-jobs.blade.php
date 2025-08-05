@@ -467,6 +467,18 @@
                         
                         <!-- Employers Grid -->
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- Blast -->
+                            <div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between">
+                                <div>
+                                    <div class="mx-auto mb-4 rounded-lg flex items-center justify-center p-2" style="width: 120px; height: 60px;">
+                                        <img src="{{ asset('companies/blast.png') }}" alt="Blast Logo" class="h-full w-full object-contain">
+                                    </div>
+                                    <div class="text-lg font-semibold text-gray-800 mb-2">Blast</div>
+                                    <div class="text-sm text-gray-600 mb-3">45+ open positions</div>
+                                </div>
+                                <a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                            </div>
+                            
                             <!-- Airtel Tanzania -->
                             <div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between">
                                 <div>

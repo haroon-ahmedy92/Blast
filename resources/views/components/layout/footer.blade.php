@@ -2,9 +2,19 @@
     <div class="max-w-7xl mx-auto">
         <!-- Main Footer Content -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            <!-- About Us Section -->
+            <!-- Company Logo and About Section -->
             <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-4">ABOUT US</h3>
+                <div class="mb-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="{{ asset('companies/blast.png') }}" alt="Blast Logo" class="h-12 w-auto">
+                        <span class="text-xl font-bold" style="color: #1E40AF;">Blast</span>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Your gateway to career opportunities across Tanzania and beyond. Connecting talent with the right opportunities.
+                    </p>
+                </div>
+                
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">QUICK LINKS</h3>
                 <ul class="space-y-2">
                     <li><a href="#" class="text-sm text-gray-600 hover:text-blue-700 transition-colors">Post a Job</a></li>
                     <li><a href="#" class="text-sm text-gray-600 hover:text-blue-700 transition-colors">Post a Tender</a></li>
@@ -100,12 +110,12 @@
             <!-- Copyright and Footer Text -->
             <div class="border-t border-gray-200 pt-6">
                 <div class="text-center">
-                    <p class="text-sm text-gray-600 mb-4">© 2025 Developed by Project X - All Right Reserved</p>
+                    <p class="text-sm text-gray-600 mb-4">© 2025 Developed by Blast - All Right Reserved</p>
                     <p class="text-xs text-gray-500 mb-2">
-                        <strong>Privacy Policy:</strong> Project X respects your privacy. We do not sell, share personal information without your consent. Any data you submit is protected and used solely to improve your experience.
+                        <strong>Privacy Policy:</strong> Blast respects your privacy. We do not sell, share personal information without your consent. Any data you submit is protected and used solely to improve your experience.
                     </p>
                     <p class="text-xs text-gray-500">
-                        <strong>About Project X:</strong> Project X is a community-driven blog and platform providing job updates, scholarship info, tenders, and professional development tools to empower Tanzanians. Our mission is to make opportunity accessible for everyone, regardless of their background or location.
+                        <strong>About Blast:</strong> Blast is a community-driven blog and platform providing job updates, scholarship info, tenders, and professional development tools to empower Tanzanians. Our mission is to make opportunity accessible for everyone, regardless of their background or location.
                     </p>
                 </div>
             </div>

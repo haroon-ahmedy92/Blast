@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>{{ config('app.name', 'Tanzania Jobs Portal') }}</title>
+    <title>{{ config('app.name', 'Blast - Tanzania Jobs Portal') }}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('companies/blast.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('companies/blast.png') }}">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">

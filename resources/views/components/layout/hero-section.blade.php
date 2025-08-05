@@ -1,5 +1,11 @@
 <div class="flex flex-col items-center py-16">
     <div class="max-w-4xl w-full px-8 text-center">
+        <!-- Hero Logo -->
+        <div class="flex items-center justify-center gap-3 mb-8">
+            <img src="{{ asset('companies/blast.png') }}" alt="Blast Logo" class="h-16 w-auto">
+            <div class="text-3xl md:text-4xl font-bold" style="color: #1E40AF;">Blast</div>
+        </div>
+        
         <div class="text-blue-800 text-2xl md:text-3xl font-bold mt-6 mb-2" style="color: #1E40AF;">
             Real News. Real Jobs. Real Opportunities.
         </div>
@@ -9,7 +15,7 @@
         </div>
         
         <div class="text-gray-700 text-base md:text-lg max-w-3xl mx-auto mb-8 leading-relaxed">
-            Project X connects you with opportunities in Tanzania 
+            Blast connects you with opportunities in Tanzania 
             and beyond — from jobs and tenders to scholarships and 
             programs that empower all people.
         </div>
@@ -28,7 +34,7 @@
              style="background-color: #EFF6FF;">
             Looking for Nafasi za kazi mpya Leo 2025, Jobs in Tanzania, Nafasi za kazi Tanzania, Ajira Tanzania, 
             Nafasi za kazi utumishi, Nafasi za kazi serikalini, Nafasi za kazi halmashauri, or ajira mpya in general? 
-            Project X is your perfect destination for all academic and employment goals for Jobs in All African Countries.
+            Blast is your perfect destination for all academic and employment goals for Jobs in All African Countries.
         </div>
     </div>
 </div>

@@ -11,6 +11,14 @@
     <div class="nav-container">
         <div class="container">
             <div class="nav-content">
+                <!-- Logo Section -->
+                <div class="logo-section">
+                    <a href="{{ route('home') }}" class="logo-link">
+                        <img src="{{ asset('companies/blast.png') }}" alt="Blast Logo" class="logo-img">
+                        <span class="logo-text">Blast</span>
+                    </a>
+                </div>
+                
                 <div class="nav-links">
                     <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">HOME</a>
                     <a href="{{ route('tanzania-jobs') }}" class="nav-link {{ request()->routeIs('tanzania-jobs') ? 'active' : '' }}">TANZANIA-JOBS</a>

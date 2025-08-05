@@ -5,7 +5,7 @@
     <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
             <h1 class="text-4xl font-bold text-blue-800 mb-4" style="color: #1E40AF;">
-                About Project X
+                About Blast
             </h1>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                 Connecting Tanzania with opportunities across Africa and beyond.
