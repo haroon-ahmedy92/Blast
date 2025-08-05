@@ -413,6 +413,136 @@
         </div>
     </div>
 
+    <!-- Recent Jobs Section -->
+    <div class="py-8">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="max-w-4xl mx-auto mb-8">
+                <h2 class="text-2xl font-bold mb-4" style="color: #1E40AF;">Recent Jobs</h2>
+                <p class="text-gray-600">
+                    Discover the latest job opportunities posted by top employers.
+                </p>
+            </div>
+            
+            <!-- Job Listings -->
+            <div class="space-y-4 max-w-4xl mx-auto mb-8">
+                <!-- Sales Executive -->
+                <div class="job-card bg-white border border-gray-200 rounded-lg p-6 flex items-center justify-between transition-all duration-200 hover:shadow-lg cursor-pointer" data-job="sales-executive">
+                    <div class="flex items-center space-x-4">
+                        <div class="job-icon w-12 h-12 rounded-lg flex items-center justify-center text-xl" style="background-color: #EFF6FF; color: #1E40AF;">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-1">Sales Executive</h3>
+                            <p class="text-sm text-gray-500">384 Jobs Available</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-lg mb-1 font-semibold" style="color: #1E40AF;">$80K - $120K</div>
+                        <div class="location-text flex items-center justify-end mb-1 text-sm text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            🇹🇿 Tanzania - Dar es Salaam
+                        </div>
+                        <div class="posted-text text-xs text-gray-400">Posted today</div>
+                    </div>
+                </div>
+
+                <!-- Financial Analyst -->
+                <div class="job-card bg-white border border-gray-200 rounded-lg p-6 flex items-center justify-between transition-all duration-200 hover:shadow-lg cursor-pointer" data-job="financial-analyst">
+                    <div class="flex items-center space-x-4">
+                        <div class="job-icon w-12 h-12 rounded-lg flex items-center justify-center text-xl" style="background-color: #EFF6FF; color: #1E40AF;">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-1">Financial Analyst</h3>
+                            <p class="text-sm text-gray-500">295 Jobs Available</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-lg mb-1 font-semibold" style="color: #1E40AF;">$70K - $110K</div>
+                        <div class="location-text flex items-center justify-end mb-1 text-sm text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            🇹🇿 Tanzania - Mbeya
+                        </div>
+                        <div class="posted-text text-xs text-gray-400">Posted today</div>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing Specialist -->
+                <div class="job-card bg-white border border-gray-200 rounded-lg p-6 flex items-center justify-between transition-all duration-200 hover:shadow-lg cursor-pointer" data-job="digital-marketing-specialist">
+                    <div class="flex items-center space-x-4">
+                        <div class="job-icon w-12 h-12 rounded-lg flex items-center justify-center text-xl" style="background-color: #EFF6FF; color: #1E40AF;">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-1">Digital Marketing Specialist</h3>
+                            <p class="text-sm text-gray-500">213 Jobs Available</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-lg mb-1 font-semibold" style="color: #1E40AF;">$60K - $90K</div>
+                        <div class="location-text flex items-center justify-end mb-1 text-sm text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            🇹🇿 Tanzania - Mwanza
+                        </div>
+                        <div class="posted-text text-xs text-gray-400">Posted today</div>
+                    </div>
+                </div>
+
+                <!-- Secondary School Teacher -->
+                <div class="job-card bg-white border border-gray-200 rounded-lg p-6 flex items-center justify-between transition-all duration-200 hover:shadow-lg cursor-pointer" data-job="secondary-school-teacher">
+                    <div class="flex items-center space-x-4">
+                        <div class="job-icon w-12 h-12 rounded-lg flex items-center justify-center text-xl" style="background-color: #EFF6FF; color: #1E40AF;">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-1">Secondary School Teacher</h3>
+                            <p class="text-sm text-gray-500">167 Jobs Available</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-lg mb-1 font-semibold" style="color: #1E40AF;">$45K - $65K</div>
+                        <div class="location-text flex items-center justify-end mb-1 text-sm text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            🇹🇿 Tanzania - Arusha
+                        </div>
+                        <div class="posted-text text-xs text-gray-400">Posted today</div>
+                    </div>
+                </div>
+
+                <!-- Hotel Manager -->
+                <div class="job-card bg-white border border-gray-200 rounded-lg p-6 flex items-center justify-between transition-all duration-200 hover:shadow-lg cursor-pointer" data-job="hotel-manager">
+                    <div class="flex items-center space-x-4">
+                        <div class="job-icon w-12 h-12 rounded-lg flex items-center justify-center text-xl" style="background-color: #EFF6FF; color: #1E40AF;">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-1">Hotel Manager</h3>
+                            <p class="text-sm text-gray-500">142 Jobs Available</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-lg mb-1 font-semibold" style="color: #1E40AF;">$55K - $85K</div>
+                        <div class="location-text flex items-center justify-end mb-1 text-sm text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            🇹🇿 Tanzania - Morogoro
+                        </div>
+                        <div class="posted-text text-xs text-gray-400">Posted today</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Jobs Button -->
+            <div class="text-center max-w-4xl mx-auto">
+                <button class="load-more-btn px-6 py-3 text-white rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:transform hover:-translate-y-1" 
+                        style="background-color: #1E40AF;" 
+                        id="loadMoreJobsBtn">
+                    Load More Jobs
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- All Jobs JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -511,6 +641,68 @@
                     }
                 });
             });
+
+            // Handle recent job clicks
+            document.querySelectorAll('.job-card[data-job]').forEach(jobCard => {
+                jobCard.addEventListener('click', function() {
+                    const jobTitle = this.querySelector('h3').textContent;
+                    const jobSlug = this.getAttribute('data-job');
+                    
+                    // Set search keyword to job title
+                    keywordInput.value = jobTitle;
+                    
+                    // Highlight selected job card
+                    document.querySelectorAll('.job-card[data-job]').forEach(card => {
+                        card.style.borderColor = '#e5e7eb';
+                        card.style.backgroundColor = 'white';
+                    });
+                    
+                    this.style.borderColor = '#1E40AF';
+                    this.style.backgroundColor = '#EFF6FF';
+                    
+                    // Perform search
+                    performJobSearch();
+                    
+                    console.log(`Selected job: ${jobTitle} (${jobSlug})`);
+                });
+                
+                // Add hover effects that don't interfere with selection
+                jobCard.addEventListener('mouseenter', function() {
+                    if (this.style.borderColor !== 'rgb(30, 64, 175)') {
+                        this.style.borderColor = '#1E40AF';
+                        this.style.boxShadow = '0 2px 8px rgba(30, 64, 175, 0.1)';
+                    }
+                });
+                
+                jobCard.addEventListener('mouseleave', function() {
+                    if (this.style.backgroundColor !== 'rgb(239, 246, 255)') {
+                        this.style.borderColor = '#e5e7eb';
+                        this.style.boxShadow = 'none';
+                    }
+                });
+            });
+
+            // Handle Load More Jobs button
+            const loadMoreBtn = document.getElementById('loadMoreJobsBtn');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Loading...';
+                    this.disabled = true;
+                    this.style.backgroundColor = '#9ca3af';
+
+                    // Simulate loading more jobs
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.disabled = false;
+                        this.style.backgroundColor = '#1E40AF';
+                        
+                        // In a real application, this would load more job data
+                        alert('More jobs loaded! In a real application, this would display additional job listings.');
+                        console.log('Loading more recent jobs...');
+                    }, 2000);
+                });
+            }
 
             // Handle popular keyword clicks
             document.querySelectorAll('a[href="#"]').forEach(link => {
