@@ -543,6 +543,179 @@
         </div>
     </div>
 
+    <!-- Top Hiring Companies Section -->
+    <div class="py-8">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="max-w-4xl mx-auto mb-8">
+                <h2 class="text-2xl font-bold mb-4" style="color: #1E40AF;">Top Hiring Companies</h2>
+                <p class="text-gray-600">
+                    Discover career opportunities with Tanzania's leading employers.
+                </p>
+            </div>
+            
+            <!-- Companies Grid -->
+            <div class="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Blast -->
+                <div class="company-card bg-white border border-gray-200 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-55 flex flex-col justify-between cursor-pointer" data-company="blast">
+                    <div>
+                        <div class="company-logo w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center" style="width: 60px; height: 60px;">
+                            <img src="{{ asset('companies/blast.png') }}" alt="Blast Logo" class="h-full w-full object-contain">
+                        </div>
+                        <div class="company-name text-lg font-semibold text-gray-800 mb-2">Blast</div>
+                        <div class="positions-count text-sm text-gray-600 mb-4">45+ open positions</div>
+                    </div>
+                    <a href="#" class="view-jobs-link text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                </div>
+                
+                <!-- Airtel Tanzania -->
+                <div class="company-card bg-white border border-gray-200 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-55 flex flex-col justify-between cursor-pointer" data-company="airtel">
+                    <div>
+                        <div class="company-logo w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center" style="width: 60px; height: 60px;">
+                            <img src="{{ asset('assets/logos/airtel.svg') }}" alt="Airtel Tanzania Logo" class="h-full w-full object-contain">
+                        </div>
+                        <div class="company-name text-lg font-semibold text-gray-800 mb-2">Airtel Tanzania</div>
+                        <div class="positions-count text-sm text-gray-600 mb-4">11 open positions</div>
+                    </div>
+                    <a href="#" class="view-jobs-link text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                </div>
+                
+                <!-- Vodacom Tz -->
+                <div class="company-card bg-white border border-gray-200 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-55 flex flex-col justify-between cursor-pointer" data-company="vodacom">
+                    <div>
+                        <div class="company-logo w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center" style="width: 60px; height: 60px;">
+                            <img src="{{ asset('assets/logos/vodacom.svg') }}" alt="Vodacom Tanzania Logo" class="h-full w-full object-contain">
+                        </div>
+                        <div class="company-name text-lg font-semibold text-gray-800 mb-2">Vodacom Tz</div>
+                        <div class="positions-count text-sm text-gray-600 mb-4">26 open positions</div>
+                    </div>
+                    <a href="#" class="view-jobs-link text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                </div>
+                
+                <!-- Muhimbili Hosp -->
+                <div class="company-card bg-white border border-gray-200 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-55 flex flex-col justify-between cursor-pointer" data-company="muhimbili">
+                    <div>
+                        <div class="company-logo w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center" style="width: 60px; height: 60px;">
+                            <img src="{{ asset('companies/muhimbili.png') }}" alt="Muhimbili Hospital Tanzania Logo" class="h-full w-full object-contain">
+                        </div>
+                        <div class="company-name text-lg font-semibold text-gray-800 mb-2">Muhimbili Hosp</div>
+                        <div class="positions-count text-sm text-gray-600 mb-4">13 open positions</div>
+                    </div>
+                    <a href="#" class="view-jobs-link text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                </div>
+                
+                <!-- Tanzania Petroleum Development -->
+                <div class="company-card bg-white border border-gray-200 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-55 flex flex-col justify-between cursor-pointer" data-company="tanzania-petroleum">
+                    <div>
+                        <div class="company-logo w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center" style="width: 60px; height: 60px;">
+                            <img src="{{ asset('companies/Tanzania Petroleum Development.png') }}" alt="Tanzania Petroleum Development Logo" class="h-full w-full object-contain">
+                        </div>
+                        <div class="company-name text-lg font-semibold text-gray-800 mb-2">Tanzania Petroleum Development</div>
+                        <div class="positions-count text-sm text-gray-600 mb-4">11 open positions</div>
+                    </div>
+                    <a href="#" class="view-jobs-link text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                </div>
+                
+                <!-- Tanzania Brew -->
+                <div class="company-card bg-white border border-gray-200 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-55 flex flex-col justify-between cursor-pointer" data-company="tanzania-brew">
+                    <div>
+                        <div class="company-logo w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center" style="width: 60px; height: 60px;">
+                            <img src="{{ asset('companies/tzBreweries.png') }}" alt="Tanzania Breweries Logo" class="h-full w-full object-contain">
+                        </div>
+                        <div class="company-name text-lg font-semibold text-gray-800 mb-2">Tanzania Brew</div>
+                        <div class="positions-count text-sm text-gray-600 mb-4">21 open positions</div>
+                    </div>
+                    <a href="#" class="view-jobs-link text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                </div>
+                
+                <!-- NMB Bank -->
+                <div class="company-card bg-white border border-gray-200 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-55 flex flex-col justify-between cursor-pointer" data-company="nmb">
+                    <div>
+                        <div class="company-logo w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center" style="width: 60px; height: 60px;">
+                            <img src="{{ asset('companies/nmb.png') }}" alt="NMB Bank Tanzania Logo" class="h-full w-full object-contain">
+                        </div>
+                        <div class="company-name text-lg font-semibold text-gray-800 mb-2">NMB Bank</div>
+                        <div class="positions-count text-sm text-gray-600 mb-4">31 open positions</div>
+                    </div>
+                    <a href="#" class="view-jobs-link text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                </div>
+                
+                <!-- CRDB Bank -->
+                <div class="company-card bg-white border border-gray-200 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-55 flex flex-col justify-between cursor-pointer" data-company="crdb">
+                    <div>
+                        <div class="company-logo w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center" style="width: 60px; height: 60px;">
+                            <img src="{{ asset('companies/crdb.png') }}" alt="CRDB Bank Tanzania Logo" class="h-full w-full object-contain">
+                        </div>
+                        <div class="company-name text-lg font-semibold text-gray-800 mb-2">CRDB Bank</div>
+                        <div class="positions-count text-sm text-gray-600 mb-4">28 open positions</div>
+                    </div>
+                    <a href="#" class="view-jobs-link text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Seeker Resources Section -->
+    <div class="py-8">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="max-w-4xl mx-auto mb-8">
+                <h2 class="text-2xl font-bold mb-4" style="color: #1E40AF;">Job Seeker Resources</h2>
+                <p class="text-gray-600">
+                    Essential tools and guides to help you succeed in your job search journey.
+                </p>
+            </div>
+            
+            <!-- Resource Cards with Staggered Widths -->
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- Resume Writing Tips - 60% width -->
+                <div class="resource-card bg-white border border-gray-200 rounded-lg p-6 flex items-center transition-all duration-300 hover:shadow-lg cursor-pointer" style="width: 60%;">
+                    <div class="resource-icon w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-5 flex-shrink-0" style="background-color: #1E40AF;">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="resource-content flex-grow mr-5">
+                        <h3 class="text-lg font-semibold mb-2 text-gray-900">Resume Writing Tips</h3>
+                        <p class="text-sm text-gray-600 italic leading-relaxed">Learn how to create a standout resume that gets noticed by employers.</p>
+                    </div>
+                    <a href="#" class="read-more-link text-sm font-medium flex items-center flex-shrink-0 transition-colors hover:underline" style="color: #1E40AF;">
+                        Read More
+                        <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Interview Preparation - 80% width -->
+                <div class="resource-card bg-white border border-gray-200 rounded-lg p-6 flex items-center transition-all duration-300 hover:shadow-lg cursor-pointer" style="width: 80%;">
+                    <div class="resource-icon w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-5 flex-shrink-0" style="background-color: #1E40AF;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="resource-content flex-grow mr-5">
+                        <h3 class="text-lg font-semibold mb-2 text-gray-900">Interview Preparation</h3>
+                        <p class="text-sm text-gray-600 italic leading-relaxed">Tips and strategies to help you ace your next job interview.</p>
+                    </div>
+                    <a href="#" class="read-more-link text-sm font-medium flex items-center flex-shrink-0 transition-colors hover:underline" style="color: #1E40AF;">
+                        Read More
+                        <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Career Development - 100% width -->
+                <div class="resource-card bg-white border border-gray-200 rounded-lg p-6 flex items-center transition-all duration-300 hover:shadow-lg cursor-pointer" style="width: 100%;">
+                    <div class="resource-icon w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-5 flex-shrink-0" style="background-color: #1E40AF;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="resource-content flex-grow mr-5">
+                        <h3 class="text-lg font-semibold mb-2 text-gray-900">Career Development</h3>
+                        <p class="text-sm text-gray-600 italic leading-relaxed">Resources to help you grow your skills and advance your career.</p>
+                    </div>
+                    <a href="#" class="read-more-link text-sm font-medium flex items-center flex-shrink-0 transition-colors hover:underline" style="color: #1E40AF;">
+                        Read More
+                        <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- All Jobs JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -703,6 +876,54 @@
                     }, 2000);
                 });
             }
+
+            // Handle company card clicks
+            document.querySelectorAll('.company-card[data-company]').forEach(companyCard => {
+                companyCard.addEventListener('click', function(e) {
+                    // Don't trigger if clicking on the "View Jobs" link
+                    if (e.target.classList.contains('view-jobs-link')) {
+                        e.preventDefault();
+                        const companyName = this.querySelector('.company-name').textContent;
+                        alert(`Viewing jobs for ${companyName}. In a real application, this would redirect to the company's job listings.`);
+                        return;
+                    }
+                    
+                    const companyName = this.querySelector('.company-name').textContent;
+                    const companySlug = this.getAttribute('data-company');
+                    
+                    // Set search keyword to company name
+                    keywordInput.value = companyName;
+                    
+                    // Highlight selected company card
+                    document.querySelectorAll('.company-card[data-company]').forEach(card => {
+                        card.style.borderColor = '#e5e7eb';
+                        card.style.backgroundColor = 'white';
+                    });
+                    
+                    this.style.borderColor = '#1E40AF';
+                    this.style.backgroundColor = '#EFF6FF';
+                    
+                    // Perform search
+                    performJobSearch();
+                    
+                    console.log(`Selected company: ${companyName} (${companySlug})`);
+                });
+                
+                // Add hover effects that don't interfere with selection
+                companyCard.addEventListener('mouseenter', function() {
+                    if (this.style.borderColor !== 'rgb(30, 64, 175)') {
+                        this.style.borderColor = '#1E40AF';
+                        this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+                    }
+                });
+                
+                companyCard.addEventListener('mouseleave', function() {
+                    if (this.style.backgroundColor !== 'rgb(239, 246, 255)') {
+                        this.style.borderColor = '#e5e7eb';
+                        this.style.boxShadow = 'none';
+                    }
+                });
+            });
 
             // Handle popular keyword clicks
             document.querySelectorAll('a[href="#"]').forEach(link => {
