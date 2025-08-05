@@ -86,8 +86,8 @@
             <div class="mb-6">
                 <h3 class="text-lg font-semibold text-gray-900 mb-4">CONNECT WITH US</h3>
                 <div class="space-y-2">
-                    <p class="text-sm text-gray-600">Email us at: <a href="mailto:project.x@gmail.com" class="text-blue-700 hover:text-blue-800 transition-colors">project.x@gmail.com</a></p>
-                    <p class="text-sm text-gray-600">Call us at: <a href="tel:+255686855352" class="text-blue-700 hover:text-blue-800 transition-colors">+255 686 855 352</a></p>
+                    <p class="text-sm text-gray-600">Email us at: <a href="mailto:blast@gmail.com" class="text-blue-700 hover:text-blue-800 transition-colors">blast@gmail.com</a></p>
+                    <p class="text-sm text-gray-600">Call us at: <a href="tel:+255686855352" class="text-blue-700 hover:text-blue-800 transition-colors">+255 616 393 881</a></p>
                 </div>
             </div>
 
