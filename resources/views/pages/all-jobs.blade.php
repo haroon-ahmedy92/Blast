@@ -293,6 +293,126 @@
         </div>
     </div>
 
+    <!-- Browse Jobs By Category Section -->
+    <div class="py-8">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold mb-4" style="color: #1E40AF;">Browse Jobs By Category</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Explore job opportunities across different industries and find the perfect match for your skills and interests.
+                </p>
+            </div>
+            
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Information Technology -->
+                <div class="category-card bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 hover:shadow-lg cursor-pointer" data-category="information-technology">
+                    <div class="flex items-start space-x-4">
+                        <div class="category-icon text-2xl" style="color: #1E40AF;">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1" style="color: #1f2937;">Information Technology</h3>
+                            <p class="text-sm text-gray-600">384 Jobs Available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business & Finance -->
+                <div class="category-card bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 hover:shadow-lg cursor-pointer" data-category="business-finance">
+                    <div class="flex items-start space-x-4">
+                        <div class="category-icon text-2xl" style="color: #1E40AF;">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1" style="color: #1f2937;">Business & Finance</h3>
+                            <p class="text-sm text-gray-600">295 Jobs Available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare & Medical -->
+                <div class="category-card bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 hover:shadow-lg cursor-pointer" data-category="healthcare-medical">
+                    <div class="flex items-start space-x-4">
+                        <div class="category-icon text-2xl" style="color: #1E40AF;">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1" style="color: #1f2937;">Healthcare & Medical</h3>
+                            <p class="text-sm text-gray-600">213 Jobs Available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Training -->
+                <div class="category-card bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 hover:shadow-lg cursor-pointer" data-category="education-training">
+                    <div class="flex items-start space-x-4">
+                        <div class="category-icon text-2xl" style="color: #1E40AF;">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1" style="color: #1f2937;">Education & Training</h3>
+                            <p class="text-sm text-gray-600">384 Jobs Available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Engineering & Manufacturing -->
+                <div class="category-card bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 hover:shadow-lg cursor-pointer" data-category="engineering-manufacturing">
+                    <div class="flex items-start space-x-4">
+                        <div class="category-icon text-2xl" style="color: #1E40AF;">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1" style="color: #1f2937;">Engineering & Manufacturing</h3>
+                            <p class="text-sm text-gray-600">384 Jobs Available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing & Creative -->
+                <div class="category-card bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 hover:shadow-lg cursor-pointer" data-category="marketing-creative">
+                    <div class="flex items-start space-x-4">
+                        <div class="category-icon text-2xl" style="color: #1E40AF;">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1" style="color: #1f2937;">Marketing & Creative</h3>
+                            <p class="text-sm text-gray-600">295 Jobs Available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transportation & Logistics -->
+                <div class="category-card bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 hover:shadow-lg cursor-pointer" data-category="transportation-logistics">
+                    <div class="flex items-start space-x-4">
+                        <div class="category-icon text-2xl" style="color: #1E40AF;">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1" style="color: #1f2937;">Transportation & Logistics</h3>
+                            <p class="text-sm text-gray-600">213 Jobs Available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospitality & Tourism -->
+                <div class="category-card bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 hover:shadow-lg cursor-pointer" data-category="hospitality-tourism">
+                    <div class="flex items-start space-x-4">
+                        <div class="category-icon text-2xl" style="color: #1E40AF;">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1" style="color: #1f2937;">Hospitality & Tourism</h3>
+                            <p class="text-sm text-gray-600">384 Jobs Available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- All Jobs JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -352,21 +472,52 @@
                 }, 1500);
             }
 
+            // Handle category clicks
+            document.querySelectorAll('.category-card').forEach(category => {
+                category.addEventListener('click', function() {
+                    const categoryName = this.querySelector('h3').textContent;
+                    const categorySlug = this.getAttribute('data-category');
+                    
+                    // Set search keyword to category name
+                    keywordInput.value = categoryName;
+                    
+                    // Highlight selected category
+                    document.querySelectorAll('.category-card').forEach(card => {
+                        card.style.borderColor = '#e5e7eb';
+                        card.style.backgroundColor = 'white';
+                    });
+                    
+                    this.style.borderColor = '#1E40AF';
+                    this.style.backgroundColor = '#EFF6FF';
+                    
+                    // Perform search
+                    performJobSearch();
+                    
+                    console.log(`Selected category: ${categoryName} (${categorySlug})`);
+                });
+                
+                // Add hover effects
+                category.addEventListener('mouseenter', function() {
+                    if (this.style.borderColor !== 'rgb(30, 64, 175)') {
+                        this.style.borderColor = '#1E40AF';
+                        this.style.boxShadow = '0 4px 12px rgba(30, 64, 175, 0.1)';
+                    }
+                });
+                
+                category.addEventListener('mouseleave', function() {
+                    if (this.style.backgroundColor !== 'rgb(239, 246, 255)') {
+                        this.style.borderColor = '#e5e7eb';
+                        this.style.boxShadow = 'none';
+                    }
+                });
+            });
+
             // Handle popular keyword clicks
             document.querySelectorAll('a[href="#"]').forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const keyword = this.textContent;
                     keywordInput.value = keyword;
-                    performJobSearch();
-                });
-            });
-
-            // Handle category clicks
-            document.querySelectorAll('.grid .bg-white').forEach(category => {
-                category.addEventListener('click', function() {
-                    const categoryName = this.querySelector('h3').textContent;
-                    keywordInput.value = categoryName;
                     performJobSearch();
                 });
             });
