@@ -261,6 +261,92 @@
             </div>
         </div>
 
+        <!-- Recent Tenders Section -->
+        <div class="mt-12 md:mt-16">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl font-semibold mb-6 text-center" style="color: #1E40AF;">Recent Tenders</h2>
+                
+                <div class="space-y-4">
+                    <!-- School Furniture Supply -->
+                    <div class="bg-white border rounded-lg p-4 md:p-5 transition-all duration-200 hover:shadow-md" style="border-color: #1E40AF;">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">School Furniture Supply</h3>
+                                <p class="text-gray-600 text-sm mb-3 leading-relaxed">Supply of desks and chairs for 15 primary schools in Mwanza Region.</p>
+                                <span class="inline-block px-3 py-1 text-xs font-medium text-white rounded" style="background-color: #1E40AF;">Education</span>
+                            </div>
+                            <div class="text-sm font-medium text-red-600 sm:ml-4 sm:text-right">
+                                Closes in 5 days
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agricultural Equipment -->
+                    <div class="bg-white border rounded-lg p-4 md:p-5 transition-all duration-200 hover:shadow-md" style="border-color: #1E40AF;">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Agricultural Equipment</h3>
+                                <p class="text-gray-600 text-sm mb-3 leading-relaxed">Supply of irrigation equipment for farmers in Morogoro Region.</p>
+                                <span class="inline-block px-3 py-1 text-xs font-medium text-white rounded" style="background-color: #1E40AF;">Agriculture</span>
+                            </div>
+                            <div class="text-sm font-medium text-red-600 sm:ml-4 sm:text-right">
+                                Closes in 7 days
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Office Renovation Services -->
+                    <div class="bg-white border rounded-lg p-4 md:p-5 transition-all duration-200 hover:shadow-md" style="border-color: #1E40AF;">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Office Renovation Services</h3>
+                                <p class="text-gray-600 text-sm mb-3 leading-relaxed">Renovation of regional offices for TANESCO in Dodoma.</p>
+                                <span class="inline-block px-3 py-1 text-xs font-medium text-white rounded" style="background-color: #1E40AF;">Construction</span>
+                            </div>
+                            <div class="text-sm font-medium text-red-600 sm:ml-4 sm:text-right">
+                                Closes in 9 days
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Services -->
+                    <div class="bg-white border rounded-lg p-4 md:p-5 transition-all duration-200 hover:shadow-md" style="border-color: #1E40AF;">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Security Services</h3>
+                                <p class="text-gray-600 text-sm mb-3 leading-relaxed">Provision of security services for bank branches in Dar es Salaam.</p>
+                                <span class="inline-block px-3 py-1 text-xs font-medium text-white rounded" style="background-color: #1E40AF;">Services</span>
+                            </div>
+                            <div class="text-sm font-medium text-red-600 sm:ml-4 sm:text-right">
+                                Closes in 15 days
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medical Supplies -->
+                    <div class="bg-white border rounded-lg p-4 md:p-5 transition-all duration-200 hover:shadow-md" style="border-color: #1E40AF;">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Medical Supplies</h3>
+                                <p class="text-gray-600 text-sm mb-3 leading-relaxed">Supply of essential medicines for rural health centers in Mbeya Region.</p>
+                                <span class="inline-block px-3 py-1 text-xs font-medium text-white rounded" style="background-color: #1E40AF;">Healthcare</span>
+                            </div>
+                            <div class="text-sm font-medium text-red-600 sm:ml-4 sm:text-right">
+                                Closes in 12 days
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View All Link -->
+                <div class="text-center mt-8">
+                    <a href="#" class="inline-block text-base font-medium hover:underline transition-colors" style="color: #1E40AF;">
+                        View All Recent Tenders →
+                    </a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 @endsection
