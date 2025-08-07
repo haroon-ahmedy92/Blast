@@ -17,3 +17,7 @@ Route::get('/tanzania-jobs', function () {
 Route::get('/all-jobs', function () {
     return view('pages.all-jobs');
 })->name('all-jobs');
+
+Route::get('/tenders', function () {
+    return view('pages.tenders');
+})->name('tenders');

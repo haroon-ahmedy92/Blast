@@ -71,18 +71,18 @@
     </div>
 
     <!-- Job Filter and Listings Section -->
-    <div class="py-8">
-        <div class="container mx-auto">
-            <div class="flex">
+    <div class="py-6 md:py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-6">
                 <!-- Sidebar Filter -->
-                <div class="w-80 p-6 bg-white border-gray-200">
-                    <div class="filter-section p-4 mb-6 border border-gray-200 rounded-lg bg-white">
-                        <h2 class="text-lg font-semibold mb-4" style="color: #1E40AF;">Filter Tanzania Jobs</h2>
+                <div class="w-full lg:w-80 p-4 md:p-6 bg-white border-gray-200 order-2 lg:order-1">
+                    <div class="filter-section p-3 md:p-4 mb-4 md:mb-6 border border-gray-200 rounded-lg bg-white">
+                        <h2 class="text-base md:text-lg font-semibold mb-3 md:mb-4" style="color: #1E40AF;">Filter Tanzania Jobs</h2>
                         
                         <!-- Job Category -->
-                        <div class="mb-6">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Job Category</label>
-                            <select class="w-full p-2 border border-gray-300 rounded bg-white dropdown-select"
+                        <div class="mb-4 md:mb-6">
+                            <label class="block text-xs md:text-sm font-medium text-gray-700 mb-2">Job Category</label>
+                            <select class="w-full p-2 md:p-2 border border-gray-300 rounded bg-white dropdown-select text-sm"
                                     style="background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3e%3cpath stroke=\'%236b7280\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'m6 8 4 4 4-4\'/%3e%3c/svg%3e'); background-position: right 8px center; background-repeat: no-repeat; background-size: 16px 12px; padding-right: 40px;">
                                 <option>All Categories</option>
                                 <option>Technology</option>

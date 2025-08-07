@@ -254,85 +254,233 @@
     /* Mobile Responsive */
     @media (max-width: 768px) {
         body {
-            padding-top: 110px;
+            padding-top: 130px;
         }
         
         .container {
-            padding: 0 15px;
+            padding: 0 12px;
         }
         
         .nav-content {
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
+            padding: 5px 0;
         }
         
         .logo-section {
             margin-right: 0;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .logo-img {
-            height: 32px;
+            height: 28px;
         }
         
         .logo-text {
-            font-size: 18px;
+            font-size: 16px;
         }
         
         .nav-links {
             flex-wrap: wrap;
             justify-content: center;
-            gap: 6px;
-        }
-        
-        .nav-link {
-            font-size: 10px;
-            padding: 4px 6px;
-        }
-        
-        .right-section {
-            gap: 8px;
-        }
-        
-        .search-input {
-            width: 140px;
-            height: 28px;
-            font-size: 11px;
-        }
-        
-        .search-input:focus {
-            width: 160px;
-        }
-        
-        .icon-link {
-            width: 28px;
-            height: 28px;
-            font-size: 14px;
-        }
-        
-        .login-link {
-            height: 28px;
-            font-size: 11px;
-            padding: 4px 10px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .nav-links {
             gap: 4px;
+            order: 3;
         }
         
         .nav-link {
             font-size: 9px;
             padding: 3px 5px;
-        }
-        
-        .search-input {
-            width: 120px;
+            letter-spacing: 0.3px;
         }
         
         .right-section {
             gap: 6px;
+            order: 2;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .search-input {
+            width: 120px;
+            height: 26px;
+            font-size: 10px;
+            padding: 4px 12px;
+            padding-right: 35px;
+        }
+        
+        .search-input:focus {
+            width: 140px;
+        }
+        
+        .search-icon {
+            right: 12px;
+            font-size: 12px;
+        }
+        
+        .icon-link {
+            width: 26px;
+            height: 26px;
+            font-size: 12px;
+        }
+        
+        .login-link {
+            height: 26px;
+            font-size: 10px;
+            padding: 3px 8px;
+        }
+        
+        .login-link i {
+            font-size: 10px;
+        }
+        
+        .top-banner {
+            font-size: 11px;
+            padding: 6px 0;
+        }
+        
+        .header-wrapper.scrolled .top-banner {
+            padding: 4px 0;
+            font-size: 10px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        body {
+            padding-top: 140px;
+        }
+        
+        .container {
+            padding: 0 10px;
+        }
+        
+        .nav-links {
+            gap: 3px;
+        }
+        
+        .nav-link {
+            font-size: 8px;
+            padding: 2px 4px;
+        }
+        
+        .search-input {
+            width: 100px;
+            font-size: 9px;
+        }
+        
+        .search-input:focus {
+            width: 120px;
+        }
+        
+        .right-section {
+            gap: 4px;
+        }
+        
+        .icon-link {
+            width: 24px;
+            height: 24px;
+            font-size: 11px;
+        }
+        
+        .login-link {
+            height: 24px;
+            font-size: 9px;
+            padding: 2px 6px;
+        }
+        
+        .logo-img {
+            height: 24px;
+        }
+        
+        .logo-text {
+            font-size: 14px;
+        }
+        
+        .top-banner {
+            font-size: 10px;
+            padding: 5px 0;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        body {
+            padding-top: 150px;
+        }
+        
+        .nav-link {
+            font-size: 7px;
+            padding: 2px 3px;
+        }
+        
+        .search-input {
+            width: 80px;
+        }
+        
+        .search-input:focus {
+            width: 100px;
+        }
+        
+        .icon-link {
+            width: 22px;
+            height: 22px;
+            font-size: 10px;
+        }
+        
+        .login-link {
+            height: 22px;
+            font-size: 8px;
+            padding: 2px 5px;
+        }
+        
+        .logo-img {
+            height: 22px;
+        }
+        
+        .logo-text {
+            font-size: 12px;
+        }
+    }
+    
+    /* Tablet Responsive */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .nav-links {
+            gap: 6px;
+        }
+        
+        .nav-link {
+            font-size: 10px;
+            padding: 5px 7px;
+        }
+        
+        .search-input {
+            width: 160px;
+        }
+        
+        .search-input:focus {
+            width: 200px;
+        }
+    }
+    
+    /* Large Desktop */
+    @media (min-width: 1200px) {
+        .container {
+            max-width: 1200px;
+        }
+        
+        .nav-links {
+            gap: 10px;
+        }
+        
+        .nav-link {
+            font-size: 12px;
+            padding: 7px 10px;
+        }
+        
+        .search-input {
+            width: 200px;
+        }
+        
+        .search-input:focus {
+            width: 240px;
         }
     }
 </style>

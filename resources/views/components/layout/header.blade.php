@@ -23,7 +23,7 @@
                     <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">HOME</a>
                     <a href="{{ route('tanzania-jobs') }}" class="nav-link {{ request()->routeIs('tanzania-jobs') ? 'active' : '' }}">TANZANIA-JOBS</a>
                     <a href="{{ route('all-jobs') }}" class="nav-link {{ request()->routeIs('all-jobs') ? 'active' : '' }}">ALL-JOBS</a>
-                    <a href="#" class="nav-link">TENDER</a>
+                    <a href="{{ route('tenders') }}" class="nav-link {{ request()->routeIs('tenders') ? 'active' : '' }}">TENDER</a>
                     <a href="#" class="nav-link">POST</a>
                     <a href="#" class="nav-link">ADVERTISE</a>
                     <a href="#" class="nav-link">OTHER</a>
