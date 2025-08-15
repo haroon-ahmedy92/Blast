@@ -74,16 +74,16 @@
 
         <!-- Featured Tenders Section -->
         <div class="mt-12 md:mt-16">
-            <div class="flex max-w-6xl mx-auto bg-white rounded-lg border border-gray-200 overflow-hidden">
+            <div class="flex flex-col lg:flex-row max-w-6xl mx-auto bg-white rounded-lg border border-gray-200 overflow-hidden">
                 <!-- Filter Sidebar -->
-                <div class="w-80 p-6 border-r border-gray-200" style="background-color: #EFF6FF;">
-                    <h3 class="text-lg font-semibold mb-6" style="color: #1E40AF;">Filter Options</h3>
+                <div class="w-full lg:w-80 p-4 md:p-6 border-b lg:border-b-0 lg:border-r border-gray-200" style="background-color: #EFF6FF;">
+                    <h3 class="text-lg font-semibold mb-4 md:mb-6" style="color: #1E40AF;">Filter Options</h3>
                     
                     <!-- Tender Category -->
-                    <div class="mb-6">
+                    <div class="mb-4 md:mb-6">
                         <label class="block text-sm font-medium text-gray-700 mb-2">Tender Category</label>
                         <div class="relative">
-                            <select class="w-full p-3 border border-gray-300 rounded-md appearance-none" style="color: #1E40AF; background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3e%3cpath stroke=\'%236b7280\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'m6 8 4 4 4-4\'/%3e%3c/svg%3e'); background-position: right 12px center; background-repeat: no-repeat; background-size: 16px;">
+                            <select class="w-full p-2 md:p-3 border border-gray-300 rounded-md appearance-none text-sm md:text-base" style="color: #1E40AF; background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3e%3cpath stroke=\'%236b7280\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'m6 8 4 4 4-4\'/%3e%3c/svg%3e'); background-position: right 12px center; background-repeat: no-repeat; background-size: 16px;">
                                 <option>All Categories</option>
                                 <option>Government</option>
                                 <option>Private</option>
@@ -93,167 +93,167 @@
                     </div>
                     
                     <!-- Sector -->
-                    <div class="mb-6">
-                        <h4 class="text-sm font-medium text-gray-700 mb-3">Sector</h4>
-                        <div class="space-y-2">
+                    <div class="mb-4 md:mb-6">
+                        <h4 class="text-sm font-medium text-gray-700 mb-2 md:mb-3">Sector</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-1 gap-2">
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Construction</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Construction</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Healthcare</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Healthcare</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Education</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Education</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Technology</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Technology</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Agriculture</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Agriculture</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Energy</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Energy</span>
                             </label>
                         </div>
                     </div>
                     
                     <!-- Regions -->
-                    <div class="mb-6">
-                        <h4 class="text-sm font-medium text-gray-700 mb-3">Regions</h4>
-                        <div class="space-y-2">
+                    <div class="mb-4 md:mb-6">
+                        <h4 class="text-sm font-medium text-gray-700 mb-2 md:mb-3">Regions</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-1 gap-2">
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Dar es Salaam</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Dar es Salaam</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Arusha</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Arusha</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Mwanza</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Mwanza</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Mbeya</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Mbeya</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Dodoma</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Dodoma</span>
                             </label>
                         </div>
                     </div>
                     
                     <!-- Category -->
-                    <div class="mb-6">
-                        <h4 class="text-sm font-medium text-gray-700 mb-3">Category</h4>
-                        <div class="space-y-2">
+                    <div class="mb-4 md:mb-6">
+                        <h4 class="text-sm font-medium text-gray-700 mb-2 md:mb-3">Category</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-1 gap-2">
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Goods</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Goods</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Services</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Services</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Consultancy</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Consultancy</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-3 focus:ring-blue-500" style="color: #1E40AF;">
-                                <span class="text-sm text-gray-700">Works</span>
+                                <input type="checkbox" class="w-4 h-4 border-gray-300 rounded mr-2 md:mr-3 focus:ring-blue-500" style="color: #1E40AF;">
+                                <span class="text-xs md:text-sm text-gray-700">Works</span>
                             </label>
                         </div>
                     </div>
                     
                     <!-- Apply Filters Button -->
-                    <button class="w-full text-white py-3 px-4 rounded-md hover:opacity-90 transition-opacity" style="background-color: #1E40AF;">
+                    <button class="w-full text-white py-2 md:py-3 px-4 rounded-md hover:opacity-90 transition-opacity text-sm md:text-base" style="background-color: #1E40AF;">
                         Apply Filters
                     </button>
                 </div>
                 
                 <!-- Main Content -->
-                <div class="flex-1 p-6">
+                <div class="flex-1 p-4 md:p-6">
                     <!-- Header -->
-                    <div class="rounded-lg p-4 mb-6" style="background-color: #EFF6FF;">
-                        <h2 class="text-xl font-semibold" style="color: #1E40AF;">Featured Tenders in Tanzania</h2>
+                    <div class="rounded-lg p-3 md:p-4 mb-4 md:mb-6" style="background-color: #EFF6FF;">
+                        <h2 class="text-lg md:text-xl font-semibold" style="color: #1E40AF;">Featured Tenders in Tanzania</h2>
                     </div>
                     
                     <!-- Tender Listings -->
-                    <div class="space-y-6">
+                    <div class="space-y-4 md:space-y-6">
                         <!-- Tender 1: Medical Equipment -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 relative hover:shadow-md transition-shadow">
-                            <div class="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded" style="background-color: #FACC15; color: #1E40AF;">
+                        <div class="bg-white border border-gray-200 rounded-lg p-4 md:p-6 relative hover:shadow-md transition-shadow">
+                            <div class="absolute top-2 md:top-3 right-2 md:right-3 px-2 py-1 text-xs font-semibold rounded" style="background-color: #FACC15; color: #1E40AF;">
                                 Featured
                             </div>
-                            <h3 class="text-lg font-semibold mb-2 pr-20" style="color: #1E40AF;">Supply of Medical Equipment for Muhimbili Hospital</h3>
-                            <p class="text-gray-600 text-sm mb-4">The Ministry of Health is seeking qualified suppliers for the provision of various medical equipment for Muhimbili National Hospital.</p>
+                            <h3 class="text-base md:text-lg font-semibold mb-2 pr-16 md:pr-20" style="color: #1E40AF;">Supply of Medical Equipment for Muhimbili Hospital</h3>
+                            <p class="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed">The Ministry of Health is seeking qualified suppliers for the provision of various medical equipment for Muhimbili National Hospital.</p>
                             
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Healthcare</span>
-                                <span class="px-3 py-1 text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Dar es Salaam</span>
-                                <span class="px-3 py-1 text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Government</span>
+                            <div class="flex flex-wrap gap-1 md:gap-2 mb-3 md:mb-4">
+                                <span class="px-2 md:px-3 py-1 text-xs md:text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Healthcare</span>
+                                <span class="px-2 md:px-3 py-1 text-xs md:text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Dar es Salaam</span>
+                                <span class="px-2 md:px-3 py-1 text-xs md:text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Government</span>
                             </div>
                             
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-4 text-sm text-gray-600">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-xs md:text-sm text-gray-600">
                                     <span>TZS 3M - 5M</span>
                                     <span class="px-2 py-1 text-xs font-medium text-white bg-red-600 rounded">Deadline: 15 Oct 2025</span>
                                 </div>
-                                <a href="#" class="text-sm font-medium hover:underline" style="color: #1E40AF;">View Details</a>
+                                <a href="#" class="text-xs md:text-sm font-medium hover:underline" style="color: #1E40AF;">View Details</a>
                             </div>
                         </div>
                         
                         <!-- Tender 2: Rural Roads -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 relative hover:shadow-md transition-shadow">
-                            <div class="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded" style="background-color: #FACC15; color: #1E40AF;">
+                        <div class="bg-white border border-gray-200 rounded-lg p-4 md:p-6 relative hover:shadow-md transition-shadow">
+                            <div class="absolute top-2 md:top-3 right-2 md:right-3 px-2 py-1 text-xs font-semibold rounded" style="background-color: #FACC15; color: #1E40AF;">
                                 Featured
                             </div>
-                            <h3 class="text-lg font-semibold mb-2 pr-20" style="color: #1E40AF;">Construction of Rural Roads in Arusha Region</h3>
-                            <p class="text-gray-600 text-sm mb-4">TANROADS is inviting tenders for the construction of 45km of rural roads in various districts of Arusha Region.</p>
+                            <h3 class="text-base md:text-lg font-semibold mb-2 pr-16 md:pr-20" style="color: #1E40AF;">Construction of Rural Roads in Arusha Region</h3>
+                            <p class="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed">TANROADS is inviting tenders for the construction of 45km of rural roads in various districts of Arusha Region.</p>
                             
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Construction</span>
-                                <span class="px-3 py-1 text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Arusha</span>
-                                <span class="px-3 py-1 text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Government</span>
+                            <div class="flex flex-wrap gap-1 md:gap-2 mb-3 md:mb-4">
+                                <span class="px-2 md:px-3 py-1 text-xs md:text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Construction</span>
+                                <span class="px-2 md:px-3 py-1 text-xs md:text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Arusha</span>
+                                <span class="px-2 md:px-3 py-1 text-xs md:text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Government</span>
                             </div>
                             
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-4 text-sm text-gray-600">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-xs md:text-sm text-gray-600">
                                     <span>Budget: 1.2B - 1.5B TZS</span>
                                     <span class="px-2 py-1 text-xs font-medium text-white bg-red-600 rounded">Deadline: 20 Oct 2025</span>
                                 </div>
-                                <a href="#" class="text-sm font-medium hover:underline" style="color: #1E40AF;">View Details</a>
+                                <a href="#" class="text-xs md:text-sm font-medium hover:underline" style="color: #1E40AF;">View Details</a>
                             </div>
                         </div>
                         
                         <!-- Tender 3: IT Services -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 relative hover:shadow-md transition-shadow">
-                            <div class="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded" style="background-color: #FACC15; color: #1E40AF;">
+                        <div class="bg-white border border-gray-200 rounded-lg p-4 md:p-6 relative hover:shadow-md transition-shadow">
+                            <div class="absolute top-2 md:top-3 right-2 md:right-3 px-2 py-1 text-xs font-semibold rounded" style="background-color: #FACC15; color: #1E40AF;">
                                 Featured
                             </div>
-                            <h3 class="text-lg font-semibold mb-2 pr-20" style="color: #1E40AF;">IT Services for Tanzania Revenue Authority</h3>
-                            <p class="text-gray-600 text-sm mb-4">TRA is seeking service providers for the development and implementation of a new customs management system.</p>
+                            <h3 class="text-base md:text-lg font-semibold mb-2 pr-16 md:pr-20" style="color: #1E40AF;">IT Services for Tanzania Revenue Authority</h3>
+                            <p class="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed">TRA is seeking service providers for the development and implementation of a new customs management system.</p>
                             
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Technology</span>
-                                <span class="px-3 py-1 text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Dar es Salaam</span>
-                                <span class="px-3 py-1 text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Government</span>
+                            <div class="flex flex-wrap gap-1 md:gap-2 mb-3 md:mb-4">
+                                <span class="px-2 md:px-3 py-1 text-xs md:text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Technology</span>
+                                <span class="px-2 md:px-3 py-1 text-xs md:text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Dar es Salaam</span>
+                                <span class="px-2 md:px-3 py-1 text-xs md:text-sm rounded-full border" style="background-color: #EFF6FF; color: #1E40AF; border-color: #1E40AF;">Government</span>
                             </div>
                             
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-4 text-sm text-gray-600">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-xs md:text-sm text-gray-600">
                                     <span>Budget: 800M - 1.2B TZS</span>
                                     <span class="px-2 py-1 text-xs font-medium text-white bg-red-600 rounded">Deadline: 25 Oct 2025</span>
                                 </div>
-                                <a href="#" class="text-sm font-medium hover:underline" style="color: #1E40AF;">View Details</a>
+                                <a href="#" class="text-xs md:text-sm font-medium hover:underline" style="color: #1E40AF;">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -343,6 +343,122 @@
                     <a href="#" class="inline-block text-base font-medium hover:underline transition-colors" style="color: #1E40AF;">
                         View All Recent Tenders →
                     </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tender Application Guidelines Section -->
+        <div class="mt-12 md:mt-16">
+            <div class="max-w-5xl mx-auto">
+                <!-- Main Heading -->
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-2" style="color: #1E40AF;">Tender Application Guidelines</h2>
+                    <p class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
+                        Follow these essential steps to successfully apply for tenders and increase your chances of winning
+                    </p>
+                </div>
+
+                <!-- Guidelines Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 md:mb-12 max-w-4xl mx-auto">
+                    <!-- Card 1: Eligibility Check -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 text-white rounded-full flex items-center justify-center text-lg font-semibold" style="background-color: #1E40AF;">
+                                    1
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Eligibility Check</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">Verify your business meets all eligibility requirements before applying.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Documentation -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 text-white rounded-full flex items-center justify-center text-lg font-semibold" style="background-color: #1E40AF;">
+                                    2
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Documentation</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">Prepare all required business documents and certificates.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Proposal Preparation -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 text-white rounded-full flex items-center justify-center text-lg font-semibold" style="background-color: #1E40AF;">
+                                    3
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Proposal Preparation</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">Create a comprehensive and competitive proposal that meets all requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Submission -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 text-white rounded-full flex items-center justify-center text-lg font-semibold" style="background-color: #1E40AF;">
+                                    4
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Submission</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">Submit your proposal before the deadline, following all instructions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Notice Section -->
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 md:p-8">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Important Notice for Applicants</h3>
+                        
+                        <p class="text-gray-700 mb-4 font-medium">To increase your chances of winning tenders:</p>
+                        
+                        <ul class="space-y-3 mb-6 md:mb-8">
+                            <li class="flex items-start">
+                                <span class="text-gray-400 mr-3 mt-1 text-lg">•</span>
+                                <span class="text-gray-700 text-sm">Ensure all documentation is complete and accurate</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-gray-400 mr-3 mt-1 text-lg">•</span>
+                                <span class="text-gray-700 text-sm">Register your business with relevant authorities</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-gray-400 mr-3 mt-1 text-lg">•</span>
+                                <span class="text-gray-700 text-sm">Maintain good tax compliance record</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-gray-400 mr-3 mt-1 text-lg">•</span>
+                                <span class="text-gray-700 text-sm">Provide realistic pricing and implementation timelines</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-gray-400 mr-3 mt-1 text-lg">•</span>
+                                <span class="text-gray-700 text-sm">Clearly demonstrate your capability and experience</span>
+                            </li>
+                        </ul>
+
+                        <!-- Download Button -->
+                        <div class="flex justify-center">
+                            <button class="text-white font-medium py-3 px-6 rounded-lg flex items-center space-x-2 transition-all duration-200 hover:opacity-90 transform hover:scale-105" style="background-color: #1E40AF;">
+                                <i class="fas fa-download"></i>
+                                <span>Download Complete Guidelines</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

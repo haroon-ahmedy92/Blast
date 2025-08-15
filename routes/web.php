@@ -21,3 +21,11 @@ Route::get('/all-jobs', function () {
 Route::get('/tenders', function () {
     return view('pages.tenders');
 })->name('tenders');
+
+Route::get('/post', function () {
+    return view('pages.post');
+})->name('post');
+
+Route::get('/job-form', function () {
+    return view('pages.job-form');
+})->name('job-form');
