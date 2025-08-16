@@ -29,3 +29,7 @@ Route::get('/post', function () {
 Route::get('/job-form', function () {
     return view('pages.job-form');
 })->name('job-form');
+
+Route::get('/advertise', function () {
+    return view('pages.advertise');
+})->name('advertise');
