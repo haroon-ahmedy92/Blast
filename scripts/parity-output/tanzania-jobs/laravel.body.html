@@ -1,0 +1,337 @@
+<div class="header-wrapper" id="headerWrapper"><div class="top-banner"><div class="container">
+            Top Add Placeholder
+        </div></div><div class="nav-container"><div class="container"><div class="nav-content"><div class="logo-section"><a href="" class="logo-link"><img src="/companies/blast.png" alt="Blast Logo" class="logo-img"><span class="logo-text">Blast</span></a></div><div class="nav-links"><a href="" class="nav-link ">HOME</a><a href="/tanzania-jobs" class="nav-link active">TANZANIA-JOBS</a><a href="/all-jobs" class="nav-link ">ALL-JOBS</a><a href="/tenders" class="nav-link ">TENDER</a><a href="/post" class="nav-link ">POST</a><a href="#" class="nav-link">ADVERTISE</a><a href="/other" class="nav-link ">OTHER</a></div><div class="right-section"><div class="search-container"><input type="text" class="search-input" placeholder="search Anything"><div class="search-icon"><i class="fas fa-search"></i></div></div><div class="social-icons"><a href="#" class="login-link"><i class="fas fa-lock"></i><span>login</span></a><a href="#" class="icon-link"><i class="fab fa-facebook-f"></i></a><a href="#" class="icon-link"><i class="fab fa-twitter"></i></a><a href="#" class="icon-link"><i class="fas fa-bell"></i></a></div></div></div></div></div></div><script>
+    // Header scroll effect
+    let lastScrollTop = 0;
+    const headerWrapper = document.getElementById('headerWrapper');
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Add scrolled class when scrolling down
+        if (scrollTop > 50) {
+            headerWrapper.classList.add('scrolled');
+        } else {
+            headerWrapper.classList.remove('scrolled');
+        }
+
+        lastScrollTop = scrollTop;
+    }, { passive: true });
+
+    // Search functionality
+    function performSearch() {
+        const searchInput = document.querySelector('.search-input');
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm) {
+            // You can implement search functionality here
+            console.log('Searching for:', searchTerm);
+            // Example: window.location.href = `/search?q=${encodeURIComponent(searchTerm)}`;
+        }
+    }
+
+    // Search icon click
+    document.querySelector('.search-icon').addEventListener('click', performSearch);
+
+    // Search on Enter key
+    document.querySelector('.search-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add loading states for navigation links
+    document.querySelectorAll('.nav-link:not([href="#"])').forEach(link => {
+        link.addEventListener('click', function() {
+            this.style.opacity = '0.7';
+            this.innerHTML += ' <i class="fas fa-spinner fa-spin" style="font-size: 10px;"></i>';
+        });
+    });
+</script><main><div class="container"><div class="flex flex-col items-center py-16"><div class="max-w-4xl w-full px-8 text-center"><h1 class="text-3xl md:text-4xl font-bold mb-6" style="color: #1E40AF;">
+                Tanzania Job Opportunities
+            </h1><p class="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Find the best employment opportunities across Tanzania. The more information, the better your life becomes.
+            </p><div class="w-full max-w-4xl mx-auto p-6 md:p-8 rounded-lg mb-8" style="background-color: #EFF6FF;"><p class="text-gray-600 mb-6 text-sm md:text-base">
+                    Enter a keyword, role, skill or company. We will help you find a job matching your preferences in Tanzania.
+                </p><form class="flex flex-col md:flex-row gap-4 items-center justify-center" id="jobSearchForm"><div class="w-full md:w-80"><input
+                            type="text"
+                            placeholder="Jobs Title, Keyword or Company"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+                            id="jobKeyword"
+                            name="keyword"
+                        /></div><div class="w-full md:w-80"><select class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white appearance-none"
+                                id="jobLocation"
+                                name="location"
+                                style="background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3e%3cpath stroke=\'%236b7280\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'m6 8 4 4 4-4\'/%3e%3c/svg%3e'); background-position: right 12px center; background-repeat: no-repeat; background-size: 16px; padding-right: 40px;"><option value="">All Locations in Tanzania</option><option value="dar-es-salaam">Dar es Salaam</option><option value="arusha">Arusha</option><option value="mwanza">Mwanza</option><option value="dodoma">Dodoma</option><option value="mbeya">Mbeya</option><option value="morogoro">Morogoro</option><option value="tanga">Tanga</option><option value="zanzibar">Zanzibar</option></select></div><div class="w-full md:w-auto"><button type="submit"
+                                class="w-full md:w-auto min-w-[140px] px-6 py-3 rounded-lg text-white font-medium text-sm transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 flex items-center justify-center gap-2 whitespace-nowrap"
+                                style="background-color: #1E40AF; height: 48px;"><i class="fas fa-search"></i>
+                            Search Jobs
+                        </button></div></form></div><p class="text-gray-600 text-sm md:text-base">
+                We have everything! Please use our link to find what you're looking.
+            </p></div></div><div class="py-6 md:py-8"><div class="container mx-auto px-4"><div class="flex flex-col lg:flex-row gap-6"><div class="w-full lg:w-80 p-4 md:p-6 bg-white border-gray-200 order-2 lg:order-1"><div class="filter-section p-3 md:p-4 mb-4 md:mb-6 border border-gray-200 rounded-lg bg-white"><h2 class="text-base md:text-lg font-semibold mb-3 md:mb-4" style="color: #1E40AF;">Filter Tanzania Jobs</h2><div class="mb-4 md:mb-6"><label class="block text-xs md:text-sm font-medium text-gray-700 mb-2">Job Category</label><select class="w-full p-2 md:p-2 border border-gray-300 rounded bg-white dropdown-select text-sm"
+                                    style="background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3e%3cpath stroke=\'%236b7280\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'m6 8 4 4 4-4\'/%3e%3c/svg%3e'); background-position: right 8px center; background-repeat: no-repeat; background-size: 16px 12px; padding-right: 40px;"><option>All Categories</option><option>Technology</option><option>Healthcare</option><option>Education</option><option>Finance</option><option>Marketing</option><option>Engineering</option></select></div><div class="mb-6"><label class="block text-sm font-medium text-gray-700 mb-3">Job Type</label><div class="space-y-2"><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Full Time</span></label><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Part Time</span></label><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Contract</span></label><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Freelance</span></label><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Internship</span></label></div></div><div class="mb-6"><label class="block text-sm font-medium text-gray-700 mb-3">Experience Level</label><div class="space-y-2"><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Entry Level</span></label><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Mid Level</span></label><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Senior Level</span></label><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Management</span></label><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Executive</span></label></div></div><div class="mb-6"><label class="block text-sm font-medium text-gray-700 mb-2">Salary Range (TZS)</label><select class="w-full p-2 border border-gray-300 rounded bg-white dropdown-select"
+                                    style="background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3e%3cpath stroke=\'%236b7280\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'m6 8 4 4 4-4\'/%3e%3c/svg%3e'); background-position: right 8px center; background-repeat: no-repeat; background-size: 16px 12px; padding-right: 40px;"><option>Any Salary</option><option>Below 1M TZS</option><option>1M - 2M TZS</option><option>2M - 3M TZS</option><option>3M - 5M TZS</option><option>5M+ TZS</option></select></div><div class="mb-6"><label class="block text-sm font-medium text-gray-700 mb-3">Date Posted</label><div class="space-y-2"><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Anytime</span></label><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Last 24 hours</span></label><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Last 7 days</span></label><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Last 14 days</span></label><label class="flex items-center"><input type="checkbox" class="mr-2" style="color: #1E40AF;"><span class="text-sm text-gray-700">Last 30 days</span></label></div></div><div class="flex space-x-3"><button class="px-4 py-2 text-gray-600 border border-gray-300 rounded hover:bg-gray-50 transition-colors">Reset</button><button class="px-4 py-2 text-white border-none rounded cursor-pointer font-medium transition-all hover:shadow-lg"
+                                    style="background-color: #1E40AF;">Apply Filters</button></div></div></div><div class="flex-1 p-6"><div class="p-4 rounded-lg mb-6" style="background-color: #EFF6FF;"><h1 class="text-xl font-semibold" style="color: #1E40AF;">Featured Jobs in Tanzania</h1></div><div class="space-y-6"><div class="border border-gray-200 rounded-lg bg-white p-6 mb-4"><div class="flex justify-between items-start mb-4"><div><h3 class="text-lg font-semibold mb-2" style="color: #1E40AF;">Senior Software Engineer</h3><p class="text-gray-700 font-medium">Tech Solutions Tanzania Ltd. - Dar es Salaam</p></div><span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: #EFF6FF; color: #1E40AF;">Featured</span></div><div class="flex items-center space-x-4 mb-4 text-sm text-gray-600"><span class="flex items-center"><i class="fas fa-clock mr-1"></i>
+                                    Full Time
+                                </span><span class="flex items-center"><i class="fas fa-money-bill-wave mr-1"></i>
+                                    TZS 3M - 5M per month
+                                </span><span class="flex items-center"><i class="fas fa-calendar mr-1"></i>
+                                    Posted 2 days ago
+                                </span></div><p class="text-gray-700 mb-4">
+                                We are looking for an experienced Software Engineer to join our growing team in Dar es Salaam. The ideal candidate will have strong experience in web development and cloud technologies.
+                            </p><div class="mb-4"><span class="inline-block px-3 py-1 rounded-full text-xs mr-2 mb-1" style="background-color: #EFF6FF; color: #1E40AF;">JavaScript</span><span class="inline-block px-3 py-1 rounded-full text-xs mr-2 mb-1" style="background-color: #EFF6FF; color: #1E40AF;">React</span><span class="inline-block px-3 py-1 rounded-full text-xs mr-2 mb-1" style="background-color: #EFF6FF; color: #1E40AF;">Node.js</span><span class="inline-block px-3 py-1 rounded-full text-xs mr-2 mb-1" style="background-color: #EFF6FF; color: #1E40AF;">AWS</span><span class="inline-block px-3 py-1 rounded-full text-xs mr-2 mb-1" style="background-color: #EFF6FF; color: #1E40AF;">Agile</span></div><div class="flex justify-between items-center"><button class="px-5 py-2 text-white border-none rounded cursor-pointer font-medium transition-all hover:shadow-lg"
+                                        style="background-color: #1E40AF;">Apply Now</button><a href="#" class="font-medium transition-colors hover:underline" style="color: #1E40AF;">View Details</a></div></div><div class="border border-gray-200 rounded-lg bg-white p-6 mb-4"><div class="flex justify-between items-start mb-4"><div><h3 class="text-lg font-semibold mb-2" style="color: #1E40AF;">Project Manager - Infrastructure Development</h3><p class="text-gray-700 font-medium">Tanzania Infrastructure Authority - Dodoma</p></div><span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: #DCFCE7; color: #166534;">Government</span></div><div class="flex items-center space-x-4 mb-4 text-sm text-gray-600"><span class="flex items-center"><i class="fas fa-clock mr-1"></i>
+                                    Full Time
+                                </span><span class="flex items-center"><i class="fas fa-money-bill-wave mr-1"></i>
+                                    TZS 2M - 4M per month
+                                </span><span class="flex items-center"><i class="fas fa-calendar mr-1"></i>
+                                    Posted 1 day ago
+                                </span></div><p class="text-gray-700 mb-4">
+                                A Project Manager is needed to oversee large-scale infrastructure development projects across Tanzania. This role requires extensive experience in managing civil engineering projects.
+                            </p><div class="mb-4"><span class="inline-block px-3 py-1 rounded-full text-xs mr-2 mb-1" style="background-color: #EFF6FF; color: #1E40AF;">Project Management</span><span class="inline-block px-3 py-1 rounded-full text-xs mr-2 mb-1" style="background-color: #EFF6FF; color: #1E40AF;">Civil Engineering</span><span class="inline-block px-3 py-1 rounded-full text-xs mr-2 mb-1" style="background-color: #EFF6FF; color: #1E40AF;">Budget Management</span></div><div class="flex justify-between items-center"><button class="px-5 py-2 text-white border-none rounded cursor-pointer font-medium transition-all hover:shadow-lg"
+                                        style="background-color: #1E40AF;">Apply Now</button><a href="#" class="font-medium transition-colors hover:underline" style="color: #1E40AF;">View Details</a></div></div><div class="border border-gray-200 rounded-lg bg-white p-6 mb-4"><div class="flex justify-between items-start mb-4"><div><h3 class="text-lg font-semibold mb-2" style="color: #1E40AF;">Marketing Manager</h3><p class="text-gray-700 font-medium">East African Breweries - Arusha</p></div><span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: #FEF9C3; color: #CA8A04;">Premium</span></div><div class="flex items-center space-x-4 mb-4 text-sm text-gray-600"><span class="flex items-center"><i class="fas fa-clock mr-1"></i>
+                                    Full Time
+                                </span><span class="flex items-center"><i class="fas fa-money-bill-wave mr-1"></i>
+                                    TZS 2.5M - 4M per month
+                                </span><span class="flex items-center"><i class="fas fa-calendar mr-1"></i>
+                                    Posted 3 days ago
+                                </span></div><p class="text-gray-700 mb-4">
+                                We are seeking a creative and strategic Marketing Manager to lead our brand campaigns across Tanzania. The ideal candidate will have experience in FMCG marketing and brand management.
+                            </p><div class="mb-4"><span class="inline-block px-3 py-1 rounded-full text-xs mr-2 mb-1" style="background-color: #EFF6FF; color: #1E40AF;">Marketing Strategy</span><span class="inline-block px-3 py-1 rounded-full text-xs mr-2 mb-1" style="background-color: #EFF6FF; color: #1E40AF;">Brand Management</span><span class="inline-block px-3 py-1 rounded-full text-xs mr-2 mb-1" style="background-color: #EFF6FF; color: #1E40AF;">Digital Marketing</span></div><div class="flex justify-between items-center"><button class="px-5 py-2 text-white border-none rounded cursor-pointer font-medium transition-all hover:shadow-lg"
+                                        style="background-color: #1E40AF;">Apply Now</button><a href="#" class="font-medium transition-colors hover:underline" style="color: #1E40AF;">View Details</a></div></div></div><div class="text-center mt-8"><button class="px-6 py-3 text-white rounded-lg font-medium transition-all hover:shadow-lg"
+                                style="background-color: #1E40AF;">Load More Jobs</button></div><div class="mt-12"><div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm max-w-4xl mx-auto"><div class="px-6 py-4 border-b border-gray-200" style="background-color: #EFF6FF;"><h2 class="text-xl font-semibold" style="color: #1E40AF;">Latest Job Postings</h2></div><div class="divide-y divide-gray-100"><div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-base font-semibold hover:underline cursor-pointer" style="color: #1E40AF;">Finance Officer</h3><span class="px-2 py-1 text-xs font-medium text-white rounded" style="background-color: #1E40AF;">NEW</span></div><div class="text-sm text-gray-600 mb-3 font-medium">CRDB Bank - Dar es Salaam</div><div class="flex items-center gap-6 text-sm text-gray-500 mb-3"><span class="flex items-center gap-2"><i class="far fa-clock"></i>
+                                            Full Time
+                                        </span><span class="flex items-center gap-2"><i class="far fa-calendar"></i>
+                                            Posted 2 days ago
+                                        </span></div><a href="#" class="text-sm font-medium hover:underline" style="color: #1E40AF;">View Details</a></div><div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-base font-semibold hover:underline cursor-pointer" style="color: #1E40AF;">English Teacher</h3><span class="px-2 py-1 text-xs font-medium text-white rounded" style="background-color: #1E40AF;">NEW</span></div><div class="text-sm text-gray-600 mb-3 font-medium">International School of Tanganyika - Dar es Salaam</div><div class="flex items-center gap-6 text-sm text-gray-500 mb-3"><span class="flex items-center gap-2"><i class="far fa-clock"></i>
+                                            Full Time
+                                        </span><span class="flex items-center gap-2"><i class="far fa-calendar"></i>
+                                            Posted 2 days ago
+                                        </span></div><a href="#" class="text-sm font-medium hover:underline" style="color: #1E40AF;">View Details</a></div><div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-base font-semibold hover:underline cursor-pointer" style="color: #1E40AF;">Operations Manager</h3><span class="px-2 py-1 text-xs font-medium text-white rounded" style="background-color: #1E40AF;">NEW</span></div><div class="text-sm text-gray-600 mb-3 font-medium">Airtel Tanzania - Dar es Salaam</div><div class="flex items-center gap-6 text-sm text-gray-500 mb-3"><span class="flex items-center gap-2"><i class="far fa-clock"></i>
+                                            Full Time
+                                        </span><span class="flex items-center gap-2"><i class="far fa-calendar"></i>
+                                            Posted 2 days ago
+                                        </span></div><a href="#" class="text-sm font-medium hover:underline" style="color: #1E40AF;">View Details</a></div><div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-base font-semibold hover:underline cursor-pointer" style="color: #1E40AF;">HR Specialist</h3><span class="px-2 py-1 text-xs font-medium text-white rounded" style="background-color: #1E40AF;">NEW</span></div><div class="text-sm text-gray-600 mb-3 font-medium">Tigo Tanzania - Dar es Salaam</div><div class="flex items-center gap-6 text-sm text-gray-500 mb-3"><span class="flex items-center gap-2"><i class="far fa-clock"></i>
+                                            Full Time
+                                        </span><span class="flex items-center gap-2"><i class="far fa-calendar"></i>
+                                            Posted 2 days ago
+                                        </span></div><a href="#" class="text-sm font-medium hover:underline" style="color: #1E40AF;">View Details</a></div><div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-base font-semibold hover:underline cursor-pointer" style="color: #1E40AF;">Tour Guide</h3><span class="px-2 py-1 text-xs font-medium text-white rounded" style="background-color: #1E40AF;">NEW</span></div><div class="text-sm text-gray-600 mb-3 font-medium">Tanzania Tourism Board - Arusha</div><div class="flex items-center gap-6 text-sm text-gray-500 mb-3"><span class="flex items-center gap-2"><i class="far fa-clock"></i>
+                                            Full Time
+                                        </span><span class="flex items-center gap-2"><i class="far fa-calendar"></i>
+                                            Posted 2 days ago
+                                        </span></div><a href="#" class="text-sm font-medium hover:underline" style="color: #1E40AF;">View Details</a></div></div><div class="p-6 border-t border-gray-200 text-center" style="background-color: #f8fafc;"><a href="#" class="inline-block px-6 py-3 text-white rounded-lg font-medium text-sm transition-all hover:shadow-lg"
+                                   style="background-color: #1E40AF;">View All Latest Jobs</a></div></div></div><div class="mt-12"><div class="p-4 rounded-lg mb-8" style="background-color: #EFF6FF;"><h2 class="text-xl font-semibold" style="color: #1E40AF;">Top Employers in Tanzania</h2></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between"><div><div class="mx-auto mb-4 rounded-lg flex items-center justify-center p-2" style="width: 120px; height: 60px;"><img src="/companies/blast.png" alt="Blast Logo" class="h-full w-full object-contain"></div><div class="text-lg font-semibold text-gray-800 mb-2">Blast</div><div class="text-sm text-gray-600 mb-3">45+ open positions</div></div><a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a></div><div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between"><div><div class="mx-auto mb-4 rounded-lg flex items-center justify-center p-2" style="width: 120px; height: 60px;"><img src="/assets/logos/airtel.svg" alt="Airtel Tanzania Logo" class="h-full w-full object-contain"></div><div class="text-lg font-semibold text-gray-800 mb-2">Airtel Tanzania</div><div class="text-sm text-gray-600 mb-3">11 open positions</div></div><a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a></div><div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between"><div><div class="w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center font-bold text-sm text-white" style="width: 120px; height: 60px;);"><img src="/assets/logos/vodacom.svg" alt="Vodacom Tanzania Logo" class="h-full w-full object-contain"></div><div class="text-lg font-semibold text-gray-800 mb-2">Vodacom Tz</div><div class="text-sm text-gray-600 mb-3">26 open positions</div></div><a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a></div><div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between"><div><div class="w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center font-bold text-sm text-white" style="width: 60px; height: 60px; background: linear-gradient(45deg, #3182ce, #2c5282);"><img src="/companies/muhimbili.png" alt="Muhimbili Hospital Tanzania Logo" class="h-full w-full object-contain"></div><div class="text-lg font-semibold text-gray-800 mb-2">Muhimbili Hosp</div><div class="text-sm text-gray-600 mb-3">13 open positions</div></div><a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a></div><div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between"><div><div class="w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center font-bold text-sm text-white" style="width: 60px; height: 60px;"><img src="/companies/tzBreweries.png" alt="Tanzania Breweries Logo" class="h-full w-full object-contain"></div><div class="text-lg font-semibold text-gray-800 mb-2">Tanzania Brew</div><div class="text-sm text-gray-600 mb-3">21 open positions</div></div><a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a></div><div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between"><div><div class="w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center font-bold text-sm text-white" style="width: 60px; height: 60px;"><img src="/companies/nmb.png" alt="NMB Tanzania Logo" class="h-full w-full object-contain"></div><div class="text-lg font-semibold text-gray-800 mb-2">NMB Bank</div><div class="text-sm text-gray-600 mb-3">31 open positions</div></div><a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a></div><div class="employer-card bg-white border border-gray-200 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 h-48 flex flex-col justify-between"><div><div class="w-15 h-15 mx-auto mb-4 rounded-lg flex items-center justify-center font-bold text-sm text-white" style="width: 60px; height: 60px;"><img src="/companies/Tanzania Petroleum Development.png" alt="Tanzania Petroleum Development Tanzania Logo" class="h-full w-full object-contain"></div><div class="text-lg font-semibold text-gray-800 mb-2">Tanzania Petroleum Development</div><div class="text-sm text-gray-600 mb-3">11 open positions</div></div><a href="#" class="text-sm font-medium transition-colors hover:underline" style="color: #1E40AF;">View Jobs</a></div></div></div></div></div></div></div><script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const jobSearchForm = document.getElementById('jobSearchForm');
+            const keywordInput = document.getElementById('jobKeyword');
+            const locationSelect = document.getElementById('jobLocation');
+            const searchButton = document.querySelector('button[type="submit"]');
+
+            // Handle form submission
+            jobSearchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                performJobSearch();
+            });
+
+            // Handle Enter key in keyword input
+            keywordInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    performJobSearch();
+                }
+            });
+
+            function performJobSearch() {
+                const keyword = keywordInput.value.trim();
+                const location = locationSelect.value;
+
+                if (!keyword && !location) {
+                    alert('Please enter a keyword or select a location to search for jobs.');
+                    return;
+                }
+
+                // Add loading state
+                const originalText = searchButton.innerHTML;
+                searchButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
+                searchButton.disabled = true;
+
+                // Simulate search (you can replace this with actual search functionality)
+                setTimeout(() => {
+                    console.log('Searching for jobs:', { keyword, location });
+
+                    // Build search query
+                    const searchParams = new URLSearchParams();
+                    if (keyword) searchParams.append('keyword', keyword);
+                    if (location) searchParams.append('location', location);
+
+                    // For now, just log the search - you can redirect to a results page
+                    console.log('Search URL would be: /jobs/search?' + searchParams.toString());
+
+                    // Reset button state
+                    searchButton.innerHTML = originalText;
+                    searchButton.disabled = false;
+
+                    // Show success message and scroll to results
+                    const locationText = location ? locationSelect.options[locationSelect.selectedIndex].text : 'all Tanzania';
+                    alert(`Searching for "${keyword}" jobs in ${locationText}. Scrolling to results...`);
+
+                    // Scroll to job listings
+                    document.querySelector('.bg-gray-50').scrollIntoView({ behavior: 'smooth' });
+
+                }, 1500);
+            }
+
+            // Add focus animations for search inputs
+            const searchInputs = document.querySelectorAll('#jobKeyword, #jobLocation');
+            searchInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+
+                input.addEventListener('blur', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Filter functionality
+            const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+            const filterSelects = document.querySelectorAll('.dropdown-select');
+            const applyFiltersBtn = document.querySelector('button:contains("Apply Filters")');
+            const resetFiltersBtn = document.querySelector('button:contains("Reset")');
+
+            // Apply filters functionality
+            document.addEventListener('click', function(e) {
+                if (e.target.textContent.includes('Apply Filters')) {
+                    applyFilters();
+                } else if (e.target.textContent.includes('Reset')) {
+                    resetFilters();
+                }
+            });
+
+            function applyFilters() {
+                const filters = {
+                    jobTypes: [],
+                    experienceLevels: [],
+                    datePosted: [],
+                    category: '',
+                    salary: ''
+                };
+
+                // Collect filter data
+                filterCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        const label = checkbox.nextElementSibling.textContent;
+                        const section = checkbox.closest('div').previousElementSibling;
+
+                        if (section && section.textContent.includes('Job Type')) {
+                            filters.jobTypes.push(label);
+                        } else if (section && section.textContent.includes('Experience Level')) {
+                            filters.experienceLevels.push(label);
+                        } else if (section && section.textContent.includes('Date Posted')) {
+                            filters.datePosted.push(label);
+                        }
+                    }
+                });
+
+                console.log('Applied filters:', filters);
+                // Here you would typically filter the job listings
+                alert('Filters applied! In a real application, this would filter the job listings.');
+            }
+
+            function resetFilters() {
+                filterCheckboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                filterSelects.forEach(select => {
+                    select.selectedIndex = 0;
+                });
+                console.log('Filters reset');
+            }
+
+            // Job card interactions
+            document.addEventListener('click', function(e) {
+                if (e.target.textContent.includes('Apply Now')) {
+                    e.preventDefault();
+                    const jobTitle = e.target.closest('.border').querySelector('h3').textContent;
+                    alert(`Applying for: ${jobTitle}\nThis would redirect to the application form.`);
+                } else if (e.target.textContent.includes('View Details')) {
+                    e.preventDefault();
+                    const jobTitle = e.target.closest('.border').querySelector('h3').textContent;
+                    alert(`Viewing details for: ${jobTitle}\nThis would show the full job description.`);
+                } else if (e.target.textContent.includes('Load More Jobs')) {
+                    e.preventDefault();
+                    loadMoreJobs();
+                }
+            });
+
+            function loadMoreJobs() {
+                const button = document.querySelector('button:contains("Load More Jobs")');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                button.disabled = true;
+
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                    alert('More jobs loaded! In a real application, this would load additional job listings.');
+                }, 2000);
+            }
+
+            // Animate elements on page load
+            const elements = document.querySelectorAll('h1, p, .w-full.max-w-4xl');
+            elements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s ease';
+
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+
+            // Animate job cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe job cards for animation
+            setTimeout(() => {
+                const jobCards = document.querySelectorAll('.border.border-gray-200.rounded-lg');
+                jobCards.forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(30px)';
+                    card.style.transition = 'all 0.6s ease';
+                    observer.observe(card);
+                });
+            }, 1000);
+        });
+    </script></div></main><footer class="py-8 md:py-12 px-4 md:px-6" style="background-color: #EFF6FF;"><div class="max-w-7xl mx-auto"><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8"><div class="sm:col-span-2 lg:col-span-1"><div class="mb-4 md:mb-6"><div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4"><img src="/companies/blast.png" alt="Blast Logo" class="h-10 md:h-12 w-auto"><span class="text-lg md:text-xl font-bold" style="color: #1E40AF;">Blast</span></div><p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                        Your gateway to career opportunities across Tanzania and beyond. Connecting talent with the right opportunities.
+                    </p></div><h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">QUICK LINKS</h3><ul class="space-y-1 md:space-y-2"><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Post a Job</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Post a Tender</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">ESS (Employee Self Service) - Utumishi</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">NECTA Exam Results</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Get in Touch with Us</a></li></ul></div><div><h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Jobs by Category</h3><ul class="space-y-1 md:space-y-2"><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Accounting</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Administration</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Banking & Finance</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Education & Teaching</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Engineering</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Government</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Hospitality & Tourism</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Human Resources</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Information Technology (IT)</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Logistics & Transportation</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Mining</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">NGO & Social Work</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Procurement & Supply Chain</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Sales & Marketing</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Cleaning & Forwarding</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Driver Jobs</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Other Services</a></li></ul></div><div><h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Career Tools & Resources</h3><ul class="space-y-1 md:space-y-2 mb-4 md:mb-6"><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">CV Writing Services</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">ZA-Bursaries</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Scholarships</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Career Guide</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">NECTA Results</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Call for Interview</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Ajira Portal - Latest Jobs</a></li></ul><h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Jobs by Location</h3><ul class="space-y-1 md:space-y-2"><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Jobs in Tanzania</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Jobs in Zambia</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Jobs in Kenya</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Jobs in Other Countries</a></li></ul></div><div><h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Other Sections</h3><ul class="space-y-1 md:space-y-2"><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Post a Tender</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Advertise Here</a></li><li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Blog</a></li></ul></div></div><div class="border-t border-gray-200 pt-6 md:pt-8"><div class="mb-4 md:mb-6"><h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">CONNECT WITH US</h3><div class="space-y-1 md:space-y-2"><p class="text-xs md:text-sm text-gray-600">Email us at: <a href="mailto:blast@gmail.com" class="text-blue-700 hover:text-blue-800 transition-colors">blast@gmail.com</a></p><p class="text-xs md:text-sm text-gray-600">Call us at: <a href="tel:+255686855352" class="text-blue-700 hover:text-blue-800 transition-colors">+255 616 393 881</a></p></div></div><div class="flex space-x-3 md:space-x-4 mb-6 md:mb-8"><a href="#" class="w-7 h-7 md:w-8 md:h-8 bg-gray-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"><i class="fab fa-tiktok text-sm"></i></a><a href="#" class="w-7 h-7 md:w-8 md:h-8 bg-gray-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"><i class="fab fa-instagram text-sm"></i></a><a href="#" class="w-7 h-7 md:w-8 md:h-8 bg-gray-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"><i class="fab fa-facebook-f text-sm"></i></a><a href="#" class="w-7 h-7 md:w-8 md:h-8 bg-gray-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"><i class="fab fa-twitter text-sm"></i></a></div><div class="border-t border-gray-200 pt-4 md:pt-6"><div class="text-center"><p class="text-xs md:text-sm text-gray-600 mb-3 md:mb-4">© 2025 Developed by Blast - All Right Reserved</p><p class="text-xs text-gray-500 mb-2 leading-relaxed"><strong>Privacy Policy:</strong> Blast respects your privacy. We do not sell, share personal information without your consent. Any data you submit is protected and used solely to improve your experience.
+                    </p><p class="text-xs text-gray-500 leading-relaxed"><strong>About Blast:</strong> Blast is a community-driven blog and platform providing job updates, scholarship info, tenders, and professional development tools to empower Tanzanians. Our mission is to make opportunity accessible for everyone, regardless of their background or location.
+                    </p></div></div></div></div></footer>

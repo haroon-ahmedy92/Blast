@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="">
+    
+    <title data-th-text="${pageTitle}">Blast - Tanzania Jobs Portal</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" data-th-href="${baseUrl + '/companies/blast.png'}" href="/companies/blast.png">
+    <link rel="shortcut icon" type="image/png" data-th-href="${baseUrl + '/companies/blast.png'}" href="/companies/blast.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <link rel="preload" as="style" data-th-href="${baseUrl + '/build/assets/app--IYFLYdj.css'}" href="/build/assets/app--IYFLYdj.css" />
+    <link rel="modulepreload" as="script" data-th-href="${baseUrl + '/build/assets/app-C0G0cght.js'}" href="/build/assets/app-C0G0cght.js" />
+    <link rel="stylesheet" data-th-href="${baseUrl + '/build/assets/app--IYFLYdj.css'}" href="/build/assets/app--IYFLYdj.css" />
+    <script type="module" data-th-src="${baseUrl + '/build/assets/app-C0G0cght.js'}" src="/build/assets/app-C0G0cght.js"></script>
+    
+    <!-- Include Styles Component -->
+    <th:block data-th-replace="~{fragments/styles :: content}"></th:block>
+</head>
+
+<body>
+    <!-- Include Header Component -->
+    <th:block data-th-replace="~{fragments/header :: content}"></th:block>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <th:block data-th-replace="~{${body} :: body}"></th:block>
+        </div>
+    </main>
+
+    <!-- Include Footer Component -->
+    <th:block data-th-replace="~{fragments/footer :: content}"></th:block>
+</body>
+</html>

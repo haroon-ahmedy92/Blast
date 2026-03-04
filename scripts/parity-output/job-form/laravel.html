@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="KPseZ1zQOTCpKOWEmiKfp7DKyFMetjAcKMePCTA3">
+    
+    <title>Laravel</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="http://127.0.0.1:8000/companies/blast.png">
+    <link rel="shortcut icon" type="image/png" href="http://127.0.0.1:8000/companies/blast.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <link rel="preload" as="style" href="http://127.0.0.1:8000/build/assets/app--IYFLYdj.css" /><link rel="modulepreload" as="script" href="http://127.0.0.1:8000/build/assets/app-C0G0cght.js" /><link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app--IYFLYdj.css" /><script type="module" src="http://127.0.0.1:8000/build/assets/app-C0G0cght.js"></script>    
+    <!-- Include Styles Component -->
+    <style>
+    :root {
+        --primary-core: #1E40AF;
+        --secondary-core: #EFF6FF;
+        --accent: #FACC15;
+        --secondary-accent: #FEF9C3;
+        --green-accent: #166534;
+        --secondary-green: #DCFCE7;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        padding-top: 90px; /* Account for fixed header */
+    }
+    
+    /* Container for centered content */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    /* Header wrapper - full width */
+    .header-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: var(--secondary-core);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    
+    /* Header when scrolled */
+    .header-wrapper.scrolled {
+        background-color: rgba(239, 246, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+    
+    .top-banner {
+        background-color: var(--secondary-core);
+        color: var(--primary-core);
+        text-align: center;
+        padding: 8px 0;
+        font-weight: bold;
+        border-bottom: 1px solid #ddd;
+        transition: all 0.3s ease;
+        font-size: 13px;
+    }
+    
+    .header-wrapper.scrolled .top-banner {
+        padding: 5px 0;
+        font-size: 12px;
+    }
+    
+    .nav-container {
+        background-color: transparent;
+        padding: 6px 0;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Logo Section */
+    .logo-section {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+    }
+    
+    .logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: 8px;
+        transition: all 0.3s ease;
+    }
+    
+    .logo-link:hover {
+        transform: scale(1.05);
+    }
+    
+    .logo-img {
+        height: 40px;
+        width: auto;
+        object-fit: contain;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--primary-core);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    
+    .nav-link {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 11px;
+        color: #333;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        letter-spacing: 0.5px;
+    }
+    
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(30, 64, 175, 0.1), transparent);
+        transition: left 0.6s;
+    }
+    
+    .nav-link:hover::before {
+        left: 100%;
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--primary-core);
+        font-weight: bold;
+        background-color: rgba(30, 64, 175, 0.08);
+        transform: translateY(-2px);
+    }
+    
+    .right-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .search-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    
+    .search-input {
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        padding: 6px 15px;
+        padding-right: 40px;
+        font-size: 12px;
+        width: 180px;
+        transition: all 0.3s ease;
+        background-color: white;
+        height: 32px;
+    }
+    
+    .search-input:focus {
+        outline: none;
+        border-color: var(--primary-core);
+        box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.1);
+        width: 220px;
+    }
+    
+    .search-icon {
+        position: absolute;
+        right: 15px;
+        color: var(--primary-core);
+        cursor: pointer;
+        transition: color 0.3s ease;
+        font-size: 14px;
+        z-index: 10;
+    }
+    
+    .search-icon:hover {
+        color: var(--accent);
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+    
+    .icon-link {
+        color: var(--primary-core);
+        font-size: 16px;
+        text-decoration: none;
+        padding: 8px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(30, 64, 175, 0.1);
+    }
+    
+    .icon-link:hover {
+        color: white;
+        background-color: var(--primary-core);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+    }
+    
+    .login-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+        color: var(--primary-core);
+        font-size: 12px;
+        padding: 6px 12px;
+        border: 1.5px solid var(--primary-core);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        background-color: white;
+        height: 32px;
+    }
+    
+    .login-link i {
+        font-size: 12px;
+    }
+    
+    .login-link:hover {
+        color: white;
+        background-color: var(--primary-core);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        body {
+            padding-top: 130px;
+        }
+        
+        .container {
+            padding: 0 12px;
+        }
+        
+        .nav-content {
+            flex-direction: column;
+            gap: 8px;
+            padding: 5px 0;
+        }
+        
+        .logo-section {
+            margin-right: 0;
+            margin-bottom: 8px;
+        }
+        
+        .logo-img {
+            height: 28px;
+        }
+        
+        .logo-text {
+            font-size: 16px;
+        }
+        
+        .nav-links {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4px;
+            order: 3;
+        }
+        
+        .nav-link {
+            font-size: 9px;
+            padding: 3px 5px;
+            letter-spacing: 0.3px;
+        }
+        
+        .right-section {
+            gap: 6px;
+            order: 2;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .search-input {
+            width: 120px;
+            height: 26px;
+            font-size: 10px;
+            padding: 4px 12px;
+            padding-right: 35px;
+        }
+        
+        .search-input:focus {
+            width: 140px;
+        }
+        
+        .search-icon {
+            right: 12px;
+            font-size: 12px;
+        }
+        
+        .icon-link {
+            width: 26px;
+            height: 26px;
+            font-size: 12px;
+        }
+        
+        .login-link {
+            height: 26px;
+            font-size: 10px;
+            padding: 3px 8px;
+        }
+        
+        .login-link i {
+            font-size: 10px;
+        }
+        
+        .top-banner {
+            font-size: 11px;
+            padding: 6px 0;
+        }
+        
+        .header-wrapper.scrolled .top-banner {
+            padding: 4px 0;
+            font-size: 10px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        body {
+            padding-top: 140px;
+        }
+        
+        .container {
+            padding: 0 10px;
+        }
+        
+        .nav-links {
+            gap: 3px;
+        }
+        
+        .nav-link {
+            font-size: 8px;
+            padding: 2px 4px;
+        }
+        
+        .search-input {
+            width: 100px;
+            font-size: 9px;
+        }
+        
+        .search-input:focus {
+            width: 120px;
+        }
+        
+        .right-section {
+            gap: 4px;
+        }
+        
+        .icon-link {
+            width: 24px;
+            height: 24px;
+            font-size: 11px;
+        }
+        
+        .login-link {
+            height: 24px;
+            font-size: 9px;
+            padding: 2px 6px;
+        }
+        
+        .logo-img {
+            height: 24px;
+        }
+        
+        .logo-text {
+            font-size: 14px;
+        }
+        
+        .top-banner {
+            font-size: 10px;
+            padding: 5px 0;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        body {
+            padding-top: 150px;
+        }
+        
+        .nav-link {
+            font-size: 7px;
+            padding: 2px 3px;
+        }
+        
+        .search-input {
+            width: 80px;
+        }
+        
+        .search-input:focus {
+            width: 100px;
+        }
+        
+        .icon-link {
+            width: 22px;
+            height: 22px;
+            font-size: 10px;
+        }
+        
+        .login-link {
+            height: 22px;
+            font-size: 8px;
+            padding: 2px 5px;
+        }
+        
+        .logo-img {
+            height: 22px;
+        }
+        
+        .logo-text {
+            font-size: 12px;
+        }
+    }
+    
+    /* Tablet Responsive */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .nav-links {
+            gap: 6px;
+        }
+        
+        .nav-link {
+            font-size: 10px;
+            padding: 5px 7px;
+        }
+        
+        .search-input {
+            width: 160px;
+        }
+        
+        .search-input:focus {
+            width: 200px;
+        }
+    }
+    
+    /* Large Desktop */
+    @media (min-width: 1200px) {
+        .container {
+            max-width: 1200px;
+        }
+        
+        .nav-links {
+            gap: 10px;
+        }
+        
+        .nav-link {
+            font-size: 12px;
+            padding: 7px 10px;
+        }
+        
+        .search-input {
+            width: 200px;
+        }
+        
+        .search-input:focus {
+            width: 240px;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <!-- Include Header Component -->
+    <!-- Fixed Header Wrapper -->
+<div class="header-wrapper" id="headerWrapper">
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="container">
+            Top Add Placeholder
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <div class="nav-container">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo Section -->
+                <div class="logo-section">
+                    <a href="http://127.0.0.1:8000" class="logo-link">
+                        <img src="http://127.0.0.1:8000/companies/blast.png" alt="Blast Logo" class="logo-img">
+                        <span class="logo-text">Blast</span>
+                    </a>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="http://127.0.0.1:8000" class="nav-link ">HOME</a>
+                    <a href="http://127.0.0.1:8000/tanzania-jobs" class="nav-link ">TANZANIA-JOBS</a>
+                    <a href="http://127.0.0.1:8000/all-jobs" class="nav-link ">ALL-JOBS</a>
+                    <a href="http://127.0.0.1:8000/tenders" class="nav-link ">TENDER</a>
+                    <a href="http://127.0.0.1:8000/post" class="nav-link ">POST</a>
+                    <a href="#" class="nav-link">ADVERTISE</a>
+                    <a href="http://127.0.0.1:8000/other" class="nav-link ">OTHER</a>
+                </div>
+                
+                <div class="right-section">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="search Anything">
+                        <div class="search-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="#" class="login-link">
+                            <i class="fas fa-lock"></i>
+                            <span>login</span>
+                        </a>
+                        <a href="#" class="icon-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="icon-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="icon-link">
+                            <i class="fas fa-bell"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Header JavaScript -->
+<script>
+    // Header scroll effect
+    let lastScrollTop = 0;
+    const headerWrapper = document.getElementById('headerWrapper');
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Add scrolled class when scrolling down
+        if (scrollTop > 50) {
+            headerWrapper.classList.add('scrolled');
+        } else {
+            headerWrapper.classList.remove('scrolled');
+        }
+        
+        lastScrollTop = scrollTop;
+    }, { passive: true });
+    
+    // Search functionality
+    function performSearch() {
+        const searchInput = document.querySelector('.search-input');
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm) {
+            // You can implement search functionality here
+            console.log('Searching for:', searchTerm);
+            // Example: window.location.href = `/search?q=${encodeURIComponent(searchTerm)}`;
+        }
+    }
+    
+    // Search icon click
+    document.querySelector('.search-icon').addEventListener('click', performSearch);
+    
+    // Search on Enter key
+    document.querySelector('.search-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Add loading states for navigation links
+    document.querySelectorAll('.nav-link:not([href="#"])').forEach(link => {
+        link.addEventListener('click', function() {
+            this.style.opacity = '0.7';
+            this.innerHTML += ' <i class="fas fa-spinner fa-spin" style="font-size: 10px;"></i>';
+        });
+    });
+</script>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <style>
+    .section-header {
+        color: #1E40AF;
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .section-divider {
+        border-bottom: 1px solid #e5e7eb;
+        margin-bottom: 24px;
+    }
+    .form-label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #374151;
+        margin-bottom: 6px;
+        display: block;
+    }
+    .form-input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        font-size: 14px;
+        background-color: white;
+        transition: border-color 0.15s ease-in-out;
+    }
+    .form-input:focus {
+        outline: none;
+        border-color: #1E40AF;
+        box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+    }
+    .form-select {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        font-size: 14px;
+        background-color: white;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+        background-position: right 8px center;
+        background-repeat: no-repeat;
+        background-size: 16px;
+        padding-right: 32px;
+        appearance: none;
+    }
+    .form-select:focus {
+        outline: none;
+        border-color: #1E40AF;
+        box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+    }
+    .form-textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        font-size: 14px;
+        background-color: white;
+        resize: vertical;
+        min-height: 80px;
+    }
+    .form-textarea:focus {
+        outline: none;
+        border-color: #1E40AF;
+        box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+    }
+    .browse-btn {
+        background-color: #1E40AF;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.15s ease-in-out;
+    }
+    .browse-btn:hover {
+        background-color: #1d4ed8;
+    }
+    .required {
+        color: #dc2626;
+    }
+    .section-icon {
+        color: #1E40AF;
+        font-size: 16px;
+    }
+</style>
+
+<div class="p-6">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-8">
+        <!-- Basic Information Section -->
+        <div class="mb-8">
+            <div class="section-header">
+                <i class="fas fa-info-circle section-icon"></i>
+                Basic Information
+            </div>
+            <div class="section-divider"></div>
+            
+            <!-- Job Title Row -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="form-label">Job Title <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="e.g Senior Software Developer">
+                </div>
+                <div>
+                    <label class="form-label">Job Type <span class="required">*</span></label>
+                    <select class="form-select">
+                        <option>select Job type</option>
+                        <option>Full-time</option>
+                        <option>Part-time</option>
+                        <option>Contract</option>
+                        <option>Internship</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Category and Job Level Row -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="form-label">Category <span class="required">*</span></label>
+                    <select class="form-select">
+                        <option>select Category</option>
+                        <option>Software Development</option>
+                        <option>Marketing</option>
+                        <option>Sales</option>
+                        <option>HR</option>
+                        <option>Finance</option>
+                        <option>Healthcare</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label">Job Level <span class="required">*</span></label>
+                    <select class="form-select">
+                        <option>select Job Level</option>
+                        <option>Entry Level</option>
+                        <option>Mid Level</option>
+                        <option>Senior Level</option>
+                        <option>Executive</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Job Description -->
+            <div class="mb-4">
+                <label class="form-label">Job Description <span class="required">*</span></label>
+                <textarea class="form-textarea" placeholder="Describe the job Responsibilities, task and expectation"></textarea>
+            </div>
+            
+            <!-- Salary Range and Number of Vacancies Row -->
+            <div class="grid grid-cols-12 gap-4 mb-4">
+                <div class="col-span-6">
+                    <label class="form-label">Salary Range (Optional)</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <input type="text" class="form-input" placeholder="Min">
+                        <input type="text" class="form-input" placeholder="Max">
+                        <select class="form-select">
+                            <option>TSH</option>
+                            <option>USD</option>
+                            <option>EUR</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-span-6">
+                    <label class="form-label">Number of Vacancies <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="e.g. 2">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Company Information Section -->
+        <div class="mb-8">
+            <div class="section-header">
+                <i class="fas fa-building section-icon"></i>
+                Company Information
+            </div>
+            <div class="section-divider"></div>
+            
+            <!-- Company Name and Industry Row -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="form-label">Company Name <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="e.g Amazon Corporation">
+                </div>
+                <div>
+                    <label class="form-label">Industry <span class="required">*</span></label>
+                    <select class="form-select">
+                        <option>Select Industry</option>
+                        <option>Technology</option>
+                        <option>Healthcare</option>
+                        <option>Finance</option>
+                        <option>Education</option>
+                        <option>Manufacturing</option>
+                        <option>Retail</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Company Website and Company Size Row -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="form-label">Company Website</label>
+                    <input type="text" class="form-input" placeholder="e.g https://www.deepseek.com">
+                </div>
+                <div>
+                    <label class="form-label">Company Size</label>
+                    <select class="form-select">
+                        <option>Select Company size</option>
+                        <option>1-10 employees</option>
+                        <option>11-50 employees</option>
+                        <option>51-200 employees</option>
+                        <option>200+ employees</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Company Description -->
+            <div class="mb-4">
+                <label class="form-label">Company Description</label>
+                <textarea class="form-textarea" placeholder="Tell Candidate about your company culture, value and mission"></textarea>
+            </div>
+            
+            <!-- Upload Company Logo -->
+            <div class="mb-4">
+                <label class="form-label">Upload Company Logo</label>
+                <div class="flex justify-center mt-2">
+                    <button class="browse-btn" type="button">Browse</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location Details Section -->
+        <div class="mb-8">
+            <div class="section-header">
+                <i class="fas fa-map-marker-alt section-icon"></i>
+                Location Details
+            </div>
+            <div class="section-divider"></div>
+            
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="form-label">Country <span class="required">*</span></label>
+                    <select class="form-select">
+                        <option value="">Select a country</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="ca">Canada</option>
+                        <option value="au">Australia</option>
+                        <option value="tz">Tanzania</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label">City/Region</label>
+                    <input type="text" class="form-input" placeholder="e.g. Dar-es-salaam">
+                    <div class="text-sm text-gray-600 mt-1">Enter the city or region where the position is based</div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="form-label">Work Arrangement</label>
+                    <select class="form-select">
+                        <option value="">Select work arrangement</option>
+                        <option value="onsite">On-site</option>
+                        <option value="remote">Remote</option>
+                        <option value="hybrid">Hybrid</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label">Address Details</label>
+                    <input type="text" class="form-input" placeholder="Enter full address">
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label class="form-label">Office Address <span class="text-gray-500 font-normal italic">(Optional)</span></label>
+                <input type="text" class="form-input" placeholder="Enter office address if different">
+            </div>
+        </div>
+
+        <!-- Requirements & Qualifications Section -->
+        <div class="mb-8">
+            <div class="section-header">
+                <i class="fas fa-clipboard-list section-icon"></i>
+                Requirements & Qualifications
+            </div>
+            <div class="section-divider"></div>
+            
+            <div class="mb-4">
+                <label class="form-label">Required Skills <span class="required">*</span></label>
+                <div id="skills-container" class="mb-3">
+                    <div class="skill-tag">HTML</div>
+                    <div class="skill-tag">CSS</div>
+                    <div class="skill-tag">JavaScript</div>
+                </div>
+                <div class="flex gap-2">
+                    <input type="text" id="skill-input" class="form-input flex-grow" placeholder="Add a skill">
+                    <button type="button" class="add-skill-btn" onclick="addSkill()">Add</button>
+                </div>
+                <div class="text-sm text-gray-600 mt-1">List the key skills required for this position</div>
+            </div>
+            
+            <div class="mb-4">
+                <label class="form-label">Required Experience</label>
+                <textarea class="form-textarea" placeholder="Describe the experience requirements"></textarea>
+                <div class="text-sm text-gray-600 mt-1">Include years of experience, specific industry experience, etc.</div>
+            </div>
+            
+            <div class="mb-4">
+                <label class="form-label">Education Requirements</label>
+                <textarea class="form-textarea" placeholder="Describe the education requirements"></textarea>
+                <div class="text-sm text-gray-600 mt-1">Include degrees, certifications, or specific educational background</div>
+            </div>
+            
+            <div class="mb-4">
+                <label class="form-label">Additional Requirements</label>
+                <textarea class="form-textarea" placeholder="Any additional requirements or preferences"></textarea>
+                <div class="text-sm text-gray-600 mt-1">Include language requirements, certifications, soft skills, etc.</div>
+            </div>
+        </div>
+
+        <!-- Application Instructions Section -->
+        <div class="mb-8">
+            <div class="section-header">
+                <i class="fas fa-paper-plane section-icon"></i>
+                Application Method
+            </div>
+            <div class="section-divider"></div>
+            
+            <div class="mb-4">
+                <label class="form-label">Application Method <span class="required">*</span></label>
+                <select class="form-select">
+                    <option value="">Select application method</option>
+                    <option value="online">Online Application</option>
+                    <option value="email">Email Application</option>
+                    <option value="in-person">In-Person Application</option>
+                    <option value="mail">Mail Application</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Application Deadline Section -->
+        <div class="mb-8">
+            <div class="section-header">
+                <i class="fas fa-calendar section-icon"></i>
+                Application Deadline
+            </div>
+            <div class="section-divider"></div>
+            
+            <div class="mb-4">
+                <label class="form-label">Application Deadline <span class="required">*</span></label>
+                <input type="date" class="form-input">
+            </div>
+        </div>
+
+        <!-- Required Documents Section -->
+        <div class="mb-8">
+            <div class="section-header">
+                <i class="fas fa-file section-icon"></i>
+                Required Documents
+            </div>
+            <div class="section-divider"></div>
+            
+            <div class="mb-4">
+                <div class="checkbox-group space-y-3">
+                    <div class="checkbox-item flex items-center">
+                        <input type="checkbox" id="cv-resume" name="required-docs" value="cv-resume" class="w-4 h-4 mr-3">
+                        <label for="cv-resume" class="form-label mb-0">CV/Resume</label>
+                    </div>
+                    <div class="checkbox-item flex items-center">
+                        <input type="checkbox" id="cover-letter" name="required-docs" value="cover-letter" class="w-4 h-4 mr-3">
+                        <label for="cover-letter" class="form-label mb-0">Cover Letter</label>
+                    </div>
+                    <div class="checkbox-item flex items-center">
+                        <input type="checkbox" id="educational-certificates" name="required-docs" value="educational-certificates" class="w-4 h-4 mr-3">
+                        <label for="educational-certificates" class="form-label mb-0">Educational Certificates</label>
+                    </div>
+                    <div class="checkbox-item flex items-center">
+                        <input type="checkbox" id="portfolio" name="required-docs" value="portfolio" class="w-4 h-4 mr-3">
+                        <label for="portfolio" class="form-label mb-0">Portfolio</label>
+                    </div>
+                    <div class="checkbox-item flex items-center">
+                        <input type="checkbox" id="references" name="required-docs" value="references" class="w-4 h-4 mr-3">
+                        <label for="references" class="form-label mb-0">References</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Application Instructions Section -->
+        <div class="mb-8">
+            <div class="section-header">
+                <i class="fas fa-comment section-icon"></i>
+                Additional Application Instructions
+            </div>
+            <div class="section-divider"></div>
+            
+            <div class="mb-4">
+                <textarea class="form-textarea" placeholder="Enter any additional instructions for applicants"></textarea>
+            </div>
+        </div>
+
+        <!-- Posting Options Section -->
+        <div class="mb-8">
+            <div class="section-header">
+                <i class="fas fa-cog section-icon"></i>
+                Posting Options
+            </div>
+            <div class="section-divider"></div>
+            
+            <div class="mb-4">
+                <label class="form-label">Posting Duration <span class="required">*</span></label>
+                <select class="form-select">
+                    <option value="">Select duration</option>
+                    <option value="7">7 days</option>
+                    <option value="14">14 days</option>
+                    <option value="30">30 days</option>
+                    <option value="60">60 days</option>
+                    <option value="90">90 days</option>
+                </select>
+            </div>
+            
+            <div class="mb-4">
+                <label class="form-label">Posting Visibility</label>
+                <div class="visibility-info bg-blue-50 p-3 rounded-lg text-blue-600">
+                    Public (Visible to Everyone)
+                </div>
+            </div>
+            
+            <div class="featured-option flex items-center">
+                <input type="checkbox" id="featured-posting" name="featured-posting" class="w-4 h-4 mr-3">
+                <label for="featured-posting" class="form-label mb-0">Make this a featured posting (additional charges apply)</label>
+            </div>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="flex justify-end gap-4">
+            <button type="button" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+                Cancel
+            </button>
+            <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                Save Job Posting
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .skill-tag {
+        display: inline-block;
+        background-color: #EFF6FF;
+        color: #1E40AF;
+        padding: 5px 10px;
+        border-radius: 20px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+    
+    .add-skill-btn {
+        background-color: #FACC15;
+        color: #333;
+        border: none;
+        padding: 0 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.3s;
+    }
+    
+    .add-skill-btn:hover {
+        background-color: #f0b90b;
+    }
+    
+    .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .checkbox-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .visibility-info {
+        background-color: #EFF6FF;
+        padding: 10px;
+        border-radius: 4px;
+        margin-top: 5px;
+        color: #1E40AF;
+    }
+    
+    .featured-option {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+    }
+</style>
+
+<script>
+    function addSkill() {
+        const skillInput = document.getElementById('skill-input');
+        const skillValue = skillInput.value.trim();
+        
+        if (skillValue) {
+            const skillsContainer = document.getElementById('skills-container');
+            const skillTag = document.createElement('div');
+            skillTag.className = 'skill-tag';
+            skillTag.textContent = skillValue;
+            
+            skillsContainer.appendChild(skillTag);
+            skillInput.value = '';
+        }
+    }
+    
+    document.getElementById('skill-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            addSkill();
+        }
+    });
+</script>
+        </div>
+    </main>
+
+    <!-- Include Footer Component -->
+    <footer class="py-8 md:py-12 px-4 md:px-6" style="background-color: #EFF6FF;">
+    <div class="max-w-7xl mx-auto">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8">
+            <!-- Company Logo and About Section -->
+            <div class="sm:col-span-2 lg:col-span-1">
+                <div class="mb-4 md:mb-6">
+                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                        <img src="http://127.0.0.1:8000/companies/blast.png" alt="Blast Logo" class="h-10 md:h-12 w-auto">
+                        <span class="text-lg md:text-xl font-bold" style="color: #1E40AF;">Blast</span>
+                    </div>
+                    <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                        Your gateway to career opportunities across Tanzania and beyond. Connecting talent with the right opportunities.
+                    </p>
+                </div>
+                
+                <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">QUICK LINKS</h3>
+                <ul class="space-y-1 md:space-y-2">
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Post a Job</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Post a Tender</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">ESS (Employee Self Service) - Utumishi</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">NECTA Exam Results</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Get in Touch with Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Jobs by Category Section -->
+            <div>
+                <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Jobs by Category</h3>
+                <ul class="space-y-1 md:space-y-2">
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Accounting</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Administration</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Banking & Finance</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Education & Teaching</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Engineering</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Government</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Hospitality & Tourism</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Human Resources</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Information Technology (IT)</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Logistics & Transportation</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Mining</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">NGO & Social Work</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Procurement & Supply Chain</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Sales & Marketing</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Cleaning & Forwarding</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Driver Jobs</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Other Services</a></li>
+                </ul>
+            </div>
+
+            <!-- Career Tools & Resources and Jobs by Location -->
+            <div>
+                <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Career Tools & Resources</h3>
+                <ul class="space-y-1 md:space-y-2 mb-4 md:mb-6">
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">CV Writing Services</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">ZA-Bursaries</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Scholarships</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Career Guide</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">NECTA Results</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Call for Interview</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Ajira Portal - Latest Jobs</a></li>
+                </ul>
+
+                <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Jobs by Location</h3>
+                <ul class="space-y-1 md:space-y-2">
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Jobs in Tanzania</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Jobs in Zambia</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Jobs in Kenya</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Jobs in Other Countries</a></li>
+                </ul>
+            </div>
+
+            <!-- Other Sections -->
+            <div>
+                <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Other Sections</h3>
+                <ul class="space-y-1 md:space-y-2">
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Post a Tender</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Advertise Here</a></li>
+                    <li><a href="#" class="text-xs md:text-sm text-gray-600 hover:text-blue-700 transition-colors">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Connect With Us Section -->
+        <div class="border-t border-gray-200 pt-6 md:pt-8">
+            <div class="mb-4 md:mb-6">
+                <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">CONNECT WITH US</h3>
+                <div class="space-y-1 md:space-y-2">
+                    <p class="text-xs md:text-sm text-gray-600">Email us at: <a href="mailto:blast@gmail.com" class="text-blue-700 hover:text-blue-800 transition-colors">blast@gmail.com</a></p>
+                    <p class="text-xs md:text-sm text-gray-600">Call us at: <a href="tel:+255686855352" class="text-blue-700 hover:text-blue-800 transition-colors">+255 616 393 881</a></p>
+                </div>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="flex space-x-3 md:space-x-4 mb-6 md:mb-8">
+                <a href="#" class="w-7 h-7 md:w-8 md:h-8 bg-gray-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                    <i class="fab fa-tiktok text-sm"></i>
+                </a>
+                <a href="#" class="w-7 h-7 md:w-8 md:h-8 bg-gray-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                    <i class="fab fa-instagram text-sm"></i>
+                </a>
+                <a href="#" class="w-7 h-7 md:w-8 md:h-8 bg-gray-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                    <i class="fab fa-facebook-f text-sm"></i>
+                </a>
+                <a href="#" class="w-7 h-7 md:w-8 md:h-8 bg-gray-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                    <i class="fab fa-twitter text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Copyright and Footer Text -->
+            <div class="border-t border-gray-200 pt-4 md:pt-6">
+                <div class="text-center">
+                    <p class="text-xs md:text-sm text-gray-600 mb-3 md:mb-4">© 2025 Developed by Blast - All Right Reserved</p>
+                    <p class="text-xs text-gray-500 mb-2 leading-relaxed">
+                        <strong>Privacy Policy:</strong> Blast respects your privacy. We do not sell, share personal information without your consent. Any data you submit is protected and used solely to improve your experience.
+                    </p>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        <strong>About Blast:</strong> Blast is a community-driven blog and platform providing job updates, scholarship info, tenders, and professional development tools to empower Tanzanians. Our mission is to make opportunity accessible for everyone, regardless of their background or location.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
