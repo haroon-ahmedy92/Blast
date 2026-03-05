@@ -1,0 +1,75 @@
+/* Motion and interaction overrides for subtle, stable UI feedback */
+
+/* Card-like blocks used across pages */
+.other-card,
+.job-card,
+.feature-card,
+.company-card,
+.resource-card,
+.employer-card,
+.posting-option,
+.tender-card,
+.category-card,
+.bg-white.border.border-gray-200.rounded-lg,
+.border.border-gray-200.rounded-lg.bg-white,
+.bg-white.rounded-lg.shadow-lg,
+.bg-white.rounded-lg.shadow-sm {
+    transform: none !important;
+    transition-property: box-shadow, border-color, background-color, color;
+    transition-duration: 0.18s;
+    transition-timing-function: ease;
+}
+
+.other-card:hover,
+.job-card:hover,
+.feature-card:hover,
+.company-card:hover,
+.resource-card:hover,
+.employer-card:hover,
+.posting-option:hover,
+.tender-card:hover,
+.category-card:hover,
+.bg-white.border.border-gray-200.rounded-lg:hover,
+.border.border-gray-200.rounded-lg.bg-white:hover,
+.bg-white.rounded-lg.shadow-lg:hover,
+.bg-white.rounded-lg.shadow-sm:hover {
+    transform: none !important;
+    border-color: rgba(30, 64, 175, 0.22);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+/* Safety net: neutralize utility-based lift/scale hovers */
+[class*="hover:-translate-y"]:hover,
+[class*="hover:translate-y"]:hover,
+[class*="hover:scale-"]:hover {
+    transform: none !important;
+}
+
+/* Buttons and links that previously used scale/translate on hover */
+.other-cta,
+.btn-primary,
+.btn-success,
+.btn-accent {
+    transition-property: box-shadow, border-color, background-color, color;
+    transition-duration: 0.18s;
+    transition-timing-function: ease;
+}
+
+.other-cta:hover,
+.btn-primary:hover,
+.btn-success:hover,
+.btn-accent:hover {
+    transform: none !important;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
