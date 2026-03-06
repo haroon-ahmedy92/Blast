@@ -1,0 +1,48 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
+<section class="py-8 md:py-12">
+    <div class="max-w-5xl mx-auto">
+        <a data-th-href="${baseUrl + '/jobs/category/' + job.categorySlug}" href="/opportunities" class="text-sm font-medium hover:underline" style="color: #1E40AF;">← Back to Category</a>
+
+        <article class="bg-white border border-gray-200 rounded-lg p-6 md:p-8 mt-4 mb-8">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold mb-2" style="color: #1E40AF;" th:text="${job.title}">Job title</h1>
+                    <p class="text-sm md:text-base text-gray-700" th:text="${job.company + ' • ' + job.location}">Company • Location</p>
+                </div>
+                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium h-fit" style="background-color: #EFF6FF; color: #1E40AF;" th:text="${job.employmentType}">Full Time</span>
+            </div>
+
+            <p class="text-sm text-gray-500 mb-4" th:text="${'Posted ' + job.postedDate}">Posted date</p>
+            <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-6" th:text="${job.description}">Full description</p>
+
+            <h2 class="text-lg font-semibold mb-3" style="color: #1E40AF;">Requirements</h2>
+            <ul class="space-y-2 mb-6">
+                <li th:each="req : ${job.requirements}" class="text-sm text-gray-700 flex items-start gap-2">
+                    <i class="fas fa-check-circle mt-0.5" style="color: #166534;"></i>
+                    <span th:text="${req}">Requirement</span>
+                </li>
+            </ul>
+
+            <a th:href="${job.applyUrl}" href="#" class="inline-flex items-center px-5 py-3 rounded-lg text-white text-sm font-medium transition-shadow transition-colors hover:shadow-md" style="background-color: #1E40AF;">
+                Apply Now
+            </a>
+        </article>
+
+        <section>
+            <h2 class="text-xl font-semibold mb-4" style="color: #1E40AF;">Related Jobs</h2>
+            <div class="space-y-3">
+                <a th:if="${#lists.isEmpty(relatedJobs)}" href="#" class="block bg-white border border-gray-200 rounded-lg p-4 text-sm text-gray-600">
+                    No related jobs available yet.
+                </a>
+                <a th:each="related : ${relatedJobs}"
+                   data-th-href="${baseUrl + '/jobs/' + related.slug}"
+                   th:href="@{/jobs/{slug}(slug=${related.slug})}"
+                   class="block bg-white border border-gray-200 rounded-lg p-4 transition-shadow transition-colors hover:shadow-md hover:border-gray-300">
+                    <h3 class="text-base font-semibold mb-1" style="color: #1E40AF;" th:text="${related.title}">Related title</h3>
+                    <p class="text-sm text-gray-600" th:text="${related.company + ' • ' + related.location}">Company • Location</p>
+                </a>
+            </div>
+        </section>
+    </div>
+</section>
+</th:block>

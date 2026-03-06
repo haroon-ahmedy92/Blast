@@ -22,13 +22,15 @@
         </div>
         
         <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-10">
-            <button class="px-5 md:px-6 py-2 md:py-3 rounded text-white font-medium text-sm md:text-base transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1" 
-                    style="background-color: #1E40AF;">
+            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
+               class="inline-flex items-center justify-center px-5 md:px-6 py-2 md:py-3 rounded text-white font-medium text-sm md:text-base transition-shadow transition-colors duration-200 hover:shadow-md"
+               style="background-color: #1E40AF;">
                 Explore Opportunity
-            </button>
-            <button class="px-5 md:px-6 py-2 md:py-3 rounded border border-gray-700 text-gray-700 font-medium text-sm md:text-base bg-white transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 hover:bg-gray-50">
+            </a>
+            <a data-th-href="${baseUrl + '/get-started'}" href="/get-started"
+               class="inline-flex items-center justify-center px-5 md:px-6 py-2 md:py-3 rounded border border-gray-700 text-gray-700 font-medium text-sm md:text-base bg-white transition-shadow transition-colors duration-200 hover:shadow-md hover:bg-gray-50">
                 Get Started Now
-            </button>
+            </a>
         </div>
         
         <div class="w-full max-w-4xl mx-auto p-3 md:p-4 lg:p-6 rounded text-xs md:text-sm lg:text-base leading-relaxed text-gray-700" 

@@ -18,16 +18,20 @@
                     <div class="font-medium text-gray-800 text-sm md:text-base" style="color: #1E40AF;">Jobs in All African Countries</div>
                     <div class="text-xs md:text-sm text-gray-600">Browse Opportunities Across The entire Continent</div>
                 </div>
-                <button class="explore-button text-white px-3 md:px-4 py-2 rounded flex items-center justify-center gap-2 text-sm md:text-base" style="background-color: #1E40AF;">
+                <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
+                   class="explore-button text-white px-3 md:px-4 py-2 rounded inline-flex items-center justify-center gap-2 text-sm md:text-base transition-shadow transition-colors duration-200 hover:shadow-sm"
+                   style="background-color: #1E40AF;">
                     Explore Now
                     <i class="fas fa-arrow-right text-xs"></i>
-                </button>
+                </a>
             </div>
         </div>
 
         <div class="category-grid grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
             <!-- Tanzania Section -->
-            <div class="category-box border rounded-lg overflow-hidden flex flex-col" style="border-color: #EFF6FF">
+            <a data-th-href="${baseUrl + '/jobs/category/software-engineering'}" href="/jobs/category/software-engineering"
+               class="category-box border rounded-lg overflow-hidden flex flex-col transition-shadow transition-colors duration-200 hover:shadow-sm hover:border-gray-300"
+               style="border-color: #EFF6FF">
                 <div class="category-header px-3 md:px-4 py-2 md:py-3 font-medium text-gray-800 text-sm md:text-base" style="background-color: #EFF6FF;">
                     Tanzania
                 </div>
@@ -43,10 +47,12 @@
                         View More
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Kenya Section -->
-            <div class="category-box border rounded-lg overflow-hidden flex flex-col" style="border-color: #EFF6FF;">
+            <a data-th-href="${baseUrl + '/jobs/category/finance'}" href="/jobs/category/finance"
+               class="category-box border rounded-lg overflow-hidden flex flex-col transition-shadow transition-colors duration-200 hover:shadow-sm hover:border-gray-300"
+               style="border-color: #EFF6FF;">
                 <div class="category-header px-3 md:px-4 py-2 md:py-3 font-medium text-gray-800 text-sm md:text-base" style="background-color: #EFF6FF;">
                     Kenya
                 </div>
@@ -62,10 +68,12 @@
                         View More
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Job Portal Section -->
-            <div class="category-box border rounded-lg overflow-hidden flex flex-col" style="border-color: #EFF6FF;">
+            <a data-th-href="${baseUrl + '/jobs/category/healthcare'}" href="/jobs/category/healthcare"
+               class="category-box border rounded-lg overflow-hidden flex flex-col transition-shadow transition-colors duration-200 hover:shadow-sm hover:border-gray-300"
+               style="border-color: #EFF6FF;">
                 <div class="category-header px-3 md:px-4 py-2 md:py-3 font-medium text-gray-800 text-sm md:text-base" style="background-color: #EFF6FF;">
                     Job Portal
                 </div>
@@ -81,10 +89,12 @@
                         View More
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Interviews Section -->
-            <div class="category-box border rounded-lg overflow-hidden flex flex-col" style="border-color: #EFF6FF;">
+            <a data-th-href="${baseUrl + '/jobs/category/internships'}" href="/jobs/category/internships"
+               class="category-box border rounded-lg overflow-hidden flex flex-col transition-shadow transition-colors duration-200 hover:shadow-sm hover:border-gray-300"
+               style="border-color: #EFF6FF;">
                 <div class="category-header px-3 md:px-4 py-2 md:py-3 font-medium text-gray-800 text-sm md:text-base" style="background-color: #EFF6FF;">
                     Interviews
                 </div>
@@ -100,10 +110,12 @@
                         View More
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Placements Section -->
-            <div class="category-box border rounded-lg overflow-hidden flex flex-col" style="border-color: #EFF6FF;">
+            <a data-th-href="${baseUrl + '/jobs/category/education'}" href="/jobs/category/education"
+               class="category-box border rounded-lg overflow-hidden flex flex-col transition-shadow transition-colors duration-200 hover:shadow-sm hover:border-gray-300"
+               style="border-color: #EFF6FF;">
                 <div class="category-header px-3 md:px-4 py-2 md:py-3 font-medium text-gray-800 text-sm md:text-base" style="background-color: #EFF6FF;">
                     Placements
                 </div>
@@ -119,10 +131,12 @@
                         View More
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Government Section -->
-            <div class="category-box border rounded-lg overflow-hidden flex flex-col" style="border-color: #EFF6FF;">
+            <a data-th-href="${baseUrl + '/jobs/category/government'}" href="/jobs/category/government"
+               class="category-box border rounded-lg overflow-hidden flex flex-col transition-shadow transition-colors duration-200 hover:shadow-sm hover:border-gray-300"
+               style="border-color: #EFF6FF;">
                 <div class="category-header px-3 md:px-4 py-2 md:py-3 font-medium text-gray-800 text-sm md:text-base" style="background-color: #EFF6FF;">
                     Government
                 </div>
@@ -138,7 +152,16 @@
                     </div>
                     <div class="text-gray-700 text-sm md:text-base">Ajira Portal: Latest Jobs</div>
                 </div>
-            </div>
+            </a>
+        </div>
+
+        <div class="mt-4 md:mt-6 text-center">
+            <a data-th-href="${baseUrl + '/countries'}" href="/countries"
+               class="inline-flex items-center gap-2 text-sm md:text-base font-medium transition-colors hover:underline"
+               style="color: #1E40AF;">
+                View More Countries
+                <i class="fas fa-external-link-alt text-xs"></i>
+            </a>
         </div>
     </div>
 </div>

@@ -1,0 +1,24 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
+<section class="py-8 md:py-12">
+    <div class="max-w-5xl mx-auto">
+        <header class="mb-8">
+            <h1 class="text-2xl md:text-3xl font-bold mb-3" style="color: #1E40AF;">Other Trends</h1>
+            <p class="text-sm md:text-base text-gray-600">
+                Explore timely updates around applications, admission workflows and policy notices.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <a th:each="trend : ${trends}"
+               data-th-href="${baseUrl + '/trends/' + trend.slug}"
+               th:href="@{/trends/{trendSlug}(trendSlug=${trend.slug})}"
+               class="block bg-white border border-gray-200 rounded-lg p-5 transition-shadow transition-colors hover:shadow-md hover:border-gray-300">
+                <p class="text-xs font-medium mb-2" style="color: #FACC15;" th:text="${trend.category}">Category</p>
+                <h2 class="text-lg font-semibold mb-2" style="color: #1E40AF;" th:text="${trend.title}">Trend title</h2>
+                <p class="text-sm text-gray-600 mb-2" th:text="${trend.summary}">Summary</p>
+                <p class="text-xs text-gray-500" th:text="${'Updated ' + trend.publishedOn}">Date</p>
+            </a>
+        </div>
+    </div>
+</section>
+</th:block>
