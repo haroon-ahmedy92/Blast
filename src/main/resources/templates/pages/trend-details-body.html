@@ -1,0 +1,29 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
+<section class="py-8 md:py-12">
+    <div class="max-w-5xl mx-auto">
+        <a data-th-href="${baseUrl + '/trends'}" href="/trends" class="text-sm font-medium hover:underline" style="color: #FACC15;">← Back to Trends</a>
+
+        <article class="bg-white border border-gray-200 rounded-lg p-6 md:p-8 mt-4 mb-8">
+            <p class="text-xs font-medium mb-3" style="color: #FACC15;" th:text="${trend.category}">Category</p>
+            <h1 class="text-2xl md:text-3xl font-bold mb-2" style="color: #1E40AF;" th:text="${trend.title}">Trend title</h1>
+            <p class="text-sm text-gray-600 mb-4" th:text="${'Updated ' + trend.publishedOn}">Date</p>
+            <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-5" th:text="${trend.summary}">Summary</p>
+            <div class="text-sm md:text-base text-gray-700 leading-relaxed" th:text="${trend.body}">Body content</div>
+        </article>
+
+        <section>
+            <h2 class="text-xl font-semibold mb-4" style="color: #1E40AF;">Related Trends</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a th:each="item : ${relatedTrends}"
+                   data-th-href="${baseUrl + '/trends/' + item.slug}"
+                   th:href="@{/trends/{trendSlug}(trendSlug=${item.slug})}"
+                   class="block bg-white border border-gray-200 rounded-lg p-4 transition-shadow transition-colors hover:shadow-md hover:border-gray-300">
+                    <p class="text-xs font-medium mb-1" style="color: #FACC15;" th:text="${item.category}">Category</p>
+                    <h3 class="text-base font-semibold mb-1" style="color: #1E40AF;" th:text="${item.title}">Title</h3>
+                    <p class="text-sm text-gray-600" th:text="${item.summary}">Summary</p>
+                </a>
+            </div>
+        </section>
+    </div>
+</section>
+</th:block>

@@ -1,0 +1,22 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
+<section class="py-8 md:py-12">
+    <div class="max-w-5xl mx-auto">
+        <header class="mb-6 md:mb-8">
+            <h1 class="text-2xl md:text-3xl font-bold mb-3" style="color: #1E40AF;">Jobs in African Countries</h1>
+            <p class="text-sm md:text-base text-gray-600">
+                Browse opportunities by country and combine this view with category filters for faster discovery.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <article th:each="country : ${countries}" class="bg-white border border-gray-200 rounded-lg p-5 transition-shadow transition-colors hover:shadow-md hover:border-gray-300">
+                <h2 class="text-lg font-semibold mb-2" style="color: #1E40AF;" th:text="${country}">Country</h2>
+                <p class="text-sm text-gray-600 mb-3">Explore active roles, trends and updates for this market.</p>
+                <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="text-sm font-medium hover:underline" style="color: #1E40AF;">
+                    View Opportunities
+                </a>
+            </article>
+        </div>
+    </div>
+</section>
+</th:block>

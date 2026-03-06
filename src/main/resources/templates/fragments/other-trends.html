@@ -11,7 +11,9 @@
         <!-- Trends Grid -->
         <div class="category-grid grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- HESLB Section -->
-            <div class="category-box border rounded-lg overflow-hidden" style="border-color: #FEF9C3;">
+            <a data-th-href="${baseUrl + '/trends/heslb-loan-application-guide'}" href="/trends/heslb-loan-application-guide"
+               class="category-box border rounded-lg overflow-hidden block transition-shadow transition-colors duration-200 hover:shadow-sm hover:border-yellow-200"
+               style="border-color: #FEF9C3;">
                 <div class="category-header px-4 py-3 font-medium text-gray-800" style="background-color: #FEF9C3;">
                     HESLB
                 </div>
@@ -27,10 +29,12 @@
                         View More
                     </div>
                 </div>
-            </div>
+            </a>
             
             <!-- TAMISEMI Section (First) -->
-            <div class="category-box border rounded-lg overflow-hidden" style="border-color: #FEF9C3;">
+            <a data-th-href="${baseUrl + '/trends/tamisemi-selform-updates'}" href="/trends/tamisemi-selform-updates"
+               class="category-box border rounded-lg overflow-hidden block transition-shadow transition-colors duration-200 hover:shadow-sm hover:border-yellow-200"
+               style="border-color: #FEF9C3;">
                 <div class="category-header px-4 py-3 font-medium text-gray-800" style="background-color: #FEF9C3;">
                     TAMISEMI
                 </div>
@@ -46,10 +50,12 @@
                         View More
                     </div>
                 </div>
-            </div>
+            </a>
             
             <!-- TAMISEMI Section (Second) -->
-            <div class="category-box border rounded-lg overflow-hidden" style="border-color: #FEF9C3;">
+            <a data-th-href="${baseUrl + '/trends/form-five-selection-insights'}" href="/trends/form-five-selection-insights"
+               class="category-box border rounded-lg overflow-hidden block transition-shadow transition-colors duration-200 hover:shadow-sm hover:border-yellow-200"
+               style="border-color: #FEF9C3;">
                 <div class="category-header px-4 py-3 font-medium text-gray-800" style="background-color: #FEF9C3;">
                     TAMISEMI
                 </div>
@@ -65,10 +71,12 @@
                         View More
                     </div>
                 </div>
-            </div>
+            </a>
             
             <!-- ADMISSION Section -->
-            <div class="category-box border rounded-lg overflow-hidden" style="border-color: #FEF9C3;">
+            <a data-th-href="${baseUrl + '/trends/university-admission-window'}" href="/trends/university-admission-window"
+               class="category-box border rounded-lg overflow-hidden block transition-shadow transition-colors duration-200 hover:shadow-sm hover:border-yellow-200"
+               style="border-color: #FEF9C3;">
                 <div class="category-header px-4 py-3 font-medium text-gray-800" style="background-color: #FEF9C3;">
                     ADMISSION
                 </div>
@@ -84,7 +92,15 @@
                         View More
                     </div>
                 </div>
-            </div>
+            </a>
+        </div>
+        <div class="mt-6 text-center">
+            <a data-th-href="${baseUrl + '/trends'}" href="/trends"
+               class="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:underline"
+               style="color: #FACC15;">
+                View All Trends
+                <i class="fas fa-external-link-alt text-xs"></i>
+            </a>
         </div>
     </div>
 </div>
