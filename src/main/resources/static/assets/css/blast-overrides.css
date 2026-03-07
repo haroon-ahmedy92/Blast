@@ -73,3 +73,217 @@
         scroll-behavior: auto !important;
     }
 }
+
+/* Opportunities page: premium, compact, stable layout */
+.opportunities-page .opportunities-kicker {
+    color: #1E40AF;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.opportunities-page .opportunities-hero {
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+}
+
+.opportunities-page .opportunities-hero__content {
+    max-width: 44rem;
+}
+
+.opportunities-page .opportunities-search input,
+.opportunities-page .opportunities-search button {
+    min-height: 3.125rem;
+}
+
+.opportunities-page .opportunities-category-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 15.5rem;
+    padding: 1.375rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.9rem;
+    background: #ffffff;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+}
+
+.opportunities-page .opportunities-category-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.9rem;
+    margin-bottom: 1.1rem;
+}
+
+.opportunities-page .opportunities-category-card__icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.opportunities-page .opportunities-category-card__count {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.42rem 0.7rem;
+    border-radius: 9999px;
+    background: #eff6ff;
+    color: #1E40AF;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.opportunities-page .opportunities-category-card__body {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.opportunities-page .opportunities-category-card__title {
+    margin: 0 0 0.55rem;
+    color: #111827;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+.opportunities-page .opportunities-category-card__description {
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    word-break: break-word;
+}
+
+.opportunities-page .opportunities-category-card__footer {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.1rem;
+    color: #1E40AF;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.opportunities-page .opportunities-job-row {
+    display: block;
+    padding: 1.35rem 1.4rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.9rem;
+    background: #ffffff;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+}
+
+.opportunities-page .opportunities-job-row__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.opportunities-page .opportunities-job-row__main {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.opportunities-page .opportunities-job-row__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.45rem;
+}
+
+.opportunities-page .opportunities-job-row__title {
+    margin: 0;
+    color: #111827;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+.opportunities-page .opportunities-job-row__type {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.42rem 0.72rem;
+    border-radius: 9999px;
+    background: #eff6ff;
+    color: #1E40AF;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.opportunities-page .opportunities-job-row__meta {
+    margin: 0 0 0.6rem;
+    color: #374151;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    word-break: break-word;
+}
+
+.opportunities-page .opportunities-job-row__summary {
+    max-width: 44rem;
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    word-break: break-word;
+}
+
+.opportunities-page .opportunities-job-row__aside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: #6b7280;
+}
+
+.opportunities-page .opportunities-job-row__date {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.opportunities-page .opportunities-job-row__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1E40AF;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+    .opportunities-page .opportunities-job-row__content {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .opportunities-page .opportunities-job-row__aside {
+        min-width: 9rem;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        text-align: right;
+    }
+}
+
+@media (max-width: 767px) {
+    .opportunities-page .opportunities-category-card,
+    .opportunities-page .opportunities-job-row {
+        padding: 1.1rem;
+    }
+
+    .opportunities-page .opportunities-category-card {
+        min-height: auto;
+    }
+}

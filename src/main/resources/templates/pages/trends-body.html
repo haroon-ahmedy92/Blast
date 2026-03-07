@@ -1,23 +1,223 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<section class="py-8 md:py-12">
-    <div class="max-w-5xl mx-auto">
-        <header class="mb-8">
-            <h1 class="text-2xl md:text-3xl font-bold mb-3" style="color: #1E40AF;">Other Trends</h1>
-            <p class="text-sm md:text-base text-gray-600">
-                Explore timely updates around applications, admission workflows and policy notices.
+<!-- Header Section -->
+<section class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium mb-4" style="background-color:#FEF9C3;color:#B45309;">
+                <i class="fas fa-chart-trending-up mr-2"></i>
+                Market Insights
+            </span>
+            <h1 class="text-3xl md:text-4xl font-bold mb-4" style="color: #1E40AF;">Industry Trends & Updates</h1>
+            <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Stay ahead with the latest industry developments, policy changes, application workflows, and market insights across African professional sectors.
             </p>
-        </header>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            <a th:each="trend : ${trends}"
-               data-th-href="${baseUrl + '/trends/' + trend.slug}"
-               th:href="@{/trends/{trendSlug}(trendSlug=${trend.slug})}"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-shadow transition-colors hover:shadow-md hover:border-gray-300">
-                <p class="text-xs font-medium mb-2" style="color: #FACC15;" th:text="${trend.category}">Category</p>
-                <h2 class="text-lg font-semibold mb-2" style="color: #1E40AF;" th:text="${trend.title}">Trend title</h2>
-                <p class="text-sm text-gray-600 mb-2" th:text="${trend.summary}">Summary</p>
-                <p class="text-xs text-gray-500" th:text="${'Updated ' + trend.publishedOn}">Date</p>
-            </a>
+        <!-- Trend Categories -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm text-center">
+                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #FEF9C3; color: #B45309;">
+                    <i class="fas fa-briefcase text-lg"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2" style="color: #B45309;">Employment</h3>
+                <p class="text-sm text-gray-600">Job market trends and hiring patterns</p>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm text-center">
+                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #EFF6FF; color: #1E40AF;">
+                    <i class="fas fa-graduation-cap text-lg"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2" style="color: #1E40AF;">Education</h3>
+                <p class="text-sm text-gray-600">Academic policy and admission updates</p>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm text-center">
+                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #DCFCE7; color: #166534;">
+                    <i class="fas fa-chart-bar text-lg"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2" style="color: #166534;">Economic</h3>
+                <p class="text-sm text-gray-600">Economic indicators and forecasts</p>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm text-center">
+                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #FEF3C7; color: #D97706;">
+                    <i class="fas fa-gavel text-lg"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2" style="color: #D97706;">Policy</h3>
+                <p class="text-sm text-gray-600">Regulatory changes and compliance</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Filter and Search Section -->
+<section class="py-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <div class="flex flex-col lg:flex-row gap-4 items-center justify-between">
+                <div class="flex flex-wrap gap-3 w-full lg:w-auto">
+                    <div class="relative">
+                        <input type="text" placeholder="Search trends..." 
+                               class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent w-full md:w-64">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                        <option>All Categories</option>
+                        <option>Employment</option>
+                        <option>Education</option>
+                        <option>Economic</option>
+                        <option>Policy</option>
+                    </select>
+                    <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                        <option>All Regions</option>
+                        <option>East Africa</option>
+                        <option>West Africa</option>
+                        <option>Southern Africa</option>
+                        <option>North Africa</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                    <span>Sort by:</span>
+                    <select class="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                        <option>Latest</option>
+                        <option>Most Popular</option>
+                        <option>Trending</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trends Grid -->
+<section class="py-12">
+    <div class="max-w-6xl mx-auto">
+        <!-- No Trends State -->
+        <div th:if="${#lists.isEmpty(trends)}" class="text-center py-16">
+            <div class="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center" style="background-color: #F3F4F6;">
+                <i class="fas fa-chart-trending-up text-2xl text-gray-400"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3" style="color: #1E40AF;">No Trends Available</h3>
+            <p class="text-gray-600 max-w-md mx-auto mb-8">There are no trend updates available at the moment. Check back later or explore other sections.</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" 
+                   class="inline-flex items-center px-5 py-3 rounded-lg text-white font-medium transition-shadow hover:shadow-md" 
+                   style="background-color: #1E40AF;">
+                    <i class="fas fa-briefcase mr-2"></i>
+                    Browse Opportunities
+                </a>
+                <a data-th-href="${baseUrl + '/results'}" href="/results" 
+                   class="inline-flex items-center px-5 py-3 rounded-lg border border-gray-300 bg-white font-medium text-gray-700 transition-colors hover:bg-gray-50">
+                    <i class="fas fa-graduation-cap mr-2"></i>
+                    Check Results
+                </a>
+            </div>
+        </div>
+
+        <!-- Trends Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div th:each="trend : ${trends}" class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all">
+                <a data-th-href="${baseUrl + '/trends/' + trend.slug}"
+                   th:href="@{/trends/{trendSlug}(trendSlug=${trend.slug})}"
+                   class="block p-6 h-full">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium" 
+                              th:classappend="${trend.category == 'Employment'} ? 'bg-yellow-100 text-yellow-800' : 
+                                             ${trend.category == 'Education'} ? 'bg-blue-100 text-blue-800' : 
+                                             ${trend.category == 'Economic'} ? 'bg-green-100 text-green-800' : 
+                                             'bg-orange-100 text-orange-800'"
+                              style="background-color:#FEF9C3;color:#B45309;" 
+                              th:text="${trend.category}">Policy</span>
+                        <div class="flex items-center gap-1 text-xs text-gray-500">
+                            <i class="fas fa-fire"></i>
+                            <span>Trending</span>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-lg font-semibold mb-3 hover:underline leading-snug line-clamp-2" style="color: #1E40AF;" th:text="${trend.title}">New Employment Regulations Impact Across East Africa</h2>
+                    
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3" th:text="${trend.summary}">
+                        Recent policy changes in employment law are reshaping hiring practices and worker rights across Kenya, Uganda, and Tanzania. Companies are adapting to new compliance requirements.
+                    </p>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 text-xs text-gray-500">
+                            <i class="fas fa-calendar"></i>
+                            <span th:text="${'Updated ' + trend.publishedOn}">Updated 3 days ago</span>
+                        </div>
+                        <div class="flex items-center gap-1" style="color: #FACC15;">
+                            <span class="text-xs font-medium">Read More</span>
+                            <i class="fas fa-arrow-right text-xs transform transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Reading time and engagement indicators -->
+                    <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
+                        <div class="flex items-center gap-3 text-xs text-gray-500">
+                            <span class="flex items-center gap-1">
+                                <i class="fas fa-clock"></i>
+                                <span>3 min read</span>
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i class="fas fa-eye"></i>
+                                <span>2.4k views</span>
+                            </span>
+                        </div>
+                        <button class="p-1 rounded-full text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors">
+                            <i class="fas fa-heart text-xs"></i>
+                        </button>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Load More Section -->
+        <div th:if="${!#lists.isEmpty(trends)}" class="text-center mt-12">
+            <button class="px-6 py-3 rounded-lg border border-gray-300 bg-white font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:shadow-sm">
+                <i class="fas fa-plus mr-2"></i>
+                Load More Trends
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section class="py-12 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+            <div class="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center" style="background-color: #FEF9C3; color: #B45309;">
+                <i class="fas fa-chart-line text-2xl"></i>
+            </div>
+            <h2 class="text-xl md:text-2xl font-semibold mb-4" style="color: #1E40AF;">Stay Ahead of Market Trends</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Get weekly insights delivered to your inbox. Our trend analysis covers policy changes, market shifts, and emerging opportunities across Africa.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-6">
+                <input type="email" 
+                       placeholder="Enter your email address" 
+                       class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                <button class="px-6 py-3 rounded-lg text-white font-medium transition-shadow hover:shadow-md whitespace-nowrap" 
+                        style="background-color: #FACC15; color: #000;">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Subscribe
+                </button>
+            </div>
+            
+            <div class="flex items-center justify-center gap-6 text-xs text-gray-500">
+                <span class="flex items-center gap-1">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Weekly updates</span>
+                </span>
+                <span class="flex items-center gap-1">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>No spam</span>
+                </span>
+                <span class="flex items-center gap-1">
+                    <i class="fas fa-times-circle"></i>
+                    <span>Unsubscribe anytime</span>
+                </span>
+            </div>
         </div>
     </div>
 </section>

@@ -1,29 +1,324 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<section class="py-8 md:py-12">
+<!-- Breadcrumb Navigation -->
+<section class="py-6 border-b border-gray-200">
     <div class="max-w-5xl mx-auto">
-        <a data-th-href="${baseUrl + '/trends'}" href="/trends" class="text-sm font-medium hover:underline" style="color: #FACC15;">← Back to Trends</a>
+        <nav class="flex items-center gap-2 text-sm">
+            <a data-th-href="${baseUrl + '/trends'}" href="/trends" 
+               class="text-gray-500 hover:text-yellow-600 transition-colors">Trends</a>
+            <i class="fas fa-chevron-right text-gray-300"></i>
+            <span class="font-medium text-gray-700 truncate" th:text="${trend.title}">Trend Title</span>
+        </nav>
+    </div>
+</section>
 
-        <article class="bg-white border border-gray-200 rounded-lg p-6 md:p-8 mt-4 mb-8">
-            <p class="text-xs font-medium mb-3" style="color: #FACC15;" th:text="${trend.category}">Category</p>
-            <h1 class="text-2xl md:text-3xl font-bold mb-2" style="color: #1E40AF;" th:text="${trend.title}">Trend title</h1>
-            <p class="text-sm text-gray-600 mb-4" th:text="${'Updated ' + trend.publishedOn}">Date</p>
-            <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-5" th:text="${trend.summary}">Summary</p>
-            <div class="text-sm md:text-base text-gray-700 leading-relaxed" th:text="${trend.body}">Body content</div>
-        </article>
+<!-- Trend Header -->
+<section class="py-12">
+    <div class="max-w-5xl mx-auto">
+        <div class="bg-white border border-gray-200 rounded-xl p-8 md:p-12 shadow-sm mb-8">
+            <div class="flex items-start justify-between gap-6 mb-6">
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium" 
+                              th:classappend="${trend.category == 'Employment'} ? 'bg-yellow-100 text-yellow-800' : 
+                                             ${trend.category == 'Education'} ? 'bg-blue-100 text-blue-800' : 
+                                             ${trend.category == 'Economic'} ? 'bg-green-100 text-green-800' : 
+                                             'bg-orange-100 text-orange-800'"
+                              style="background-color:#FEF9C3;color:#B45309;" 
+                              th:text="${trend.category}">Policy</span>
+                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                            <i class="fas fa-fire mr-1"></i>
+                            Trending
+                        </span>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-bold mb-4 leading-tight" style="color: #1E40AF;" th:text="${trend.title}">New Employment Regulations Impact Across East Africa</h1>
+                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                        <span class="flex items-center gap-2">
+                            <i class="fas fa-calendar"></i>
+                            <span th:text="${'Updated ' + trend.publishedOn}">Updated 3 days ago</span>
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <i class="fas fa-clock"></i>
+                            <span>5 min read</span>
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <i class="fas fa-eye"></i>
+                            <span>2,847 views</span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col gap-3 items-end flex-shrink-0">
+                    <div class="flex items-center gap-2">
+                        <button class="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition-colors">
+                            <i class="fas fa-bookmark"></i>
+                        </button>
+                        <button class="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition-colors">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="prose max-w-none">
+                <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6" th:text="${trend.summary}">
+                    Recent policy changes in employment law are reshaping hiring practices and worker rights across Kenya, Uganda, and Tanzania. Companies are adapting to new compliance requirements while workers gain enhanced protections.
+                </p>
+            </div>
+            
+            <!-- Key Insights -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 rounded-lg" style="background-color: #F8FAFC;">
+                <div class="text-center">
+                    <div class="text-xl font-bold" style="color: #1E40AF;">3 Countries</div>
+                    <div class="text-xs text-gray-600">Affected by Changes</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xl font-bold" style="color: #166534;">85%</div>
+                    <div class="text-xs text-gray-600">Companies Adapting</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xl font-bold" style="color: #B45309;">Q2 2024</div>
+                    <div class="text-xs text-gray-600">Implementation Date</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <section>
-            <h2 class="text-xl font-semibold mb-4" style="color: #1E40AF;">Related Trends</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a th:each="item : ${relatedTrends}"
-                   data-th-href="${baseUrl + '/trends/' + item.slug}"
-                   th:href="@{/trends/{trendSlug}(trendSlug=${item.slug})}"
-                   class="block bg-white border border-gray-200 rounded-lg p-4 transition-shadow transition-colors hover:shadow-md hover:border-gray-300">
-                    <p class="text-xs font-medium mb-1" style="color: #FACC15;" th:text="${item.category}">Category</p>
-                    <h3 class="text-base font-semibold mb-1" style="color: #1E40AF;" th:text="${item.title}">Title</h3>
-                    <p class="text-sm text-gray-600" th:text="${item.summary}">Summary</p>
+<!-- Trend Content -->
+<section class="pb-12">
+    <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Full Content -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <h2 class="text-xl font-semibold mb-6" style="color: #1E40AF;">
+                        <i class="fas fa-file-text mr-2"></i>
+                        Full Analysis
+                    </h2>
+                    <div class="prose max-w-none">
+                        <div class="text-gray-700 leading-relaxed space-y-4" th:text="${trend.body}">
+                            <p>The employment landscape across East Africa is undergoing significant transformation with the introduction of comprehensive labor law reforms. These changes, spearheaded by Kenya, Uganda, and Tanzania, represent the most substantial overhaul of employment regulations in the region in over a decade.</p>
+                            
+                            <p>Key provisions include enhanced worker protection measures, standardized minimum wage frameworks, and improved dispute resolution mechanisms. Companies operating across borders are particularly affected, as they must now navigate varying compliance requirements while maintaining operational efficiency.</p>
+                            
+                            <p>Industry experts suggest that while the initial adjustment period may pose challenges, the long-term benefits include improved worker satisfaction, reduced turnover, and enhanced regional economic stability. The reforms are expected to attract increased foreign investment as the regulatory environment becomes more predictable and worker-friendly.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Impact Breakdown -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <h2 class="text-xl font-semibold mb-6" style="color: #1E40AF;">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        Impact Breakdown
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="p-4 rounded-lg" style="background-color: #F0FDF4;">
+                            <h3 class="font-semibold mb-2" style="color: #166534;">Positive Impacts</h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-plus-circle text-green-600 mt-0.5"></i>
+                                    <span>Enhanced worker protection and rights</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-plus-circle text-green-600 mt-0.5"></i>
+                                    <span>Standardized regional employment practices</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-plus-circle text-green-600 mt-0.5"></i>
+                                    <span>Increased foreign investor confidence</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="p-4 rounded-lg" style="background-color: #FEF3C7;">
+                            <h3 class="font-semibold mb-2" style="color: #D97706;">Challenges</h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-exclamation-triangle text-yellow-600 mt-0.5"></i>
+                                    <span>Adjustment costs for existing businesses</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-exclamation-triangle text-yellow-600 mt-0.5"></i>
+                                    <span>Complex compliance requirements</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-exclamation-triangle text-yellow-600 mt-0.5"></i>
+                                    <span>Training needs for HR teams</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <h2 class="text-xl font-semibold mb-6" style="color: #1E40AF;">
+                        <i class="fas fa-timeline mr-2"></i>
+                        Implementation Timeline
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full" style="background-color: #166534;"></div>
+                                <div class="w-0.5 h-12" style="background-color: #DCFCE7;"></div>
+                            </div>
+                            <div class="flex-1 pb-8">
+                                <div class="text-sm font-medium" style="color: #166534;">Q1 2024 - Legislation Passed</div>
+                                <div class="text-xs text-gray-600 mt-1">All three countries finalize employment law reforms</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full" style="background-color: #FACC15;"></div>
+                                <div class="w-0.5 h-12" style="background-color: #FEF9C3;"></div>
+                            </div>
+                            <div class="flex-1 pb-8">
+                                <div class="text-sm font-medium" style="color: #B45309;">Q2 2024 - Grace Period</div>
+                                <div class="text-xs text-gray-600 mt-1">Companies prepare for compliance implementation</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full border-2 border-blue-600 bg-white"></div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-sm font-medium" style="color: #1E40AF;">Q3 2024 - Full Implementation</div>
+                                <div class="text-xs text-gray-600 mt-1">Regulations become fully enforceable</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Author Info -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm sticky top-6">
+                    <h3 class="text-lg font-semibold mb-4" style="color: #1E40AF;">About this Analysis</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: #EFF6FF;">
+                                <i class="fas fa-user text-blue-600"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-gray-900">BLAST Research Team</div>
+                                <div class="text-xs text-gray-600">Policy & Market Analysis</div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            <p>Our research team specializes in African employment and policy trends, providing insights to help professionals navigate changing markets.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Related Actions -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-4" style="color: #1E40AF;">Related Resources</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #DCFCE7;">
+                                <i class="fas fa-briefcase text-sm" style="color: #166534;"></i>
+                            </div>
+                            <div class="text-sm">
+                                <div class="font-medium text-gray-900">HR Compliance Jobs</div>
+                                <div class="text-xs text-gray-600">View related opportunities</div>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #EFF6FF;">
+                                <i class="fas fa-bell text-sm" style="color: #1E40AF;"></i>
+                            </div>
+                            <div class="text-sm">
+                                <div class="font-medium text-gray-900">Set Policy Alerts</div>
+                                <div class="text-xs text-gray-600">Get notified of updates</div>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #FEF9C3;">
+                                <i class="fas fa-download text-sm" style="color: #B45309;"></i>
+                            </div>
+                            <div class="text-sm">
+                                <div class="font-medium text-gray-900">Download Report</div>
+                                <div class="text-xs text-gray-600">Full analysis PDF</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Share Trend -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-4" style="color: #1E40AF;">Share this Trend</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="px-3 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-blue-50 transition-colors text-center">
+                            <i class="fab fa-twitter mb-1 block"></i>
+                            <span class="text-xs">Twitter</span>
+                        </button>
+                        <button class="px-3 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-blue-50 transition-colors text-center">
+                            <i class="fab fa-linkedin mb-1 block"></i>
+                            <span class="text-xs">LinkedIn</span>
+                        </button>
+                        <button class="px-3 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-green-50 transition-colors text-center">
+                            <i class="fab fa-whatsapp mb-1 block"></i>
+                            <span class="text-xs">WhatsApp</span>
+                        </button>
+                        <button class="px-3 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition-colors text-center">
+                            <i class="fas fa-link mb-1 block"></i>
+                            <span class="text-xs">Copy Link</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Trends -->
+<section class="py-12 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-xl md:text-2xl font-semibold mb-8" style="color: #1E40AF;">Related Trends</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div th:if="${#lists.isEmpty(relatedTrends)}" class="col-span-full text-center py-8">
+                <div class="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center" style="background-color: #F3F4F6;">
+                    <i class="fas fa-chart-trending-up text-xl text-gray-400"></i>
+                </div>
+                <p class="text-gray-600 mb-4">No related trends available at the moment.</p>
+                <a data-th-href="${baseUrl + '/trends'}" href="/trends" 
+                   class="inline-flex items-center px-5 py-3 rounded-lg text-white font-medium transition-shadow hover:shadow-md" 
+                   style="background-color: #FACC15; color: #000;">
+                    <i class="fas fa-chart-trending-up mr-2"></i>
+                    Browse All Trends
                 </a>
             </div>
-        </section>
+
+            <a th:each="item : ${relatedTrends}"
+               data-th-href="${baseUrl + '/trends/' + item.slug}"
+               th:href="@{/trends/{trendSlug}(trendSlug=${item.slug})}"
+               class="block bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md hover:border-gray-300 transition-all">
+                <div class="flex items-start justify-between mb-3">
+                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium" 
+                          style="background-color:#FEF9C3;color:#B45309;" 
+                          th:text="${item.category}">Policy</span>
+                    <div class="text-xs text-gray-500">
+                        <i class="fas fa-clock mr-1"></i>
+                        <span>2 min read</span>
+                    </div>
+                </div>
+                <h3 class="font-semibold mb-2 hover:underline line-clamp-2" style="color: #1E40AF;" th:text="${item.title}">Related Trend Title</h3>
+                <p class="text-sm text-gray-600 mb-3 line-clamp-2" th:text="${item.summary}">Brief summary of the related trend.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xs text-gray-500" th:text="${'Updated ' + item.publishedOn}">Updated recently</span>
+                    <div class="flex items-center gap-1" style="color: #FACC15;">
+                        <span class="text-xs">Read</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 </section>
 </th:block>
