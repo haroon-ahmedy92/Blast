@@ -1,30 +1,206 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<section class="py-8 md:py-12">
-    <div class="max-w-5xl mx-auto">
-        <header class="mb-8">
-            <h1 class="text-2xl md:text-3xl font-bold mb-3" style="color: #166534;">Examination Results</h1>
-            <p class="text-sm md:text-base text-gray-600">
-                Browse recent result releases and open detailed guidance pages for each exam type.
+<!-- Header Section -->
+<section class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium mb-4" style="background-color:#DCFCE7;color:#166534;">
+                <i class="fas fa-graduation-cap mr-2"></i>
+                Examination Results
+            </span>
+            <h1 class="text-3xl md:text-4xl font-bold mb-4" style="color: #166534;">Latest Exam Results</h1>
+            <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Stay updated with the latest examination results, admission outcomes, and academic announcements across African institutions and professional bodies.
             </p>
-        </header>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            <a th:each="exam : ${exams}"
-               data-th-href="${baseUrl + '/results/' + exam.slug}"
-               th:href="@{/results/{examSlug}(examSlug=${exam.slug})}"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-shadow transition-colors hover:shadow-md hover:border-gray-300">
-                <div class="flex items-start gap-3 mb-3">
-                    <div class="w-9 h-9 rounded-full flex items-center justify-center shrink-0" style="background-color: #DCFCE7; color: #166534;">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div>
-                        <h2 class="text-lg font-semibold mb-1" style="color: #166534;" th:text="${exam.title}">Exam title</h2>
-                        <p class="text-xs text-gray-500" th:text="${exam.provider + ' • ' + exam.region}">Provider • Region</p>
-                    </div>
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm text-center">
+                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #DCFCE7; color: #166534;">
+                    <i class="fas fa-file-alt text-lg"></i>
                 </div>
-                <p class="text-sm text-gray-600 mb-2" th:text="${exam.summary}">Summary</p>
-                <p class="text-xs text-gray-500" th:text="${'Published ' + exam.publishedOn}">Date</p>
-            </a>
+                <div class="text-2xl font-bold mb-1" style="color: #166534;" th:text="${#lists.size(exams)}">12</div>
+                <div class="text-sm text-gray-600">Recent Results</div>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm text-center">
+                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #EFF6FF; color: #1E40AF;">
+                    <i class="fas fa-university text-lg"></i>
+                </div>
+                <div class="text-2xl font-bold mb-1" style="color: #1E40AF;">15+</div>
+                <div class="text-sm text-gray-600">Institutions</div>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm text-center">
+                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #FEF9C3; color: #B45309;">
+                    <i class="fas fa-globe-africa text-lg"></i>
+                </div>
+                <div class="text-2xl font-bold mb-1" style="color: #B45309;">8</div>
+                <div class="text-sm text-gray-600">Countries Covered</div>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm text-center">
+                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #DCFCE7; color: #166534;">
+                    <i class="fas fa-clock text-lg"></i>
+                </div>
+                <div class="text-2xl font-bold mb-1" style="color: #166534;">24h</div>
+                <div class="text-sm text-gray-600">Update Frequency</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Filters Section -->
+<section class="py-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <div class="flex flex-col lg:flex-row gap-4 items-center justify-between">
+                <div class="flex flex-wrap gap-3 w-full lg:w-auto">
+                    <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        <option>All Countries</option>
+                        <option>Kenya</option>
+                        <option>Nigeria</option>
+                        <option>Ghana</option>
+                        <option>South Africa</option>
+                        <option>Tanzania</option>
+                    </select>
+                    <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        <option>All Institutions</option>
+                        <option>Universities</option>
+                        <option>Professional Bodies</option>
+                        <option>Secondary Schools</option>
+                        <option>Training Institutes</option>
+                    </select>
+                    <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        <option>All Time</option>
+                        <option>This Week</option>
+                        <option>This Month</option>
+                        <option>Last 3 Months</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                    <i class="fas fa-bell"></i>
+                    <button class="font-medium hover:underline" style="color: #166534;">Set Result Alerts</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Results Grid -->
+<section class="py-12">
+    <div class="max-w-6xl mx-auto">
+        <!-- No Results State -->
+        <div th:if="${#lists.isEmpty(exams)}" class="text-center py-16">
+            <div class="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center" style="background-color: #F3F4F6;">
+                <i class="fas fa-file-alt text-2xl text-gray-400"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3" style="color: #166534;">No Results Available</h3>
+            <p class="text-gray-600 max-w-md mx-auto mb-8">There are no examination results available at the moment. Check back later or set up alerts to be notified when new results are published.</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" 
+                   class="inline-flex items-center px-5 py-3 rounded-lg text-white font-medium transition-shadow hover:shadow-md" 
+                   style="background-color: #166534;">
+                    <i class="fas fa-briefcase mr-2"></i>
+                    Browse Opportunities
+                </a>
+                <a data-th-href="${baseUrl + '/trends'}" href="/trends" 
+                   class="inline-flex items-center px-5 py-3 rounded-lg border border-gray-300 bg-white font-medium text-gray-700 transition-colors hover:bg-gray-50">
+                    <i class="fas fa-chart-trending-up mr-2"></i>
+                    View Trends
+                </a>
+            </div>
+        </div>
+
+        <!-- Results Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div th:each="exam : ${exams}" class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all">
+                <a data-th-href="${baseUrl + '/results/' + exam.slug}"
+                   th:href="@{/results/{examSlug}(examSlug=${exam.slug})}"
+                   class="block p-6 h-full">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #DCFCE7; color: #166534;">
+                            <i class="fas fa-graduation-cap text-lg"></i>
+                        </div>
+                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium" style="background-color:#DCFCE7;color:#166534;">
+                            <i class="fas fa-circle text-xs mr-1"></i>
+                            Published
+                        </span>
+                    </div>
+                    
+                    <h2 class="text-lg font-semibold mb-2 hover:underline leading-snug line-clamp-2" style="color: #166534;" th:text="${exam.title}">KCSE 2023 Results Released</h2>
+                    
+                    <div class="flex flex-wrap items-center gap-3 mb-3 text-xs text-gray-600">
+                        <span class="flex items-center gap-1">
+                            <i class="fas fa-building"></i>
+                            <span th:text="${exam.provider}">KNEC</span>
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span th:text="${exam.region}">Kenya</span>
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <i class="fas fa-calendar"></i>
+                            <span th:text="${exam.publishedOn}">Dec 28, 2023</span>
+                        </span>
+                    </div>
+                    
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3" th:text="${exam.summary}">
+                        The Kenya Certificate of Secondary Education results for 2023 have been officially released. Over 800,000 candidates sat for the examination with improved performance across all subjects.
+                    </p>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="w-6 h-6 rounded-full flex items-center justify-center" style="background-color: #EFF6FF;">
+                                <i class="fas fa-eye text-xs" style="color: #1E40AF;"></i>
+                            </div>
+                            <span class="text-xs text-gray-500">View Details</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-green-600">
+                            <span class="text-xs font-medium">Read More</span>
+                            <i class="fas fa-arrow-right text-xs transform transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Load More Section -->
+        <div th:if="${!#lists.isEmpty(exams)}" class="text-center mt-12">
+            <button class="px-6 py-3 rounded-lg border border-gray-300 bg-white font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:shadow-sm">
+                <i class="fas fa-plus mr-2"></i>
+                Load More Results
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Alert Signup Section -->
+<section class="py-12 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+            <div class="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center" style="background-color: #DCFCE7; color: #166534;">
+                <i class="fas fa-bell text-2xl"></i>
+            </div>
+            <h2 class="text-xl md:text-2xl font-semibold mb-4" style="color: #166534;">Never Miss an Important Result</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Get instant notifications when examination results are published for institutions, regions, or exam types that matter to you.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <input type="email" 
+                       placeholder="Enter your email" 
+                       class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                <button class="px-6 py-3 rounded-lg text-white font-medium transition-shadow hover:shadow-md whitespace-nowrap" 
+                        style="background-color: #166534;">
+                    <i class="fas fa-bell mr-2"></i>
+                    Set Alerts
+                </button>
+            </div>
+            
+            <p class="text-xs text-gray-500 mt-4">
+                You can customize your alert preferences and unsubscribe anytime.
+            </p>
         </div>
     </div>
 </section>

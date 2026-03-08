@@ -1,62 +1,159 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<section class="py-8 md:py-12">
-    <div class="max-w-5xl mx-auto">
-        <header class="text-center mb-8">
-            <h1 class="text-2xl md:text-3xl font-bold mb-3" style="color: #1E40AF;">Get Started with BLAST</h1>
-            <p class="text-sm md:text-base text-gray-600 max-w-3xl mx-auto">
-                Set up your profile, track opportunities, and keep your applications organized with a simple workflow.
+<!-- Hero Section with Welcome -->
+<section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-8">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium mb-4" style="background-color:#EFF6FF;color:#1E40AF;">
+                <i class="fas fa-rocket mr-2"></i>
+                Get Started Guide
+            </span>
+            <h1 class="text-3xl md:text-4xl font-bold mb-4" style="color: #1E40AF;">Welcome to BLAST</h1>
+            <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Your comprehensive platform for discovering opportunities, tracking results, and staying ahead with the latest trends across African markets.
             </p>
-        </header>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8">
-            <article class="bg-white border border-gray-200 rounded-lg p-5 transition-shadow transition-colors hover:shadow-md hover:border-gray-300">
-                <div class="w-9 h-9 rounded-full flex items-center justify-center mb-3" style="background-color: #EFF6FF; color: #1E40AF;">
-                    <i class="fas fa-user-plus"></i>
-                </div>
-                <h2 class="text-lg font-semibold mb-2" style="color: #1E40AF;">1. Create Your Profile</h2>
-                <p class="text-sm text-gray-600">Add your background, skills and location preferences to improve matches.</p>
-            </article>
-
-            <article class="bg-white border border-gray-200 rounded-lg p-5 transition-shadow transition-colors hover:shadow-md hover:border-gray-300">
-                <div class="w-9 h-9 rounded-full flex items-center justify-center mb-3" style="background-color: #EFF6FF; color: #1E40AF;">
-                    <i class="fas fa-bell"></i>
-                </div>
-                <h2 class="text-lg font-semibold mb-2" style="color: #1E40AF;">2. Set Alerts</h2>
-                <p class="text-sm text-gray-600">Get notified when jobs, trends or exam updates match your interests.</p>
-            </article>
-
-            <article class="bg-white border border-gray-200 rounded-lg p-5 transition-shadow transition-colors hover:shadow-md hover:border-gray-300">
-                <div class="w-9 h-9 rounded-full flex items-center justify-center mb-3" style="background-color: #EFF6FF; color: #1E40AF;">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h2 class="text-lg font-semibold mb-2" style="color: #1E40AF;">3. Apply with Confidence</h2>
-                <p class="text-sm text-gray-600">Use BLAST insights and resources to improve application quality.</p>
-            </article>
         </div>
+        
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #EFF6FF; color: #1E40AF;">
+                    <i class="fas fa-briefcase text-lg"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2" style="color: #1E40AF;">Opportunities</h3>
+                <p class="text-sm text-gray-600">Discover jobs, scholarships, and career openings</p>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #DCFCE7; color: #166534;">
+                    <i class="fas fa-chart-line text-lg"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2" style="color: #166534;">Results & Trends</h3>
+                <p class="text-sm text-gray-600">Track exam results and market insights</p>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #FEF9C3; color: #B45309;">
+                    <i class="fas fa-globe-africa text-lg"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2" style="color: #B45309;">Pan-African Focus</h3>
+                <p class="text-sm text-gray-600">Coverage across African countries and regions</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <div class="bg-white border border-gray-200 rounded-lg p-6 md:p-8">
-            <h3 class="text-xl font-semibold mb-3" style="color: #1E40AF;">What you can do next</h3>
-            <ul class="space-y-3 mb-6">
-                <li class="flex items-start gap-3 text-sm text-gray-700">
-                    <i class="fas fa-check-circle mt-0.5" style="color: #166534;"></i>
-                    Build your opportunity watchlist with categories and countries.
-                </li>
-                <li class="flex items-start gap-3 text-sm text-gray-700">
-                    <i class="fas fa-check-circle mt-0.5" style="color: #166534;"></i>
-                    Review detailed job pages and requirement checklists.
-                </li>
-                <li class="flex items-start gap-3 text-sm text-gray-700">
-                    <i class="fas fa-check-circle mt-0.5" style="color: #166534;"></i>
-                    Track exam and trend pages for timely updates.
-                </li>
-            </ul>
-            <div class="flex flex-wrap gap-3">
-                <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="inline-flex items-center px-5 py-3 rounded-lg text-white text-sm font-medium transition-shadow transition-colors hover:shadow-md" style="background-color: #1E40AF;">
-                    Explore Opportunities
-                </a>
-                <a data-th-href="${baseUrl + '/results'}" href="/results" class="inline-flex items-center px-5 py-3 rounded-lg border border-gray-300 bg-white text-sm font-medium text-gray-700 transition-shadow transition-colors hover:bg-gray-50 hover:shadow-sm">
-                    Check Results
-                </a>
+<!-- Getting Started Steps -->
+<section class="py-12 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-xl md:text-2xl font-semibold mb-4" style="color: #1E40AF;">Three Steps to Success</h2>
+            <p class="text-gray-600">Set up your profile and start tracking opportunities that matter to you</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="relative">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center mr-4" style="background-color: #1E40AF;">
+                            <span class="text-white font-bold text-sm">1</span>
+                        </div>
+                        <h3 class="text-lg font-semibold" style="color: #1E40AF;">Build Your Profile</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">Add your educational background, skills, and location preferences to get personalized job matches and recommendations.</p>
+                    <div class="flex items-center text-xs text-gray-500">
+                        <i class="fas fa-clock mr-1"></i>
+                        <span>5 minutes setup</span>
+                    </div>
+                </div>
+                <!-- Connection line for desktop -->
+                <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gray-300"></div>
+            </div>
+            
+            <div class="relative">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center mr-4" style="background-color: #1E40AF;">
+                            <span class="text-white font-bold text-sm">2</span>
+                        </div>
+                        <h3 class="text-lg font-semibold" style="color: #1E40AF;">Set Up Alerts</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">Configure notifications for job categories, countries, and exam results that align with your career goals and interests.</p>
+                    <div class="flex items-center text-xs text-gray-500">
+                        <i class="fas fa-bell mr-1"></i>
+                        <span>Smart notifications</span>
+                    </div>
+                </div>
+                <!-- Connection line for desktop -->
+                <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gray-300"></div>
+            </div>
+            
+            <div>
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center mr-4" style="background-color: #1E40AF;">
+                            <span class="text-white font-bold text-sm">3</span>
+                        </div>
+                        <h3 class="text-lg font-semibold" style="color: #1E40AF;">Start Exploring</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">Browse opportunities, track application deadlines, and stay updated with the latest trends and exam results in your field.</p>
+                    <div class="flex items-center text-xs text-gray-500">
+                        <i class="fas fa-rocket mr-1"></i>
+                        <span>Begin your journey</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Action Section -->
+<section class="py-12">
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold mb-4" style="color: #1E40AF;">Ready to Get Started?</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Join thousands of professionals who trust BLAST to discover opportunities and advance their careers across Africa.</p>
+                    
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle mt-0.5" style="color: #166534;"></i>
+                            <span class="text-sm text-gray-700">Browse opportunities by country and category</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle mt-0.5" style="color: #166534;"></i>
+                            <span class="text-sm text-gray-700">Get notified about exam results and deadlines</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle mt-0.5" style="color: #166534;"></i>
+                            <span class="text-sm text-gray-700">Track market trends and insights</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <div class="space-y-4">
+                        <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="block w-full px-6 py-3 rounded-lg text-white font-medium text-center transition-shadow transition-colors hover:shadow-md" style="background-color: #1E40AF;">
+                            <i class="fas fa-search mr-2"></i>
+                            Explore Opportunities
+                        </a>
+                        <a data-th-href="${baseUrl + '/results'}" href="/results" class="block w-full px-6 py-3 rounded-lg border border-gray-300 bg-white font-medium text-gray-700 text-center transition-shadow transition-colors hover:bg-gray-50 hover:shadow-sm">
+                            <i class="fas fa-chart-bar mr-2"></i>
+                            Check Results
+                        </a>
+                        <a data-th-href="${baseUrl + '/trends'}" href="/trends" class="block w-full px-6 py-3 rounded-lg font-medium text-center transition-colors hover:underline" style="color: #1E40AF;">
+                            <i class="fas fa-trending-up mr-2"></i>
+                            View Trends
+                        </a>
+                    </div>
+                    
+                    <div class="mt-6 p-4 rounded-lg" style="background-color: #FEF9C3;">
+                        <p class="text-xs text-gray-600">
+                            <i class="fas fa-lightbulb mr-1" style="color: #FACC15;"></i>
+                            <strong>Pro Tip:</strong> Create alerts for your target countries and job categories to never miss an opportunity.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

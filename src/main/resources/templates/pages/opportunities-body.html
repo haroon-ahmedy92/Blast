@@ -1,60 +1,79 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<section class="py-8 md:py-12">
+<section class="opportunities-page py-8 md:py-12">
     <div class="max-w-6xl mx-auto">
-        <header class="bg-white border border-gray-200 rounded-lg p-6 md:p-8 mb-8">
-            <h1 class="text-2xl md:text-3xl font-bold mb-3" style="color: #1E40AF;">Explore Opportunities</h1>
-            <p class="text-sm md:text-base text-gray-600 mb-6 max-w-3xl">
-                Search through curated openings, filter by location and category, and discover your next move across Tanzania and Africa.
-            </p>
-            <form class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+        <header class="opportunities-hero bg-white border border-gray-200 rounded-lg p-6 md:p-8 mb-8">
+            <div class="opportunities-hero__content">
+                <p class="opportunities-kicker">Opportunity Desk</p>
+                <h1 class="text-2xl md:text-3xl font-bold mb-3 leading-tight" style="color: #1E40AF;">Explore Opportunities</h1>
+                <p class="text-sm md:text-base text-gray-600 mb-6 max-w-3xl leading-relaxed">
+                    Search through curated openings, filter by location and category, and discover your next move across Tanzania and Africa.
+                </p>
+            </div>
+            <form class="opportunities-search grid grid-cols-1 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_auto] gap-3 md:gap-4">
                 <input type="text" placeholder="Keyword or role" class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white">
                 <input type="text" placeholder="Location" class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white">
-                <button type="button" class="px-5 py-3 rounded-lg text-white font-medium text-sm transition-shadow transition-colors hover:shadow-md" style="background-color: #1E40AF;">
+                <button type="button" class="px-5 py-3 rounded-lg text-white font-medium text-sm transition-shadow transition-colors hover:shadow-md whitespace-nowrap" style="background-color: #1E40AF;">
                     Search Opportunities
                 </button>
             </form>
         </header>
 
         <section class="mb-10">
-            <div class="flex items-center justify-between mb-4">
-                <h2 class="text-xl md:text-2xl font-semibold" style="color: #1E40AF;">Featured Categories</h2>
-                <a data-th-href="${baseUrl + '/countries'}" href="/countries" class="text-sm font-medium hover:underline" style="color: #1E40AF;">Browse Countries</a>
+            <div class="opportunities-section-head flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5">
+                <div>
+                    <p class="opportunities-kicker mb-1">Browse by Focus</p>
+                    <h2 class="text-xl md:text-2xl font-semibold" style="color: #1E40AF;">Featured Categories</h2>
+                </div>
+                <a data-th-href="${baseUrl + '/countries'}" href="/countries" class="text-sm font-medium hover:underline self-start sm:self-auto" style="color: #1E40AF;">Browse Countries</a>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
                 <a th:each="category : ${categories}"
                    data-th-href="${baseUrl + '/jobs/category/' + category.slug}"
                    th:href="@{/jobs/category/{slug}(slug=${category.slug})}"
-                   class="block bg-white border border-gray-200 rounded-lg p-5 transition-shadow transition-colors hover:shadow-md hover:border-gray-300">
-                    <div class="flex items-start gap-3">
-                        <div class="w-9 h-9 rounded-full flex items-center justify-center shrink-0" style="background-color: #EFF6FF; color: #1E40AF;">
+                   class="opportunities-category-card block h-full">
+                    <div class="opportunities-category-card__top">
+                        <div class="opportunities-category-card__icon" style="background-color: #EFF6FF; color: #1E40AF;">
                             <i th:class="${category.iconClass}"></i>
                         </div>
-                        <div>
-                            <h3 class="text-lg font-semibold mb-1" style="color: #1E40AF;" th:text="${category.name}">Category</h3>
-                            <p class="text-sm text-gray-600 mb-2" th:text="${category.description}">Description</p>
-                            <p class="text-xs font-medium text-gray-500" th:text="${category.openRoles + ' open roles'}">0 open roles</p>
-                        </div>
+                        <span class="opportunities-category-card__count" th:text="${category.openRoles + ' open roles'}">0 open roles</span>
+                    </div>
+                    <div class="opportunities-category-card__body">
+                        <h3 class="opportunities-category-card__title" th:text="${category.name}">Category</h3>
+                        <p class="opportunities-category-card__description" th:text="${category.description}">Description</p>
+                    </div>
+                    <div class="opportunities-category-card__footer">
+                        <span>View category</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
                     </div>
                 </a>
             </div>
         </section>
 
         <section>
-            <h2 class="text-xl md:text-2xl font-semibold mb-4" style="color: #1E40AF;">Recent Jobs</h2>
-            <div class="space-y-4">
+            <div class="opportunities-section-head mb-5">
+                <p class="opportunities-kicker mb-1">Fresh Listings</p>
+                <h2 class="text-xl md:text-2xl font-semibold" style="color: #1E40AF;">Recent Jobs</h2>
+            </div>
+            <div class="space-y-3">
                 <a th:each="job : ${recentJobs}"
                    data-th-href="${baseUrl + '/jobs/' + job.slug}"
                    th:href="@{/jobs/{slug}(slug=${job.slug})}"
-                   class="block bg-white border border-gray-200 rounded-lg p-5 transition-shadow transition-colors hover:shadow-md hover:border-gray-300">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-                        <div>
-                            <h3 class="text-lg font-semibold mb-1" style="color: #1E40AF;" th:text="${job.title}">Job title</h3>
-                            <p class="text-sm text-gray-700" th:text="${job.company + ' • ' + job.location}">Company • Location</p>
-                            <p class="text-sm text-gray-600 mt-2" th:text="${job.shortDescription}">Summary</p>
+                   class="opportunities-job-row block">
+                    <div class="opportunities-job-row__content">
+                        <div class="opportunities-job-row__main">
+                            <div class="opportunities-job-row__header">
+                                <h3 class="opportunities-job-row__title" th:text="${job.title}">Job title</h3>
+                                <span class="opportunities-job-row__type" th:text="${job.employmentType}">Full Time</span>
+                            </div>
+                            <p class="opportunities-job-row__meta" th:text="${job.company + ' • ' + job.location}">Company • Location</p>
+                            <p class="opportunities-job-row__summary" th:text="${job.shortDescription}">Summary</p>
                         </div>
-                        <div class="text-left md:text-right">
-                            <div class="inline-block px-3 py-1 rounded-full text-xs font-medium mb-2" style="background-color: #EFF6FF; color: #1E40AF;" th:text="${job.employmentType}">Full Time</div>
-                            <p class="text-xs text-gray-500" th:text="${'Posted ' + job.postedDate}">Posted date</p>
+                        <div class="opportunities-job-row__aside">
+                            <p class="opportunities-job-row__date" th:text="${'Posted ' + job.postedDate}">Posted date</p>
+                            <span class="opportunities-job-row__cta">
+                                <span>View details</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </span>
                         </div>
                     </div>
                 </a>
