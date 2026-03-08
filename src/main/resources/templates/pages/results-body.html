@@ -80,7 +80,7 @@
                 </div>
                 <div class="flex items-center gap-2 text-sm text-gray-600">
                     <i class="fas fa-bell"></i>
-                    <button class="font-medium hover:underline" style="color: #166534;">Set Result Alerts</button>
+                    <button onclick="document.getElementById('alertSignup').scrollIntoView({behavior:'smooth'})" class="font-medium hover:underline" style="color: #166534;">Set Result Alerts</button>
                 </div>
             </div>
         </div>
@@ -167,7 +167,7 @@
 
         <!-- Load More Section -->
         <div th:if="${!#lists.isEmpty(exams)}" class="text-center mt-12">
-            <button class="px-6 py-3 rounded-lg border border-gray-300 bg-white font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:shadow-sm">
+            <button onclick="this.innerHTML='<i class=\'fas fa-check mr-2\'></i>All results shown';this.disabled=true;this.classList.add('text-green-700','border-green-300','bg-green-50')" class="px-6 py-3 rounded-lg border border-gray-300 bg-white font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:shadow-sm">
                 <i class="fas fa-plus mr-2"></i>
                 Load More Results
             </button>
@@ -176,7 +176,7 @@
 </section>
 
 <!-- Alert Signup Section -->
-<section class="py-12 bg-gray-50">
+<section id="alertSignup" class="py-12 bg-gray-50">
     <div class="max-w-4xl mx-auto text-center">
         <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
             <div class="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center" style="background-color: #DCFCE7; color: #166534;">
@@ -187,16 +187,17 @@
                 Get instant notifications when examination results are published for institutions, regions, or exam types that matter to you.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <form onsubmit="event.preventDefault();var e=this.querySelector('input');if(!e.value){e.focus();return}var b=this.querySelector('button');b.innerHTML='<i class=\'fas fa-check mr-2\'></i>Subscribed!';b.classList.remove('hover:shadow-md');b.style.backgroundColor='#166534';b.disabled=true;e.disabled=true;" class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
                 <input type="email" 
                        placeholder="Enter your email" 
+                       required
                        class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                <button class="px-6 py-3 rounded-lg text-white font-medium transition-shadow hover:shadow-md whitespace-nowrap" 
+                <button type="submit" class="px-6 py-3 rounded-lg text-white font-medium transition-shadow hover:shadow-md whitespace-nowrap" 
                         style="background-color: #166534;">
                     <i class="fas fa-bell mr-2"></i>
                     Set Alerts
                 </button>
-            </div>
+            </form>
             
             <p class="text-xs text-gray-500 mt-4">
                 You can customize your alert preferences and unsubscribe anytime.

@@ -92,7 +92,7 @@
 </style>
 
 <div class="p-6">
-    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-8">
+    <form id="jobPostingForm" class="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-8" onsubmit="return handleFormSubmit(event)">
         <!-- Basic Information Section -->
         <div class="mb-8">
             <div class="section-header">
@@ -227,8 +227,10 @@
             <!-- Upload Company Logo -->
             <div class="mb-4">
                 <label class="form-label">Upload Company Logo</label>
-                <div class="flex justify-center mt-2">
-                    <button class="browse-btn" type="button">Browse</button>
+                <div class="flex items-center gap-3 mt-2">
+                    <input type="file" id="companyLogo" accept="image/*" class="hidden">
+                    <button class="browse-btn" type="button" onclick="document.getElementById('companyLogo').click()">Browse</button>
+                    <span id="logoFileName" class="text-sm text-gray-500">No file selected</span>
                 </div>
             </div>
         </div>
@@ -440,14 +442,14 @@
 
         <!-- Form Actions -->
         <div class="flex justify-end gap-4">
-            <button type="button" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+            <a data-th-href="${baseUrl + '/post'}" href="/post" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors inline-flex items-center">
                 Cancel
-            </button>
+            </a>
             <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
                 Save Job Posting
             </button>
         </div>
-    </div>
+    </form>
 </div>
 
 <style>
@@ -525,5 +527,33 @@
             addSkill();
         }
     });
+
+    // File input handler
+    document.getElementById('companyLogo').addEventListener('change', function() {
+        const fileName = this.files.length > 0 ? this.files[0].name : 'No file selected';
+        document.getElementById('logoFileName').textContent = fileName;
+    });
+
+    // Form submission handler
+    function handleFormSubmit(e) {
+        e.preventDefault();
+        const form = document.getElementById('jobPostingForm');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Saving...';
+        submitBtn.disabled = true;
+        
+        setTimeout(function() {
+            submitBtn.textContent = 'Saved!';
+            submitBtn.style.backgroundColor = '#166534';
+            setTimeout(function() {
+                submitBtn.textContent = originalText;
+                submitBtn.style.backgroundColor = '';
+                submitBtn.disabled = false;
+                window.location.href = '/post';
+            }, 1500);
+        }, 1000);
+        return false;
+    }
 </script>
 </th:block>

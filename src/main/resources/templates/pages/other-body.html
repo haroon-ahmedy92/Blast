@@ -1,453 +1,143 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<style>
-    .other-page {
-        --other-primary: var(--primary-core);
-        --other-surface: var(--secondary-core);
-        --other-border: #e5e7eb;
-        --other-text: #374151;
-        --other-muted: #6b7280;
-        --other-shadow: 0 1px 2px rgba(15, 23, 42, 0.07);
-        --other-shadow-hover: 0 10px 24px rgba(15, 23, 42, 0.08);
-    }
-
-    .other-page .other-hero {
-        border: 1px solid var(--other-border);
-        border-radius: 12px;
-        background: var(--other-surface);
-        padding: 28px 24px;
-        margin: 22px 0 18px;
-    }
-
-    .other-page .other-kicker {
-        display: inline-block;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: var(--other-primary);
-        background: rgba(30, 64, 175, 0.08);
-        border-radius: 999px;
-        padding: 5px 10px;
-        margin-bottom: 12px;
-    }
-
-    .other-page .other-title {
-        color: var(--other-primary);
-        font-size: 32px;
-        line-height: 1.2;
-        font-weight: 700;
-        margin-bottom: 12px;
-    }
-
-    .other-page .other-subtitle {
-        color: var(--other-text);
-        font-size: 16px;
-        line-height: 1.6;
-        max-width: 700px;
-        margin: 0 auto;
-    }
-
-    .other-page .other-subnav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
-    }
-
-    .other-page .other-subnav-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        border: 1px solid var(--other-border);
-        background: #fff;
-        color: var(--other-primary);
-        border-radius: 999px;
-        font-size: 13px;
-        font-weight: 600;
-        text-decoration: none;
-        padding: 8px 14px;
-        transition: background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .other-page .other-subnav-link:hover {
-        background: rgba(30, 64, 175, 0.08);
-        border-color: rgba(30, 64, 175, 0.25);
-    }
-
-    .other-page .other-subnav-link:focus-visible {
-        outline: 2px solid var(--other-primary);
-        outline-offset: 2px;
-    }
-
-    .other-page .other-section {
-        margin: 18px 0 24px;
-    }
-
-    .other-page .other-section-head {
-        margin-bottom: 14px;
-    }
-
-    .other-page .other-section-title {
-        color: var(--other-primary);
-        font-size: 24px;
-        line-height: 1.3;
-        font-weight: 700;
-        margin-bottom: 6px;
-    }
-
-    .other-page .other-section-text {
-        color: var(--other-muted);
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    .other-page .other-grid {
-        display: grid;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        gap: 14px;
-    }
-
-    .other-page .other-card {
-        border: 1px solid var(--other-border);
-        border-radius: 12px;
-        background: #fff;
-        box-shadow: var(--other-shadow);
-        padding: 18px;
-        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-    }
-
-    .other-page .other-card:hover {
-        box-shadow: var(--other-shadow-hover);
-        border-color: rgba(30, 64, 175, 0.24);
-    }
-
-    .other-page .other-card-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 12px;
-        margin-bottom: 12px;
-    }
-
-    .other-page .other-card-title {
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 1.35;
-        color: var(--other-primary);
-        margin-bottom: 4px;
-    }
-
-    .other-page .other-card-text {
-        font-size: 14px;
-        line-height: 1.55;
-        color: var(--other-text);
-        margin-bottom: 12px;
-    }
-
-    .other-page .other-list {
-        margin-bottom: 14px;
-    }
-
-    .other-page .other-list li {
-        display: flex;
-        align-items: center;
-        gap: 9px;
-        font-size: 13px;
-        line-height: 1.45;
-        color: var(--other-muted);
-        margin-bottom: 6px;
-    }
-
-    .other-page .other-list i {
-        color: var(--green-accent);
-        font-size: 12px;
-    }
-
-    .other-page .other-badge {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 28px;
-        height: 28px;
-        border-radius: 999px;
-        background: var(--other-surface);
-        color: var(--other-primary);
-        border: 1px solid rgba(30, 64, 175, 0.2);
-        flex-shrink: 0;
-    }
-
-    .other-page .other-cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 8px;
-        font-size: 13px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: box-shadow 0.18s ease, transform 0.18s ease, background-color 0.18s ease;
-    }
-
-    .other-page .other-cta-primary {
-        background: var(--other-primary);
-        color: #fff;
-    }
-
-    .other-page .other-cta-primary:hover {
-        box-shadow: 0 8px 16px rgba(30, 64, 175, 0.24);
-        color: #fff;
-    }
-
-    .other-page .other-cta-muted {
-        background: #fff;
-        color: var(--other-primary);
-        border: 1px solid rgba(30, 64, 175, 0.24);
-    }
-
-    .other-page .other-cta-muted:hover {
-        background: rgba(30, 64, 175, 0.08);
-        color: var(--other-primary);
-    }
-
-    .other-page .other-cta:focus-visible {
-        outline: 2px solid var(--other-primary);
-        outline-offset: 2px;
-    }
-
-    .other-page .other-strip {
-        margin: 18px 0 28px;
-        border: 1px solid var(--other-border);
-        border-radius: 12px;
-        background: #fff;
-        padding: 16px;
-    }
-
-    .other-page .other-strip-grid {
-        display: grid;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        gap: 10px;
-    }
-
-    .other-page .other-pill {
-        border-radius: 10px;
-        border: 1px solid var(--other-border);
-        background: #fff;
-        padding: 10px 12px;
-        font-size: 13px;
-        color: var(--other-text);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .other-page .other-pill i {
-        color: var(--other-primary);
-        font-size: 12px;
-    }
-
-    @media (min-width: 768px) {
-        .other-page .other-hero {
-            padding: 34px;
-        }
-
-        .other-page .other-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .other-page .other-strip-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-    }
-</style>
-
-<div class="other-page">
-    <section class="other-hero text-center">
-        <span class="other-kicker">Other</span>
-        <h1 class="other-title">Career Tools & Extra Resources</h1>
-        <p class="other-subtitle">
-            Short, practical resources for interview prep, skills growth, and market updates.
-            Everything here uses the same clean BLAST style as the rest of the site.
+<!-- Hero Section -->
+<section class="py-12 md:py-16 px-4 md:px-6" style="background-color: #EFF6FF;">
+    <div class="max-w-5xl mx-auto text-center">
+        <p class="text-sm font-medium mb-2" style="color: #1E40AF;">Resources &amp; Tools</p>
+        <h1 class="text-2xl md:text-4xl font-bold mb-4 leading-tight" style="color: #1E40AF;">
+            Career Tools &amp; Resources
+        </h1>
+        <p class="text-sm md:text-base text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed">
+            Essential tools to advance your career. From CV building to interview preparation, scholarships and government services.
         </p>
+    </div>
+</section>
 
-        <nav class="other-subnav" aria-label="Other page sections">
-            <a href="#career-tools" class="other-subnav-link">
-                <i class="fas fa-briefcase"></i>
-                Career Tools
+<!-- Career Tools Grid -->
+<section class="py-8 md:py-12 px-4 md:px-6">
+    <div class="max-w-5xl mx-auto">
+        <div class="mb-6">
+            <p class="text-xs font-medium uppercase tracking-wide mb-1" style="color: #1E40AF;">Career Development</p>
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900">Professional Tools</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+            <!-- CV Builder -->
+            <a data-th-href="${baseUrl + '/get-started'}" href="/get-started"
+               class="block bg-white border border-gray-200 rounded-lg p-6 transition-all hover:shadow-md hover:border-blue-200 group">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: #EFF6FF; color: #1E40AF;">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">CV Builder</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Create a professional CV with our step-by-step career guide.</p>
+                <span class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color: #1E40AF;">
+                    Get started <i class="fas fa-arrow-right text-xs"></i>
+                </span>
             </a>
-            <a href="#learning" class="other-subnav-link">
-                <i class="fas fa-graduation-cap"></i>
-                Learning
+
+            <!-- Interview Prep -->
+            <a data-th-href="${baseUrl + '/get-started'}" href="/get-started"
+               class="block bg-white border border-gray-200 rounded-lg p-6 transition-all hover:shadow-md hover:border-blue-200 group">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: #EFF6FF; color: #1E40AF;">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">Interview Prep</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Tips and strategies to ace your next interview with confidence.</p>
+                <span class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color: #1E40AF;">
+                    Start prep <i class="fas fa-arrow-right text-xs"></i>
+                </span>
             </a>
-            <a href="#insights" class="other-subnav-link">
-                <i class="fas fa-chart-line"></i>
-                Insights
+
+            <!-- Career Guide -->
+            <a data-th-href="${baseUrl + '/get-started'}" href="/get-started"
+               class="block bg-white border border-gray-200 rounded-lg p-6 transition-all hover:shadow-md hover:border-blue-200 group">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: #EFF6FF; color: #1E40AF;">
+                    <i class="fas fa-compass"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">Career Guide</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Navigate your career path with our comprehensive guidance.</p>
+                <span class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color: #1E40AF;">
+                    View guide <i class="fas fa-arrow-right text-xs"></i>
+                </span>
             </a>
-        </nav>
-    </section>
-
-    <section id="career-tools" class="other-section">
-        <header class="other-section-head">
-            <h2 class="other-section-title">Career Tools</h2>
-            <p class="other-section-text">Focused resources to help you apply faster and prepare better.</p>
-        </header>
-
-        <div class="other-grid">
-            <article class="other-card">
-                <div class="other-card-top">
-                    <div>
-                        <h3 class="other-card-title">CV Builder</h3>
-                    </div>
-                    <span class="other-badge"><i class="fas fa-file-alt"></i></span>
-                </div>
-                <p class="other-card-text">Build a clear, ATS-friendly CV with concise sections and export-ready formatting.</p>
-                <ul class="other-list">
-                    <li><i class="fas fa-check"></i>Clean layout templates</li>
-                    <li><i class="fas fa-check"></i>Role-specific bullet guidance</li>
-                    <li><i class="fas fa-check"></i>Fast PDF export</li>
-                </ul>
-                <a href="#" class="other-cta other-cta-primary">Build CV</a>
-            </article>
-
-            <article class="other-card">
-                <div class="other-card-top">
-                    <div>
-                        <h3 class="other-card-title">Interview Prep</h3>
-                    </div>
-                    <span class="other-badge"><i class="fas fa-comments"></i></span>
-                </div>
-                <p class="other-card-text">Practice structured answers with practical prompts used in Tanzania job interviews.</p>
-                <ul class="other-list">
-                    <li><i class="fas fa-check"></i>Question banks by role</li>
-                    <li><i class="fas fa-check"></i>Mock interview scripts</li>
-                    <li><i class="fas fa-check"></i>Confidence checklist</li>
-                </ul>
-                <a href="#" class="other-cta other-cta-primary">Start Prep</a>
-            </article>
-
-            <article class="other-card">
-                <div class="other-card-top">
-                    <div>
-                        <h3 class="other-card-title">Salary Guide</h3>
-                    </div>
-                    <span class="other-badge"><i class="fas fa-chart-bar"></i></span>
-                </div>
-                <p class="other-card-text">Review salary ranges and trends to negotiate with better context and confidence.</p>
-                <ul class="other-list">
-                    <li><i class="fas fa-check"></i>Role and level benchmarks</li>
-                    <li><i class="fas fa-check"></i>Sector comparisons</li>
-                    <li><i class="fas fa-check"></i>Updated opportunity notes</li>
-                </ul>
-                <a href="#" class="other-cta other-cta-primary">View Guide</a>
-            </article>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="learning" class="other-section">
-        <header class="other-section-head">
-            <h2 class="other-section-title">Learning & Certifications</h2>
-            <p class="other-section-text">Curated learning paths for practical, job-relevant skill growth.</p>
-        </header>
-
-        <div class="other-grid">
-            <article class="other-card">
-                <div class="other-card-top">
-                    <div>
-                        <h3 class="other-card-title">Online Courses</h3>
-                    </div>
-                    <span class="other-badge"><i class="fas fa-laptop"></i></span>
-                </div>
-                <p class="other-card-text">Browse compact course tracks across technology, business, and communication.</p>
-                <ul class="other-list">
-                    <li><i class="fas fa-check"></i>Tech and data fundamentals</li>
-                    <li><i class="fas fa-check"></i>Business analysis basics</li>
-                    <li><i class="fas fa-check"></i>Self-paced modules</li>
-                </ul>
-                <a href="#" class="other-cta other-cta-muted">Browse Courses</a>
-            </article>
-
-            <article class="other-card">
-                <div class="other-card-top">
-                    <div>
-                        <h3 class="other-card-title">Certifications</h3>
-                    </div>
-                    <span class="other-badge"><i class="fas fa-certificate"></i></span>
-                </div>
-                <p class="other-card-text">Track certification options that strengthen your CV and screening outcomes.</p>
-                <ul class="other-list">
-                    <li><i class="fas fa-check"></i>IT and cloud pathways</li>
-                    <li><i class="fas fa-check"></i>Project management tracks</li>
-                    <li><i class="fas fa-check"></i>Marketing and finance options</li>
-                </ul>
-                <a href="#" class="other-cta other-cta-muted">View Paths</a>
-            </article>
-
-            <article class="other-card">
-                <div class="other-card-top">
-                    <div>
-                        <h3 class="other-card-title">Weekly Learning Plan</h3>
-                    </div>
-                    <span class="other-badge"><i class="fas fa-calendar-check"></i></span>
-                </div>
-                <p class="other-card-text">A simple weekly cadence to keep momentum while applying for roles.</p>
-                <ul class="other-list">
-                    <li><i class="fas fa-check"></i>Skill block planning</li>
-                    <li><i class="fas fa-check"></i>Interview + CV routine</li>
-                    <li><i class="fas fa-check"></i>Progress checkpoints</li>
-                </ul>
-                <a href="#" class="other-cta other-cta-muted">Use Template</a>
-            </article>
+<!-- Government & Education Services -->
+<section class="py-8 md:py-12 px-4 md:px-6" style="background-color: #f8fafc;">
+    <div class="max-w-5xl mx-auto">
+        <div class="mb-6">
+            <p class="text-xs font-medium uppercase tracking-wide mb-1" style="color: #166534;">Government Services</p>
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900">Education &amp; Public Services</h2>
         </div>
-    </section>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+            <!-- NECTA Results -->
+            <a data-th-href="${baseUrl + '/results'}" href="/results"
+               class="block bg-white border border-gray-200 rounded-lg p-6 transition-all hover:shadow-md group">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: #DCFCE7; color: #166534;">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">NECTA Results</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Check Form Four and Form Six national examination results.</p>
+                <span class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color: #1E40AF;">
+                    Check results <i class="fas fa-arrow-right text-xs"></i>
+                </span>
+            </a>
 
-    <section id="insights" class="other-section">
-        <header class="other-section-head">
-            <h2 class="other-section-title">Market Insights</h2>
-            <p class="other-section-text">Quick updates to help you prioritize sectors and applications.</p>
-        </header>
+            <!-- HESLB / Scholarships -->
+            <a data-th-href="${baseUrl + '/trends'}" href="/trends"
+               class="block bg-white border border-gray-200 rounded-lg p-6 transition-all hover:shadow-md group">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: #DCFCE7; color: #166534;">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">HESLB &amp; Scholarships</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Loan applications, bursaries, and scholarship opportunities.</p>
+                <span class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color: #1E40AF;">
+                    View updates <i class="fas fa-arrow-right text-xs"></i>
+                </span>
+            </a>
 
-        <div class="other-strip">
-            <div class="other-strip-grid">
-                <div class="other-pill"><i class="fas fa-arrow-trend-up"></i> Hiring trend summaries by role</div>
-                <div class="other-pill"><i class="fas fa-location-dot"></i> Regional activity signals</div>
-                <div class="other-pill"><i class="fas fa-lightbulb"></i> Application quality tips</div>
-            </div>
+            <!-- TAMISEMI / Form Five Selection -->
+            <a data-th-href="${baseUrl + '/trends'}" href="/trends"
+               class="block bg-white border border-gray-200 rounded-lg p-6 transition-all hover:shadow-md group">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: #DCFCE7; color: #166534;">
+                    <i class="fas fa-school"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">TAMISEMI Updates</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Form Five selection, Selform updates, and school placements.</p>
+                <span class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color: #1E40AF;">
+                    View updates <i class="fas fa-arrow-right text-xs"></i>
+                </span>
+            </a>
         </div>
+    </div>
+</section>
 
-        <div class="other-grid">
-            <article class="other-card">
-                <div class="other-card-top">
-                    <div>
-                        <h3 class="other-card-title">Hiring Trends</h3>
-                    </div>
-                    <span class="other-badge"><i class="fas fa-newspaper"></i></span>
-                </div>
-                <p class="other-card-text">Weekly snapshot of growing categories and active hiring patterns.</p>
-                <a href="#" class="other-cta other-cta-primary">Read Update</a>
-            </article>
-
-            <article class="other-card">
-                <div class="other-card-top">
-                    <div>
-                        <h3 class="other-card-title">Career Tips</h3>
-                    </div>
-                    <span class="other-badge"><i class="fas fa-compass"></i></span>
-                </div>
-                <p class="other-card-text">Practical tips for better role targeting, CV clarity, and interview outcomes.</p>
-                <a href="#" class="other-cta other-cta-primary">Read Tips</a>
-            </article>
-
-            <article class="other-card">
-                <div class="other-card-top">
-                    <div>
-                        <h3 class="other-card-title">Success Stories</h3>
-                    </div>
-                    <span class="other-badge"><i class="fas fa-rocket"></i></span>
-                </div>
-                <p class="other-card-text">Short case studies from successful applicants and how they prepared.</p>
-                <a href="#" class="other-cta other-cta-primary">View Stories</a>
-            </article>
+<!-- Explore More -->
+<section class="py-8 md:py-12 px-4 md:px-6">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Explore More</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
+               class="bg-white border border-gray-200 rounded-lg p-4 text-center transition-all hover:shadow-md group">
+                <i class="fas fa-briefcase text-lg mb-2" style="color: #1E40AF;"></i>
+                <h3 class="font-semibold text-sm text-gray-900 group-hover:text-blue-700 transition-colors">Opportunities</h3>
+            </a>
+            <a data-th-href="${baseUrl + '/tenders'}" href="/tenders"
+               class="bg-white border border-gray-200 rounded-lg p-4 text-center transition-all hover:shadow-md group">
+                <i class="fas fa-file-contract text-lg mb-2" style="color: #1E40AF;"></i>
+                <h3 class="font-semibold text-sm text-gray-900 group-hover:text-blue-700 transition-colors">Tenders</h3>
+            </a>
+            <a data-th-href="${baseUrl + '/countries'}" href="/countries"
+               class="bg-white border border-gray-200 rounded-lg p-4 text-center transition-all hover:shadow-md group">
+                <i class="fas fa-globe text-lg mb-2" style="color: #1E40AF;"></i>
+                <h3 class="font-semibold text-sm text-gray-900 group-hover:text-blue-700 transition-colors">Countries</h3>
+            </a>
+            <a data-th-href="${baseUrl + '/about'}" href="/about"
+               class="bg-white border border-gray-200 rounded-lg p-4 text-center transition-all hover:shadow-md group">
+                <i class="fas fa-info-circle text-lg mb-2" style="color: #1E40AF;"></i>
+                <h3 class="font-semibold text-sm text-gray-900 group-hover:text-blue-700 transition-colors">About Blast</h3>
+            </a>
         </div>
-    </section>
-</div>
+    </div>
+</section>
 </th:block>

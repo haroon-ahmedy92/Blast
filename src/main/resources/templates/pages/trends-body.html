@@ -163,7 +163,7 @@
                                 <span>2.4k views</span>
                             </span>
                         </div>
-                        <button class="p-1 rounded-full text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors">
+                        <button onclick="event.preventDefault();this.classList.toggle('text-red-500');this.classList.toggle('bg-red-50');this.classList.toggle('text-gray-400')" class="p-1 rounded-full text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors">
                             <i class="fas fa-heart text-xs"></i>
                         </button>
                     </div>
@@ -173,7 +173,7 @@
 
         <!-- Load More Section -->
         <div th:if="${!#lists.isEmpty(trends)}" class="text-center mt-12">
-            <button class="px-6 py-3 rounded-lg border border-gray-300 bg-white font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:shadow-sm">
+            <button onclick="this.innerHTML='<i class=\'fas fa-check mr-2\'></i>All trends shown';this.disabled=true;this.classList.add('text-blue-700','border-blue-300','bg-blue-50')" class="px-6 py-3 rounded-lg border border-gray-300 bg-white font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:shadow-sm">
                 <i class="fas fa-plus mr-2"></i>
                 Load More Trends
             </button>
@@ -193,16 +193,17 @@
                 Get weekly insights delivered to your inbox. Our trend analysis covers policy changes, market shifts, and emerging opportunities across Africa.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-6">
+            <form onsubmit="event.preventDefault();var e=this.querySelector('input');if(!e.value){e.focus();return}var b=this.querySelector('button');b.innerHTML='<i class=\'fas fa-check mr-2\'></i>Subscribed!';b.style.backgroundColor='#166534';b.style.color='#fff';b.disabled=true;e.disabled=true;" class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-6">
                 <input type="email" 
                        placeholder="Enter your email address" 
+                       required
                        class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
-                <button class="px-6 py-3 rounded-lg text-white font-medium transition-shadow hover:shadow-md whitespace-nowrap" 
+                <button type="submit" class="px-6 py-3 rounded-lg text-white font-medium transition-shadow hover:shadow-md whitespace-nowrap" 
                         style="background-color: #FACC15; color: #000;">
                     <i class="fas fa-envelope mr-2"></i>
                     Subscribe
                 </button>
-            </div>
+            </form>
             
             <div class="flex items-center justify-center gap-6 text-xs text-gray-500">
                 <span class="flex items-center gap-1">
