@@ -1,159 +1,297 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<!-- Hero Section -->
-<section class="py-12 md:py-16 px-4 md:px-6" style="background-color: #EFF6FF;">
-    <div class="max-w-5xl mx-auto text-center">
-        <p class="text-sm font-medium mb-2" style="color: #166534;">Tanzania Focus</p>
-        <h1 class="text-2xl md:text-4xl font-bold mb-4 leading-tight" style="color: #1E40AF;">
-            Tanzania Job Opportunities
-        </h1>
-        <p class="text-sm md:text-base text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Find the best employment opportunities across Tanzania. Explore roles in Dar es Salaam, Arusha, Dodoma, Mbeya and more.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
-               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-medium text-sm transition-shadow hover:shadow-md"
-               style="background-color: #1E40AF;">
-                <i class="fas fa-search"></i>
-                Browse All Openings
-            </a>
-            <a data-th-href="${baseUrl + '/job-form'}" href="/job-form"
-               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm border border-gray-300 bg-white transition-shadow hover:shadow-md" style="color: #1E40AF;">
-                <i class="fas fa-plus"></i>
-                Post a Job
-            </a>
-        </div>
-    </div>
-</section>
 
-<!-- Featured Categories for Tanzania -->
-<section class="py-8 md:py-12 px-4 md:px-6">
-    <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
-            <div>
-                <p class="text-xs font-medium uppercase tracking-wide mb-1" style="color: #1E40AF;">Popular in Tanzania</p>
-                <h2 class="text-xl md:text-2xl font-bold text-gray-900">Top Job Categories</h2>
+<!-- HEROS SECTION -->
+<section class="relative bg-blue-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-20 bg-gradient-to-br from-blue-800 to-blue-950"></div>
+    <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wide mb-6 bg-yellow-400 text-blue-900">
+                    <i class="fas fa-location-dot"></i>
+                    TANZANIA OPPORTUNITIES
+                </span>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                    Discover better jobs <br class="hidden md:block"/>across Tanzania
+                </h1>
+                
+                <p class="text-blue-100 text-lg leading-relaxed max-w-2xl mb-10">
+                    A cleaner path to roles in Dar es Salaam, Arusha, Dodoma, Mbeya, Mwanza, and beyond. Browse stable career paths, public sector openings, and modern digital roles in one place.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                    <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
+                       class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg font-medium text-base transition-all bg-yellow-400 text-blue-900 hover:bg-yellow-300">
+                        Browse All Openings
+                    </a>
+                    <a data-th-href="${baseUrl + '/job-form'}" href="/job-form"
+                       class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-blue-400 text-white font-medium text-base transition-colors hover:bg-white/10">
+                        Post a Job
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <div class="text-2xl font-bold text-white mb-1">6</div>
+                        <div class="text-sm text-blue-200">Core categories</div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <div class="text-2xl font-bold text-white mb-1">4</div>
+                        <div class="text-sm text-blue-200">Key cities</div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <div class="text-2xl font-bold text-white mb-1">Daily</div>
+                        <div class="text-sm text-blue-200">Fresh updates</div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <div class="text-2xl font-bold text-white mb-1">Easy</div>
+                        <div class="text-sm text-blue-200">Quick navigation</div>
+                    </div>
+                </div>
             </div>
-            <a data-th-href="${baseUrl + '/countries'}" href="/countries" class="text-sm font-medium hover:underline" style="color: #1E40AF;">Browse all countries &rarr;</a>
+
+            <!-- TANZANIA SNAPSHOT -->
+            <div class="lg:col-span-5">
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                    <p class="text-xs font-bold uppercase tracking-wider text-blue-700 mb-2">Tanzania Snapshot</p>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Where people are looking now</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 rounded-xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-green-200 hover:shadow-sm transition-all">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Government &amp; Public Service</h3>
+                                <p class="text-sm text-gray-500 mt-1">Consistent demand across regions</p>
+                            </div>
+                            <span class="inline-flex items-center justify-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">High</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-4 rounded-xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-red-200 hover:shadow-sm transition-all">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Healthcare &amp; Clinical Roles</h3>
+                                <p class="text-sm text-gray-500 mt-1">Hospitals, labs, and outreach teams</p>
+                            </div>
+                            <span class="inline-flex items-center justify-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700">Urgent</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-4 rounded-xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-purple-200 hover:shadow-sm transition-all">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Technology &amp; Digital</h3>
+                                <p class="text-sm text-gray-500 mt-1">Strong growth in startup and telecom spaces</p>
+                            </div>
+                            <span class="inline-flex items-center justify-center px-3 py-1 rounded-full text-xs font-semibold bg-purple-100 text-purple-700">Growing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            <!-- Government -->
-            <a data-th-href="${baseUrl + '/jobs/category/government'}" href="/jobs/category/government"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #DCFCE7; color: #166534;">
-                        <i class="fas fa-landmark"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Government</h3>
-                        <p class="text-xs text-gray-500">Public sector, civil service &amp; TAMISEMI</p>
-                    </div>
-                    <i class="fas fa-arrow-right text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1E40AF;"></i>
-                </div>
+    </div>
+</section>
+
+<!-- EXPLORE BY REGION SECTION -->
+<section class="py-16 md:py-24 bg-gray-50 border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+            <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-blue-700 mb-2">Explore by Region</p>
+                <h2 class="text-3xl font-bold text-gray-900">Popular cities</h2>
+            </div>
+            <a data-th-href="${baseUrl + '/countries'}" href="/countries" class="text-sm font-semibold text-blue-700 hover:text-blue-800 hover:underline inline-flex items-center gap-1">
+                Browse all countries &rarr;
             </a>
-            <!-- Healthcare -->
-            <a data-th-href="${baseUrl + '/jobs/category/healthcare'}" href="/jobs/category/healthcare"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF; color: #1E40AF;">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Healthcare</h3>
-                        <p class="text-xs text-gray-500">Hospitals, clinics &amp; research</p>
-                    </div>
-                    <i class="fas fa-arrow-right text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1E40AF;"></i>
-                </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="flex flex-col h-full bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Dar es Salaam</h3>
+                <p class="text-gray-600 text-sm leading-relaxed flex-grow">
+                    Commercial hub for corporate, finance, operations, and private sector roles.
+                </p>
             </a>
-            <!-- Education -->
-            <a data-th-href="${baseUrl + '/jobs/category/education'}" href="/jobs/category/education"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF; color: #1E40AF;">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Education</h3>
-                        <p class="text-xs text-gray-500">Teaching &amp; academic roles</p>
-                    </div>
-                    <i class="fas fa-arrow-right text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1E40AF;"></i>
-                </div>
+            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="flex flex-col h-full bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Arusha</h3>
+                <p class="text-gray-600 text-sm leading-relaxed flex-grow">
+                    Strong in tourism, hospitality, development programs, and regional offices.
+                </p>
             </a>
-            <!-- Finance -->
-            <a data-th-href="${baseUrl + '/jobs/category/finance'}" href="/jobs/category/finance"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF; color: #1E40AF;">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Finance &amp; Banking</h3>
-                        <p class="text-xs text-gray-500">NMB, CRDB &amp; banking sector</p>
-                    </div>
-                    <i class="fas fa-arrow-right text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1E40AF;"></i>
-                </div>
+            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="flex flex-col h-full bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Dodoma</h3>
+                <p class="text-gray-600 text-sm leading-relaxed flex-grow">
+                    Government ministries, public institutions, policy, and administration roles.
+                </p>
             </a>
-            <!-- Software Engineering -->
-            <a data-th-href="${baseUrl + '/jobs/category/software-engineering'}" href="/jobs/category/software-engineering"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF; color: #1E40AF;">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Technology</h3>
-                        <p class="text-xs text-gray-500">Software, IT &amp; digital roles</p>
-                    </div>
-                    <i class="fas fa-arrow-right text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1E40AF;"></i>
-                </div>
-            </a>
-            <!-- Internships -->
-            <a data-th-href="${baseUrl + '/jobs/category/internships'}" href="/jobs/category/internships"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #FEF9C3; color: #CA8A04;">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Internships</h3>
-                        <p class="text-xs text-gray-500">Graduate &amp; entry-level programs</p>
-                    </div>
-                    <i class="fas fa-arrow-right text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1E40AF;"></i>
-                </div>
+            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="flex flex-col h-full bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Mbeya</h3>
+                <p class="text-gray-600 text-sm leading-relaxed flex-grow">
+                    Growing demand in agriculture, logistics, trade, and regional operations.
+                </p>
             </a>
         </div>
     </div>
 </section>
 
-<!-- Quick Links Section -->
-<section class="py-8 md:py-12 px-4 md:px-6" style="background-color: #f8fafc;">
-    <div class="max-w-5xl mx-auto">
-        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Quick Access</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <a data-th-href="${baseUrl + '/tenders'}" href="/tenders"
-               class="bg-white border border-gray-200 rounded-lg p-4 text-center transition-all hover:shadow-md group">
-                <i class="fas fa-file-contract text-lg mb-2" style="color: #1E40AF;"></i>
-                <h3 class="font-semibold text-sm text-gray-900 group-hover:text-blue-700 transition-colors">Tenders</h3>
-                <p class="text-xs text-gray-500 mt-1">Government &amp; private tenders</p>
+<!-- TOP JOB CATEGORIES SECTION -->
+<section class="py-16 md:py-24 bg-white border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+            <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-green-700 mb-2">Popular in Tanzania</p>
+                <h2 class="text-3xl font-bold text-gray-900">Top job categories</h2>
+            </div>
+            <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs" class="text-sm font-semibold text-blue-700 hover:text-blue-800 hover:underline inline-flex items-center gap-1">
+                View all categories &rarr;
             </a>
-            <a data-th-href="${baseUrl + '/results'}" href="/results"
-               class="bg-white border border-gray-200 rounded-lg p-4 text-center transition-all hover:shadow-md group">
-                <i class="fas fa-file-alt text-lg mb-2" style="color: #1E40AF;"></i>
-                <h3 class="font-semibold text-sm text-gray-900 group-hover:text-blue-700 transition-colors">Exam Results</h3>
-                <p class="text-xs text-gray-500 mt-1">NECTA &amp; other results</p>
-            </a>
-            <a data-th-href="${baseUrl + '/trends'}" href="/trends"
-               class="bg-white border border-gray-200 rounded-lg p-4 text-center transition-all hover:shadow-md group">
-                <i class="fas fa-chart-bar text-lg mb-2" style="color: #1E40AF;"></i>
-                <h3 class="font-semibold text-sm text-gray-900 group-hover:text-blue-700 transition-colors">Trends</h3>
-                <p class="text-xs text-gray-500 mt-1">HESLB &amp; TAMISEMI updates</p>
-            </a>
-            <a data-th-href="${baseUrl + '/post'}" href="/post"
-               class="bg-white border border-gray-200 rounded-lg p-4 text-center transition-all hover:shadow-md group">
-                <i class="fas fa-plus-circle text-lg mb-2" style="color: #1E40AF;"></i>
-                <h3 class="font-semibold text-sm text-gray-900 group-hover:text-blue-700 transition-colors">Post Listing</h3>
-                <p class="text-xs text-gray-500 mt-1">Submit a job or tender</p>
-            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="flex flex-col h-full bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-md hover:border-blue-300 transition-all group">
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Government</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Public sector, civil service, councils, and national institution openings.
+                    </p>
+                    <div class="text-xs text-gray-500 font-medium bg-gray-50 inline-block px-3 py-1.5 rounded-lg mb-4">
+                        TAMISEMI &bull; TRA &bull; TANESCO
+                    </div>
+                </div>
+                <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs" class="inline-flex items-center font-semibold text-blue-600 group-hover:text-blue-700 transition-colors mt-auto">
+                    Explore &rarr;
+                </a>
+            </div>
+
+            <div class="flex flex-col h-full bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-md hover:border-blue-300 transition-all group">
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Healthcare</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Hospitals, clinics, pharmacies, research centers, and community health work.
+                    </p>
+                    <div class="text-xs text-gray-500 font-medium bg-gray-50 inline-block px-3 py-1.5 rounded-lg mb-4">
+                        Muhimbili &bull; Aga Khan &bull; KCMC
+                    </div>
+                </div>
+                <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs" class="inline-flex items-center font-semibold text-blue-600 group-hover:text-blue-700 transition-colors mt-auto">
+                    Explore &rarr;
+                </a>
+            </div>
+
+            <div class="flex flex-col h-full bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-md hover:border-blue-300 transition-all group">
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Education</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Teaching, lecturing, training, school administration, and academic support.
+                    </p>
+                    <div class="text-xs text-gray-500 font-medium bg-gray-50 inline-block px-3 py-1.5 rounded-lg mb-4">
+                        UDSM &bull; SUA &bull; UDOM
+                    </div>
+                </div>
+                <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs" class="inline-flex items-center font-semibold text-blue-600 group-hover:text-blue-700 transition-colors mt-auto">
+                    Explore &rarr;
+                </a>
+            </div>
+
+            <div class="flex flex-col h-full bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-md hover:border-blue-300 transition-all group">
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Finance &amp; Banking</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Accounting, banking operations, fintech, audit, and financial analysis roles.
+                    </p>
+                    <div class="text-xs text-gray-500 font-medium bg-gray-50 inline-block px-3 py-1.5 rounded-lg mb-4">
+                        NMB &bull; CRDB &bull; BOT
+                    </div>
+                </div>
+                <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs" class="inline-flex items-center font-semibold text-blue-600 group-hover:text-blue-700 transition-colors mt-auto">
+                    Explore &rarr;
+                </a>
+            </div>
+
+            <div class="flex flex-col h-full bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-md hover:border-blue-300 transition-all group">
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Technology</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Software, IT support, product, telecom, data, and digital transformation work.
+                    </p>
+                    <div class="text-xs text-gray-500 font-medium bg-gray-50 inline-block px-3 py-1.5 rounded-lg mb-4">
+                        Vodacom &bull; Tigo &bull; Startups
+                    </div>
+                </div>
+                <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs" class="inline-flex items-center font-semibold text-blue-600 group-hover:text-blue-700 transition-colors mt-auto">
+                    Explore &rarr;
+                </a>
+            </div>
+
+            <div class="flex flex-col h-full bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-md hover:border-blue-300 transition-all group">
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Internships</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Graduate training, attachments, and entry-level pathways for early-career talent.
+                    </p>
+                    <div class="text-xs text-gray-500 font-medium bg-gray-50 inline-block px-3 py-1.5 rounded-lg mb-4">
+                        Paid &bull; Volunteer &bull; Remote
+                    </div>
+                </div>
+                <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs" class="inline-flex items-center font-semibold text-blue-600 group-hover:text-blue-700 transition-colors mt-auto">
+                    Explore &rarr;
+                </a>
+            </div>
         </div>
     </div>
 </section>
+
+<!-- RESOURCES AND EMPLOYER CTA SECTION -->
+<section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <!-- Resources Column -->
+            <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-purple-700 mb-2">Resources</p>
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Quick access</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a data-th-href="${baseUrl + '/tenders'}" href="/tenders" class="block bg-white p-5 rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-sm transition-all">
+                        <h4 class="font-bold text-gray-900 mb-1">Tenders</h4>
+                        <p class="text-xs text-gray-600">Government and private procurement opportunities.</p>
+                    </a>
+                    <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs" class="block bg-white p-5 rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-sm transition-all">
+                        <h4 class="font-bold text-gray-900 mb-1">Exam Results</h4>
+                        <p class="text-xs text-gray-600">NECTA and academic outcome updates in one place.</p>
+                    </a>
+                    <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="block bg-white p-5 rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-sm transition-all">
+                        <h4 class="font-bold text-gray-900 mb-1">Trends</h4>
+                        <p class="text-xs text-gray-600">HESLB, TAMISEMI, and other practical updates.</p>
+                    </a>
+                    <a data-th-href="${baseUrl + '/job-form'}" href="/job-form" class="block bg-white p-5 rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-sm transition-all">
+                        <h4 class="font-bold text-gray-900 mb-1">Post Listing</h4>
+                        <p class="text-xs text-gray-600">Submit a job opening or tender to reach more people.</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Employer CTA Column -->
+            <div>
+                <div class="h-full bg-blue-900 rounded-2xl p-8 md:p-10 text-white shadow-xl relative overflow-hidden flex flex-col justify-center">
+                    <div class="absolute inset-0 opacity-10 bg-gradient-to-br from-white to-transparent"></div>
+                    <div class="relative z-10">
+                        <p class="text-xs font-bold uppercase tracking-wider text-blue-300 mb-3">For employers</p>
+                        <h2 class="text-3xl font-bold mb-4">Reach qualified candidates across Tanzania</h2>
+                        <p class="text-blue-100 leading-relaxed mb-8">
+                            Publish your opening once and make it easier for the right people to discover it through BLAST.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a data-th-href="${baseUrl + '/job-form'}" href="/job-form" class="inline-flex justify-center items-center px-6 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-lg hover:bg-yellow-300 transition-colors">
+                                Post a Job
+                            </a>
+                            <a data-th-href="${baseUrl + '/about'}" href="/about" class="inline-flex justify-center items-center px-6 py-3 bg-white/10 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 </th:block>
