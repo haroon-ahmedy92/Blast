@@ -6,3 +6,4 @@
 .DS_Store
 legacy-laravel/.env
 legacy-laravel/node_modules/
+stitch_blast_job_details/

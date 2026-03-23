@@ -1,124 +1,85 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="content">
-<!-- Fixed Header Wrapper -->
-<div class="header-wrapper" id="headerWrapper">
-    <!-- Top Banner -->
-    <div class="top-banner">
-        <div class="container">
-            Top Add Placeholder
+<header class="blast-site-header" id="blastSiteHeader">
+    <div class="blast-wrap">
+        <div class="blast-header-shell">
+            <a data-th-href="${baseUrl}" href="/" class="blast-brand" aria-label="BLAST home">
+                <span class="blast-brand-mark">
+                    <img data-th-src="${baseUrl + '/companies/blast.png'}" src="/companies/blast.png" alt="Blast Logo">
+                </span>
+                <span class="blast-brand-copy">
+                    <span class="blast-brand-name">BLAST</span>
+                    <span class="blast-brand-tag">Career intelligence for Tanzania and beyond</span>
+                </span>
+            </a>
+
+            <nav class="blast-main-nav" aria-label="Primary navigation">
+                <a data-th-href="${baseUrl}" href="/" class="blast-nav-link" th:classappend="${currentPath == '/' ? ' is-active' : ''}">Home</a>
+                <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="blast-nav-link" th:classappend="${currentPath == '/opportunities' ? ' is-active' : ''}">Jobs</a>
+                <a data-th-href="${baseUrl + '/tanzania-jobs'}" href="/tanzania-jobs" class="blast-nav-link" th:classappend="${currentPath == '/tanzania-jobs' ? ' is-active' : ''}">Tanzania</a>
+                <a data-th-href="${baseUrl + '/tenders'}" href="/tenders" class="blast-nav-link" th:classappend="${currentPath == '/tenders' ? ' is-active' : ''}">Tenders</a>
+                <a data-th-href="${baseUrl + '/post'}" href="/post" class="blast-nav-link" th:classappend="${currentPath == '/post' ? ' is-active' : ''}">Employers</a>
+                <a data-th-href="${baseUrl + '/other'}" href="/other" class="blast-nav-link" th:classappend="${currentPath == '/other' ? ' is-active' : ''}">Tools</a>
+                <a data-th-href="${baseUrl + '/about'}" href="/about" class="blast-nav-link" th:classappend="${currentPath == '/about' ? ' is-active' : ''}">About</a>
+            </nav>
+
+            <div class="blast-header-tools">
+                <a data-th-href="${baseUrl + '/get-started'}" href="/get-started" class="blast-ghost-btn">Start</a>
+                <a data-th-href="${baseUrl + '/job-form'}" href="/job-form" class="blast-primary-btn">Post</a>
+                <button class="blast-mobile-toggle" type="button" id="blastMobileToggle" aria-expanded="false" aria-controls="blastMobilePanel" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-    </div>
-    
-    <!-- Navigation -->
-    <div class="nav-container">
-        <div class="container">
-            <div class="nav-content">
-                <!-- Logo Section -->
-                <div class="logo-section">
-                    <a data-th-href="${baseUrl}" href="/" class="logo-link">
-                        <img data-th-src="${baseUrl + '/companies/blast.png'}" src="/companies/blast.png" alt="Blast Logo" class="logo-img">
-                        <span class="logo-text">Blast</span>
-                    </a>
-                </div>
-                
-                <div class="nav-links">
-                    <a data-th-href="${baseUrl}" href="/" th:class="${currentPath == '/' ? 'nav-link active' : 'nav-link '}">HOME</a>
-                    <a data-th-href="${baseUrl + '/tanzania-jobs'}" href="/tanzania-jobs" th:class="${currentPath == '/tanzania-jobs' ? 'nav-link active' : 'nav-link '}">TANZANIA-JOBS</a>
-                    <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs" th:class="${currentPath == '/all-jobs' ? 'nav-link active' : 'nav-link '}">ALL-JOBS</a>
-                    <a data-th-href="${baseUrl + '/tenders'}" href="/tenders" th:class="${currentPath == '/tenders' ? 'nav-link active' : 'nav-link '}">TENDER</a>
-                    <a data-th-href="${baseUrl + '/post'}" href="/post" th:class="${currentPath == '/post' ? 'nav-link active' : 'nav-link '}">POST</a>
-                    <a data-th-href="${baseUrl + '/about'}" href="/about" th:class="${currentPath == '/about' ? 'nav-link active' : 'nav-link '}">ADVERTISE</a>
-                    <a data-th-href="${baseUrl + '/other'}" href="/other" th:class="${currentPath == '/other' ? 'nav-link active' : 'nav-link '}">OTHER</a>
-                </div>
-                
-                <div class="right-section">
-                    <div class="search-container">
-                        <input type="text" class="search-input" placeholder="search Anything">
-                        <div class="search-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="social-icons">
-                        <a data-th-href="${baseUrl + '/get-started'}" href="/get-started" class="login-link">
-                            <i class="fas fa-lock"></i>
-                            <span>login</span>
-                        </a>
-                        <a data-th-href="${baseUrl + '/about'}" href="/about" class="icon-link" title="About Blast">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a data-th-href="${baseUrl + '/trends'}" href="/trends" class="icon-link" title="Latest Trends">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a data-th-href="${baseUrl + '/trends'}" href="/trends" class="icon-link" title="Notifications">
-                            <i class="fas fa-bell"></i>
-                        </a>
-                    </div>
-                </div>
+
+        <div class="blast-mobile-panel" id="blastMobilePanel">
+            <form class="blast-header-search js-blast-search-form" role="search" style="display:flex; width:100%; margin-bottom:10px;">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input type="search" class="blast-header-search-input js-blast-search-input" placeholder="Search jobs, tenders, or companies" aria-label="Search BLAST mobile">
+            </form>
+            <nav class="blast-mobile-nav" aria-label="Mobile navigation">
+                <a data-th-href="${baseUrl}" href="/" class="blast-nav-link" th:classappend="${currentPath == '/' ? ' is-active' : ''}">Home</a>
+                <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="blast-nav-link" th:classappend="${currentPath == '/opportunities' ? ' is-active' : ''}">Jobs</a>
+                <a data-th-href="${baseUrl + '/tanzania-jobs'}" href="/tanzania-jobs" class="blast-nav-link" th:classappend="${currentPath == '/tanzania-jobs' ? ' is-active' : ''}">Tanzania</a>
+                <a data-th-href="${baseUrl + '/tenders'}" href="/tenders" class="blast-nav-link" th:classappend="${currentPath == '/tenders' ? ' is-active' : ''}">Tenders</a>
+                <a data-th-href="${baseUrl + '/post'}" href="/post" class="blast-nav-link" th:classappend="${currentPath == '/post' ? ' is-active' : ''}">Employers</a>
+                <a data-th-href="${baseUrl + '/other'}" href="/other" class="blast-nav-link" th:classappend="${currentPath == '/other' ? ' is-active' : ''}">Tools</a>
+                <a data-th-href="${baseUrl + '/about'}" href="/about" class="blast-nav-link" th:classappend="${currentPath == '/about' ? ' is-active' : ''}">About</a>
+            </nav>
+            <div class="blast-mobile-actions">
+                <a data-th-href="${baseUrl + '/get-started'}" href="/get-started" class="blast-ghost-btn">Start</a>
+                <a data-th-href="${baseUrl + '/job-form'}" href="/job-form" class="blast-primary-btn">Post</a>
             </div>
         </div>
     </div>
-</div>
+</header>
 
-<!-- Header JavaScript -->
 <script>
-    // Header scroll effect
-    let lastScrollTop = 0;
-    const headerWrapper = document.getElementById('headerWrapper');
-    
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Add scrolled class when scrolling down
-        if (scrollTop > 50) {
-            headerWrapper.classList.add('scrolled');
-        } else {
-            headerWrapper.classList.remove('scrolled');
+    (function () {
+        const mobileToggle = document.getElementById('blastMobileToggle');
+        const mobilePanel = document.getElementById('blastMobilePanel');
+
+        if (mobileToggle && mobilePanel) {
+            mobileToggle.addEventListener('click', function () {
+                const isOpen = mobilePanel.classList.toggle('is-open');
+                mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
         }
-        
-        lastScrollTop = scrollTop;
-    }, { passive: true });
-    
-    // Search functionality
-    function performSearch() {
-        const searchInput = document.querySelector('.search-input');
-        const searchTerm = searchInput.value.trim();
-        if (searchTerm) {
-            window.location.href = '/opportunities';
-        } else {
-            window.location.href = '/opportunities';
-        }
-    }
-    
-    // Search icon click
-    document.querySelector('.search-icon').addEventListener('click', performSearch);
-    
-    // Search on Enter key
-    document.querySelector('.search-input').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
-    });
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+
+        document.querySelectorAll('.js-blast-search-form').forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                window.location.href = '/opportunities';
+            });
         });
-    });
-    
-    // Add loading states for navigation links
-    document.querySelectorAll('.nav-link:not([href="#"])').forEach(link => {
-        link.addEventListener('click', function() {
-            this.style.opacity = '0.7';
-            this.innerHTML += ' <i class="fas fa-spinner fa-spin" style="font-size: 10px;"></i>';
+
+        document.querySelectorAll('.js-blast-search-input').forEach(function (input) {
+            input.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    window.location.href = '/opportunities';
+                }
+            });
         });
-    });
+    }());
 </script>
 </th:block>

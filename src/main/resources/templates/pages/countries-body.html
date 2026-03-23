@@ -1,129 +1,45 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<!-- Header Section -->
-<section class="py-12 md:py-16">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium mb-4" style="background-color:#EFF6FF;color:#1E40AF;">
-                <i class="fas fa-globe-africa mr-2"></i>
-                African Markets
-            </span>
-            <h1 class="text-3xl md:text-4xl font-bold mb-4" style="color: #1E40AF;">Opportunities by Country</h1>
-            <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Discover career opportunities, scholarships, and professional development across African nations. Each country offers unique markets and growing sectors.
+<section class="blast-page">
+    <div class="blast-shell blast-stack">
+        <div class="blast-panel blast-panel--accent">
+            <span class="blast-eyebrow"><i class="fas fa-globe"></i> Countries</span>
+            <h1 class="blast-display">Explore opportunities by country with a clearer regional view.</h1>
+            <p class="blast-lead">
+                Instead of a plain list, the country explorer now feels like a proper discovery page — easier to scan, easier to act on, and better aligned with the new BLAST interface system.
             </p>
-        </div>
-
-        <!-- Search and Filter Section -->
-        <div class="bg-white border border-gray-200 rounded-xl p-6 mb-12 shadow-sm">
-            <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
-                <div class="flex-1 w-full md:max-w-md">
-                    <div class="relative">
-                        <input type="text" placeholder="Search countries..." 
-                               class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                    </div>
-                </div>
-                <div class="flex gap-2 w-full md:w-auto">
-                    <select class="px-4 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option>All Regions</option>
-                        <option>East Africa</option>
-                        <option>West Africa</option>
-                        <option>North Africa</option>
-                        <option>Southern Africa</option>
-                        <option>Central Africa</option>
-                    </select>
-                    <button class="px-4 py-3 rounded-lg border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 transition-colors">
-                        <i class="fas fa-filter"></i>
-                    </button>
-                </div>
+            <div class="blast-actions">
+                <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="blast-button blast-button--primary">Browse Opportunities</a>
+                <a data-th-href="${baseUrl + '/tanzania-jobs'}" href="/tanzania-jobs" class="blast-button blast-button--secondary">Tanzania Jobs</a>
             </div>
         </div>
 
-        <!-- Countries Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <a th:each="country : ${countries}" 
-               data-th-href="${baseUrl + '/opportunities?country=' + country}"
-               th:href="@{/opportunities(country=${country})}"
-               class="group block bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-200">
-                
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center" style="background-color: #EFF6FF;">
-                        <i class="fas fa-map-marker-alt text-lg" style="color: #1E40AF;"></i>
-                    </div>
-                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium" style="background-color:#DCFCE7;color:#166534;">
-                        Active
-                    </span>
-                </div>
-                
-                <h2 class="text-lg font-semibold mb-2 group-hover:underline" style="color: #1E40AF;" th:text="${country}">Country Name</h2>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Discover opportunities in this growing market with diverse sectors and career paths.</p>
-                
-                <div class="flex items-center justify-between text-xs text-gray-500">
-                    <span class="flex items-center">
-                        <i class="fas fa-briefcase mr-1"></i>
-                        <span>Multiple sectors</span>
-                    </span>
-                    <span class="flex items-center text-blue-600 group-hover:text-blue-700">
-                        <span class="mr-1">Explore</span>
-                        <i class="fas fa-arrow-right transform transition-transform group-hover:translate-x-1"></i>
-                    </span>
-                </div>
+        <div class="blast-country-grid">
+            <a th:each="country : ${countries}"
+               data-th-href="${baseUrl + '/opportunities'}"
+               href="/opportunities"
+               class="blast-country">
+                <span class="blast-badge"><i class="fas fa-location-arrow"></i> Country</span>
+                <h3 th:text="${country}">Tanzania</h3>
+                <span>Open the main opportunities explorer to continue into available roles and categories.</span>
             </a>
         </div>
 
-        <!-- No Countries State -->
-        <div th:if="${#lists.isEmpty(countries)}" class="text-center py-12">
-            <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style="background-color: #F3F4F6;">
-                <i class="fas fa-globe-africa text-xl text-gray-400"></i>
+        <section class="blast-grid--double">
+            <div class="blast-sidebar-card">
+                <span class="blast-eyebrow">Why this works better</span>
+                <h3>A more logical layout for regional browsing</h3>
+                <ul class="blast-value-list">
+                    <li>No crowded cards or overly heavy borders</li>
+                    <li>Country selection is now a visual grid, not a dense block</li>
+                    <li>Calls to action stay close to the decision point</li>
+                </ul>
             </div>
-            <h3 class="text-lg font-semibold mb-2" style="color: #1E40AF;">No Countries Available</h3>
-            <p class="text-gray-600 max-w-md mx-auto mb-6">We're working on adding more countries to our platform. Check back soon for updates.</p>
-            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" 
-               class="inline-flex items-center px-5 py-3 rounded-lg text-white font-medium transition-shadow hover:shadow-md" 
-               style="background-color: #1E40AF;">
-                <i class="fas fa-search mr-2"></i>
-                Browse All Opportunities
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Quick Links Section -->
-<section class="py-12 bg-gray-50">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-8">
-            <h2 class="text-xl md:text-2xl font-semibold mb-3" style="color: #1E40AF;">Explore More</h2>
-            <p class="text-gray-600">Find opportunities in different ways</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" 
-               class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-all group">
-                <div class="w-10 h-10 rounded-lg mb-4 flex items-center justify-center" style="background-color: #EFF6FF;">
-                    <i class="fas fa-list text-lg" style="color: #1E40AF;"></i>
-                </div>
-                <h3 class="text-lg font-semibold mb-2 group-hover:underline" style="color: #1E40AF;">All Opportunities</h3>
-                <p class="text-sm text-gray-600">Browse complete list of jobs, scholarships, and programs</p>
-            </a>
-            
-            <a data-th-href="${baseUrl + '/opportunities#categories'}" href="/opportunities#categories" 
-               class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-all group">
-                <div class="w-10 h-10 rounded-lg mb-4 flex items-center justify-center" style="background-color: #DCFCE7;">
-                    <i class="fas fa-tags text-lg" style="color: #166534;"></i>
-                </div>
-                <h3 class="text-lg font-semibold mb-2 group-hover:underline" style="color: #166534;">By Category</h3>
-                <p class="text-sm text-gray-600">Filter opportunities by industry and job type</p>
-            </a>
-            
-            <a data-th-href="${baseUrl + '/trends'}" href="/trends" 
-               class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-all group">
-                <div class="w-10 h-10 rounded-lg mb-4 flex items-center justify-center" style="background-color: #FEF9C3;">
-                    <i class="fas fa-chart-trending-up text-lg" style="color: #FACC15;"></i>
-                </div>
-                <h3 class="text-lg font-semibold mb-2 group-hover:underline" style="color: #B45309;">Market Trends</h3>
-                <p class="text-sm text-gray-600">Stay updated with industry insights and forecasts</p>
-            </a>
-        </div>
+            <div class="blast-cta-band">
+                <span class="blast-eyebrow">Next stop</span>
+                <h3 class="blast-section-title">Move into jobs by category once you pick your target market.</h3>
+                <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs" class="blast-button blast-button--secondary">Open All Jobs</a>
+            </div>
+        </section>
     </div>
 </section>
 </th:block>

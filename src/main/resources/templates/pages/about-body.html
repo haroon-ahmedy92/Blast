@@ -1,63 +1,64 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<div class="min-h-screen bg-gray-50 py-12">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-blue-800 mb-4" style="color: #1E40AF;">
-                About Blast
-            </h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Connecting Tanzania with opportunities across Africa and beyond.
-            </p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-2xl font-bold text-blue-800 mb-4" style="color: #1E40AF;">Our Mission</h2>
-                <p class="text-gray-700 leading-relaxed">
-                    To provide comprehensive access to job opportunities, tenders, scholarships, 
-                    and programs that empower individuals and organizations across Tanzania and Africa.
+<section class="blast-page">
+    <div class="blast-shell blast-stack">
+        <section class="blast-grid--hero">
+            <div class="blast-panel blast-panel--dark blast-stack">
+                <span class="blast-eyebrow"><i class="fas fa-star"></i> About BLAST</span>
+                <h1 class="blast-display">BLAST is built to make opportunity feel organized, credible, and easier to act on.</h1>
+                <p class="blast-lead">
+                    Instead of feeling like a crowded collection of links, BLAST now presents jobs, trends, tenders, and career resources as a more premium editorial platform.
+                </p>
+                <div class="blast-actions">
+                    <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="blast-button blast-button--secondary">Browse Jobs</a>
+                    <a data-th-href="${baseUrl + '/job-form'}" href="/job-form" class="blast-button blast-button--ghost">Partner With BLAST</a>
+                </div>
+            </div>
+            <div class="blast-panel blast-stack">
+                <span class="blast-eyebrow">Brand profile</span>
+                <h2 class="blast-section-title">Your logo, your name, a better interface system.</h2>
+                <p class="blast-section-copy">
+                    This redesign keeps BLAST recognizable while upgrading the information architecture, visual tone, and page-level consistency across the non-Home experience.
                 </p>
             </div>
-            
-            <div class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-2xl font-bold text-blue-800 mb-4" style="color: #1E40AF;">Our Vision</h2>
-                <p class="text-gray-700 leading-relaxed">
-                    To be the leading platform connecting African talent with global opportunities, 
-                    fostering growth and development across the continent.
+        </section>
+
+        <section class="blast-grid--double">
+            <div class="blast-panel blast-stack">
+                <span class="blast-eyebrow">Mission</span>
+                <h2 class="blast-section-title">Connect people to real opportunity with less friction.</h2>
+                <p class="blast-section-copy">
+                    BLAST brings together jobs, tenders, academic updates, and useful career information so users can move from awareness to action quickly.
                 </p>
+                <p class="blast-quote">The goal is not just more information — it is better organized information.</p>
             </div>
-        </div>
-        
-        <div class="bg-white rounded-lg shadow-lg p-8">
-            <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center" style="color: #1E40AF;">
-                What We Offer
-            </h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4" style="background-color: #EFF6FF;">
-                        <i class="fas fa-briefcase text-2xl text-blue-800" style="color: #1E40AF;"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Job Opportunities</h3>
-                    <p class="text-gray-600">Latest job openings across various sectors in Tanzania and beyond.</p>
+            <div class="blast-panel blast-stack">
+                <span class="blast-eyebrow">What BLAST covers</span>
+                <ul class="blast-value-list">
+                    <li>Jobs in Tanzania and selected African markets</li>
+                    <li>Tenders and procurement notices</li>
+                    <li>Exam results and important updates</li>
+                    <li>Career tools, trend signals, and employer posting</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="blast-panel blast-stack">
+            <span class="blast-eyebrow">Principles behind the redesign</span>
+            <div class="blast-grid--cards">
+                <div class="blast-resource-card">
+                    <h3>Clear hierarchy</h3>
+                    <p>Primary actions appear where people need them, not buried among unrelated elements.</p>
                 </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4" style="background-color: #EFF6FF;">
-                        <i class="fas fa-file-contract text-2xl text-blue-800" style="color: #1E40AF;"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Tenders</h3>
-                    <p class="text-gray-600">Government and private sector procurement opportunities.</p>
+                <div class="blast-resource-card">
+                    <h3>Less visual noise</h3>
+                    <p>Heavy dividers and messy layouts are replaced by calm surfaces, spacing, and logical grouping.</p>
                 </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4" style="background-color: #EFF6FF;">
-                        <i class="fas fa-graduation-cap text-2xl text-blue-800" style="color: #1E40AF;"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Scholarships</h3>
-                    <p class="text-gray-600">Educational opportunities and funding programs for students.</p>
+                <div class="blast-resource-card">
+                    <h3>BLAST-first branding</h3>
+                    <p>The footer stays yours, the logo stays yours, and the interface now feels more intentional.</p>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
-</div>
+</section>
 </th:block>

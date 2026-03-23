@@ -1,122 +1,54 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<!-- Hero Section -->
-<section class="py-12 md:py-16 px-4 md:px-6" style="background-color: #EFF6FF;">
-    <div class="max-w-5xl mx-auto text-center">
-        <p class="text-sm font-medium mb-2" style="color: #1E40AF;">Procurement &amp; Tenders</p>
-        <h1 class="text-2xl md:text-4xl font-bold mb-4 leading-tight" style="color: #1E40AF;">
-            Tender Notices &amp; Opportunities
-        </h1>
-        <p class="text-sm md:text-base text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Browse current government and private sector tender announcements across Tanzania. Submit your own tender notice to reach qualified suppliers and contractors.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-            <a data-th-href="${baseUrl + '/post'}" href="/post"
-               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-medium text-sm transition-shadow hover:shadow-md"
-               style="background-color: #1E40AF;">
-                <i class="fas fa-plus"></i>
-                Submit a Tender Notice
-            </a>
-            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
-               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm border border-gray-300 bg-white transition-shadow hover:shadow-md" style="color: #1E40AF;">
-                <i class="fas fa-briefcase"></i>
-                Browse Jobs Instead
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Active Tenders -->
-<section class="py-8 md:py-12 px-4 md:px-6">
-    <div class="max-w-5xl mx-auto">
-        <div class="mb-6">
-            <p class="text-xs font-medium uppercase tracking-wide mb-1" style="color: #1E40AF;">Current Listings</p>
-            <h2 class="text-xl md:text-2xl font-bold text-gray-900">Active Tender Notices</h2>
-        </div>
-        <div class="space-y-4">
-            <!-- Tender 1 -->
-            <div class="bg-white border border-gray-200 rounded-lg p-5 md:p-6 transition-all hover:shadow-md">
-                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
-                    <div>
-                        <span class="inline-block px-2 py-0.5 text-xs font-medium rounded-full mb-2" style="background-color: #DCFCE7; color: #166534;">Government</span>
-                        <h3 class="font-semibold text-gray-900 text-base md:text-lg">Supply of Office Equipment &amp; Furniture</h3>
-                        <p class="text-sm text-gray-600 mt-1">Tanzania Revenue Authority (TRA) &mdash; Dodoma</p>
-                    </div>
-                    <div class="text-sm text-gray-500 sm:text-right flex-shrink-0">
-                        <p>Deadline: <span class="font-medium text-gray-700">30 June 2025</span></p>
-                    </div>
-                </div>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">
-                    Invitation to bid for the supply and delivery of office furniture, IT equipment, and stationery to TRA regional offices.
-                </p>
-                <a data-th-href="${baseUrl + '/about'}" href="/about" class="text-sm font-medium hover:underline" style="color: #1E40AF;">
-                    Contact for details <i class="fas fa-arrow-right text-xs ml-1"></i>
-                </a>
-            </div>
-
-            <!-- Tender 2 -->
-            <div class="bg-white border border-gray-200 rounded-lg p-5 md:p-6 transition-all hover:shadow-md">
-                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
-                    <div>
-                        <span class="inline-block px-2 py-0.5 text-xs font-medium rounded-full mb-2" style="background-color: #EFF6FF; color: #1E40AF;">Private Sector</span>
-                        <h3 class="font-semibold text-gray-900 text-base md:text-lg">Road Construction &amp; Maintenance Contract</h3>
-                        <p class="text-sm text-gray-600 mt-1">TANROADS &mdash; Dar es Salaam</p>
-                    </div>
-                    <div class="text-sm text-gray-500 sm:text-right flex-shrink-0">
-                        <p>Deadline: <span class="font-medium text-gray-700">15 July 2025</span></p>
-                    </div>
-                </div>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">
-                    Pre-qualification for rehabilitation and maintenance of the Dar-Morogoro highway. Registered contractors with Grade I certification invited.
-                </p>
-                <a data-th-href="${baseUrl + '/about'}" href="/about" class="text-sm font-medium hover:underline" style="color: #1E40AF;">
-                    Contact for details <i class="fas fa-arrow-right text-xs ml-1"></i>
-                </a>
-            </div>
-
-            <!-- Tender 3 -->
-            <div class="bg-white border border-gray-200 rounded-lg p-5 md:p-6 transition-all hover:shadow-md">
-                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
-                    <div>
-                        <span class="inline-block px-2 py-0.5 text-xs font-medium rounded-full mb-2" style="background-color: #FEF9C3; color: #CA8A04;">NGO</span>
-                        <h3 class="font-semibold text-gray-900 text-base md:text-lg">Medical Supplies Procurement</h3>
-                        <p class="text-sm text-gray-600 mt-1">WHO Tanzania &mdash; Dar es Salaam</p>
-                    </div>
-                    <div class="text-sm text-gray-500 sm:text-right flex-shrink-0">
-                        <p>Deadline: <span class="font-medium text-gray-700">20 July 2025</span></p>
-                    </div>
-                </div>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">
-                    Request for proposals for the procurement and distribution of essential medical supplies to regional health facilities.
-                </p>
-                <a data-th-href="${baseUrl + '/about'}" href="/about" class="text-sm font-medium hover:underline" style="color: #1E40AF;">
-                    Contact for details <i class="fas fa-arrow-right text-xs ml-1"></i>
-                </a>
+<section class="blast-page">
+    <div class="blast-shell blast-stack">
+        <div class="blast-panel blast-panel--accent">
+            <span class="blast-eyebrow"><i class="fas fa-file-signature"></i> Tenders</span>
+            <h1 class="blast-display">A tender page that feels like procurement information, not a recycled jobs layout.</h1>
+            <p class="blast-lead">
+                This section is now arranged with clearer notices, a calmer reading rhythm, and more logical support actions for procurement-focused visitors.
+            </p>
+            <div class="blast-actions">
+                <a data-th-href="${baseUrl + '/post'}" href="/post" class="blast-button blast-button--primary">Employer Hub</a>
+                <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="blast-button blast-button--secondary">Browse Jobs</a>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- How to Submit Section -->
-<section class="py-8 md:py-12 px-4 md:px-6" style="background-color: #f8fafc;">
-    <div class="max-w-5xl mx-auto">
-        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 text-center">How to Submit a Tender</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="text-center">
-                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold" style="background-color: #1E40AF;">1</div>
-                <h3 class="font-semibold text-gray-900 mb-1">Prepare Details</h3>
-                <p class="text-sm text-gray-600">Gather your tender notice information, deadlines and requirements.</p>
+        <section class="blast-grid--cards">
+            <div class="blast-resource-card">
+                <span class="blast-badge blast-badge--gold">Open</span>
+                <h3>IT Infrastructure Support Tender</h3>
+                <p>Regional implementation support, equipment coordination, and maintenance services.</p>
+                <div class="blast-compact-meta"><span>Closing in 5 days</span></div>
             </div>
-            <div class="text-center">
-                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold" style="background-color: #1E40AF;">2</div>
-                <h3 class="font-semibold text-gray-900 mb-1">Submit Online</h3>
-                <p class="text-sm text-gray-600">Use our <a data-th-href="${baseUrl + '/post'}" href="/post" class="font-medium hover:underline" style="color: #1E40AF;">posting form</a> to submit your notice.</p>
+            <div class="blast-resource-card">
+                <span class="blast-badge blast-badge--green">Priority</span>
+                <h3>Education Program Supply Notice</h3>
+                <p>Procurement for learning materials, distribution support, and monitoring services.</p>
+                <div class="blast-compact-meta"><span>Closing in 9 days</span></div>
             </div>
-            <div class="text-center">
-                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold" style="background-color: #1E40AF;">3</div>
-                <h3 class="font-semibold text-gray-900 mb-1">Reach Suppliers</h3>
-                <p class="text-sm text-gray-600">Your tender reaches thousands of qualified suppliers across Tanzania.</p>
+            <div class="blast-resource-card">
+                <span class="blast-badge">Review</span>
+                <h3>Healthcare Equipment Call</h3>
+                <p>Supplier notice for equipment sourcing, servicing, and delivery support.</p>
+                <div class="blast-compact-meta"><span>Closing in 12 days</span></div>
             </div>
-        </div>
+        </section>
+
+        <section class="blast-grid--double">
+            <div class="blast-sidebar-card">
+                <span class="blast-eyebrow">Submission guidance</span>
+                <ul class="blast-value-list">
+                    <li>Read the scope carefully before preparing documents</li>
+                    <li>Confirm the deadline and submission format</li>
+                    <li>Use BLAST for visibility and follow updates closely</li>
+                </ul>
+            </div>
+            <div class="blast-cta-band">
+                <span class="blast-eyebrow">Need to publish?</span>
+                <h3 class="blast-section-title">Use the employer workflow when you want to post a new opportunity or listing through BLAST.</h3>
+                <a data-th-href="${baseUrl + '/job-form'}" href="/job-form" class="blast-button blast-button--secondary">Open Posting Form</a>
+            </div>
+        </section>
     </div>
 </section>
 </th:block>
