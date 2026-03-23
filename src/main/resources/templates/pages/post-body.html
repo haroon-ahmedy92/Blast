@@ -1,89 +1,76 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<!-- Hero Section -->
-<section class="py-12 md:py-16 px-4 md:px-6" style="background-color: #EFF6FF;">
-    <div class="max-w-5xl mx-auto text-center">
-        <p class="text-sm font-medium mb-2" style="color: #1E40AF;">Post &amp; Publish</p>
-        <h1 class="text-2xl md:text-4xl font-bold mb-4 leading-tight" style="color: #1E40AF;">
-            Post a Job or Tender
-        </h1>
-        <p class="text-sm md:text-base text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Reach thousands of job seekers and suppliers across Tanzania. Choose the posting type that fits your needs.
-        </p>
-    </div>
-</section>
-
-<!-- Posting Options -->
-<section class="py-8 md:py-12 px-4 md:px-6">
-    <div class="max-w-4xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Post a Job -->
-            <a data-th-href="${baseUrl + '/job-form'}" href="/job-form"
-               class="block bg-white border border-gray-200 rounded-lg p-8 transition-all hover:shadow-lg hover:border-blue-200 group text-center">
-                <div class="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center" style="background-color: #EFF6FF; color: #1E40AF;">
-                    <i class="fas fa-briefcase text-xl"></i>
-                </div>
-                <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">Post a Job</h2>
-                <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                    Create a detailed job listing to attract qualified candidates. Specify requirements, location and salary range.
+<section class="blast-page">
+    <div class="blast-shell blast-stack">
+        <section class="blast-grid--hero">
+            <div class="blast-panel blast-panel--dark blast-stack">
+                <span class="blast-eyebrow"><i class="fas fa-building"></i> Employer Hub</span>
+                <h1 class="blast-display">A more credible employer experience for posting, showcasing, and hiring through BLAST.</h1>
+                <p class="blast-lead">
+                    The old advertising feel is replaced with a clearer employer hub: focused messaging, stronger structure, and direct paths into posting and company visibility.
                 </p>
-                <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-medium text-sm transition-shadow group-hover:shadow-md" style="background-color: #1E40AF;">
-                    <i class="fas fa-plus"></i>
-                    Create Job Listing
-                </span>
-            </a>
-
-            <!-- Post a Tender -->
-            <a data-th-href="${baseUrl + '/tenders'}" href="/tenders"
-               class="block bg-white border border-gray-200 rounded-lg p-8 transition-all hover:shadow-lg hover:border-blue-200 group text-center">
-                <div class="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center" style="background-color: #DCFCE7; color: #166534;">
-                    <i class="fas fa-file-contract text-xl"></i>
+                <div class="blast-actions">
+                    <a data-th-href="${baseUrl + '/job-form'}" href="/job-form" class="blast-button blast-button--secondary">Post a Job</a>
+                    <a data-th-href="${baseUrl + '/about'}" href="/about" class="blast-button blast-button--ghost">About BLAST</a>
                 </div>
-                <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">Tender Announcement</h2>
-                <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                    Publish a tender notice to reach qualified suppliers and contractors across Tanzania and East Africa.
-                </p>
-                <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm border transition-shadow group-hover:shadow-md" style="color: #166534; border-color: #166534;">
-                    <i class="fas fa-bullhorn"></i>
-                    View Tenders
-                </span>
-            </a>
-        </div>
-    </div>
-</section>
+            </div>
+            <div class="blast-panel blast-stack">
+                <span class="blast-eyebrow">Employer benefits</span>
+                <h2 class="blast-section-title">A logical handoff from brand trust into action.</h2>
+                <div class="blast-grid--stats">
+                    <div class="blast-stat">
+                        <span class="blast-stat-label">Posting flow</span>
+                        <p class="blast-stat-value">Clear</p>
+                    </div>
+                    <div class="blast-stat">
+                        <span class="blast-stat-label">Brand tone</span>
+                        <p class="blast-stat-value">Premium</p>
+                    </div>
+                    <div class="blast-stat">
+                        <span class="blast-stat-label">Candidate path</span>
+                        <p class="blast-stat-value">Fast</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- How It Works -->
-<section class="py-8 md:py-12 px-4 md:px-6" style="background-color: #f8fafc;">
-    <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 text-center">How It Works</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="text-center">
-                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold" style="background-color: #1E40AF;">1</div>
-                <h3 class="font-semibold text-gray-900 mb-1">Fill in Details</h3>
-                <p class="text-sm text-gray-600">Complete the form with your job or tender information.</p>
+        <section class="blast-grid--cards">
+            <div class="blast-resource-card">
+                <span class="blast-badge"><i class="fas fa-bolt"></i> Fast launch</span>
+                <h3>Publish openings with less clutter</h3>
+                <p>Move straight from employer intent to posting without distracting sections that do not support hiring.</p>
             </div>
-            <div class="text-center">
-                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold" style="background-color: #1E40AF;">2</div>
-                <h3 class="font-semibold text-gray-900 mb-1">Review &amp; Submit</h3>
-                <p class="text-sm text-gray-600">Preview your listing and publish it to the platform.</p>
+            <div class="blast-resource-card">
+                <span class="blast-badge"><i class="fas fa-users"></i> Better candidate trust</span>
+                <h3>Present roles in a more professional environment</h3>
+                <p>The new layouts create stronger visual trust for both employers and applicants.</p>
             </div>
-            <div class="text-center">
-                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold" style="background-color: #1E40AF;">3</div>
-                <h3 class="font-semibold text-gray-900 mb-1">Get Responses</h3>
-                <p class="text-sm text-gray-600">Receive applications from qualified candidates or suppliers.</p>
+            <div class="blast-resource-card">
+                <span class="blast-badge"><i class="fas fa-chart-line"></i> Clearer hierarchy</span>
+                <h3>Focus on what BLAST is actually solving</h3>
+                <p>Posting, discovery, and job details are now aligned instead of feeling disconnected.</p>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- CTA -->
-<section class="py-8 px-4 md:px-6">
-    <div class="max-w-4xl mx-auto text-center">
-        <p class="text-sm text-gray-600 mb-4">Need help with your listing?</p>
-        <a data-th-href="${baseUrl + '/about'}" href="/about"
-           class="inline-flex items-center gap-2 text-sm font-medium hover:underline" style="color: #1E40AF;">
-            <i class="fas fa-envelope"></i>
-            Contact us at blast@gmail.com
-        </a>
+        <section class="blast-grid--double">
+            <div class="blast-panel blast-stack">
+                <span class="blast-eyebrow">Recent platform roles</span>
+                <h2 class="blast-section-title">See how openings now appear across BLAST</h2>
+                <a th:each="job, jobStat : ${recentJobs}" th:if="${jobStat.index < 3}"
+                   data-th-href="${baseUrl + '/jobs/' + job.slug}"
+                   th:href="@{/jobs/{slug}(slug=${job.slug})}"
+                   class="blast-listing">
+                    <span class="blast-badge" th:text="${job.employmentType}">Full Time</span>
+                    <h3 class="blast-listing-title" th:text="${job.title}">Senior Java Engineer</h3>
+                    <p class="blast-listing-company" th:text="${job.company}">Blast Digital Labs</p>
+                    <p class="blast-listing-summary" th:text="${job.shortDescription}">Lead Java services for high-traffic job and opportunity flows.</p>
+                </a>
+            </div>
+            <div class="blast-cta-band">
+                <span class="blast-eyebrow">Ready to publish?</span>
+                <h3 class="blast-section-title">Use the rebuilt posting form to add roles in a much cleaner employer workflow.</h3>
+                <a data-th-href="${baseUrl + '/job-form'}" href="/job-form" class="blast-button blast-button--secondary">Open Job Form</a>
+            </div>
+        </section>
     </div>
 </section>
 </th:block>

@@ -1,159 +1,132 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<!-- Hero Section -->
-<section class="py-12 md:py-16 px-4 md:px-6" style="background-color: #EFF6FF;">
-    <div class="max-w-5xl mx-auto text-center">
-        <p class="text-sm font-medium mb-2" style="color: #1E40AF;">All Job Listings</p>
-        <h1 class="text-2xl md:text-4xl font-bold mb-4 leading-tight" style="color: #1E40AF;">
-            Find Your Perfect Job
-        </h1>
-        <p class="text-sm md:text-base text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Browse thousands of job listings from top employers worldwide. Use our dynamic categories and country filters to narrow your search.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
-               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-medium text-sm transition-shadow hover:shadow-md"
-               style="background-color: #1E40AF;">
-                <i class="fas fa-search"></i>
-                Browse Opportunities
-            </a>
-            <a data-th-href="${baseUrl + '/countries'}" href="/countries"
-               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm border border-gray-300 bg-white transition-shadow hover:shadow-md" style="color: #1E40AF;">
-                <i class="fas fa-globe"></i>
-                Browse by Country
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Quick Category Cards -->
-<section class="py-8 md:py-12 px-4 md:px-6">
-    <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
-            <div>
-                <p class="text-xs font-medium uppercase tracking-wide mb-1" style="color: #1E40AF;">Browse by Focus</p>
-                <h2 class="text-xl md:text-2xl font-bold text-gray-900">Job Categories</h2>
+<section class="blast-page">
+    <div class="blast-shell blast-stack">
+        <section class="blast-grid--hero">
+            <div class="blast-panel blast-panel--accent">
+                <span class="blast-eyebrow"><i class="fas fa-compass"></i> Editorial Job Atlas</span>
+                <h1 class="blast-display">Browse BLAST in a cleaner, sharper, more curated way.</h1>
+                <p class="blast-lead">
+                    This redesigned jobs overview turns scattered listings into a focused discovery flow — browse by category, jump into Tanzania roles, or move straight into the full opportunities feed.
+                </p>
+                <div class="blast-search-strip">
+                    <label class="blast-search-field">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Job title, keyword, or company">
+                    </label>
+                    <label class="blast-search-field">
+                        <i class="fas fa-globe"></i>
+                        <select>
+                            <option>Anywhere in Africa</option>
+                            <option th:each="country : ${countries}" th:text="${country}">Tanzania</option>
+                        </select>
+                    </label>
+                    <button type="button" class="blast-button blast-button--primary" onclick="window.location.href='/opportunities'">
+                        <i class="fas fa-arrow-right"></i>
+                        Start Browsing
+                    </button>
+                </div>
+                <div class="blast-actions">
+                    <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="blast-button blast-button--secondary">
+                        <i class="fas fa-briefcase"></i>
+                        Open Opportunities
+                    </a>
+                    <a data-th-href="${baseUrl + '/countries'}" href="/countries" class="blast-button blast-button--ghost">
+                        <i class="fas fa-map"></i>
+                        Explore Countries
+                    </a>
+                </div>
             </div>
-            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="text-sm font-medium hover:underline" style="color: #1E40AF;">View all categories &rarr;</a>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            <!-- Software Engineering -->
-            <a data-th-href="${baseUrl + '/jobs/category/software-engineering'}" href="/jobs/category/software-engineering"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF; color: #1E40AF;">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Software Engineering</h3>
-                        <p class="text-xs text-gray-500">Web, mobile &amp; cloud roles</p>
-                    </div>
-                    <i class="fas fa-arrow-right text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1E40AF;"></i>
+            <aside class="blast-panel blast-panel--dark blast-stack">
+                <div>
+                    <span class="blast-eyebrow">What is live now</span>
+                    <h2 class="blast-section-title">A calmer interface for serious job hunting.</h2>
                 </div>
-            </a>
-            <!-- Finance -->
-            <a data-th-href="${baseUrl + '/jobs/category/finance'}" href="/jobs/category/finance"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF; color: #1E40AF;">
-                        <i class="fas fa-chart-line"></i>
+                <div class="blast-grid--stats">
+                    <div class="blast-stat">
+                        <span class="blast-stat-label">Categories</span>
+                        <p class="blast-stat-value" th:text="${#lists.size(categories)} + '+'">6+</p>
                     </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Finance &amp; Banking</h3>
-                        <p class="text-xs text-gray-500">Accounting, auditing &amp; banking</p>
+                    <div class="blast-stat">
+                        <span class="blast-stat-label">Countries</span>
+                        <p class="blast-stat-value" th:text="${#lists.size(countries)} + '+'">12+</p>
                     </div>
-                    <i class="fas fa-arrow-right text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1E40AF;"></i>
+                    <div class="blast-stat">
+                        <span class="blast-stat-label">Fresh roles</span>
+                        <p class="blast-stat-value" th:text="${#lists.size(recentJobs)}">6</p>
+                    </div>
                 </div>
-            </a>
-            <!-- Healthcare -->
-            <a data-th-href="${baseUrl + '/jobs/category/healthcare'}" href="/jobs/category/healthcare"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF; color: #1E40AF;">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Healthcare</h3>
-                        <p class="text-xs text-gray-500">Medical, nursing &amp; clinical</p>
-                    </div>
-                    <i class="fas fa-arrow-right text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1E40AF;"></i>
-                </div>
-            </a>
-            <!-- Education -->
-            <a data-th-href="${baseUrl + '/jobs/category/education'}" href="/jobs/category/education"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF; color: #1E40AF;">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Education</h3>
-                        <p class="text-xs text-gray-500">Teaching &amp; academic positions</p>
-                    </div>
-                    <i class="fas fa-arrow-right text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1E40AF;"></i>
-                </div>
-            </a>
-            <!-- Government -->
-            <a data-th-href="${baseUrl + '/jobs/category/government'}" href="/jobs/category/government"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF; color: #1E40AF;">
-                        <i class="fas fa-landmark"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Government</h3>
-                        <p class="text-xs text-gray-500">Public sector &amp; civil service</p>
-                    </div>
-                    <i class="fas fa-arrow-right text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1E40AF;"></i>
-                </div>
-            </a>
-            <!-- Internships -->
-            <a data-th-href="${baseUrl + '/jobs/category/internships'}" href="/jobs/category/internships"
-               class="block bg-white border border-gray-200 rounded-lg p-5 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF; color: #1E40AF;">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Internships</h3>
-                        <p class="text-xs text-gray-500">Training &amp; early career</p>
-                    </div>
-                    <i class="fas fa-arrow-right text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1E40AF;"></i>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
+                <p class="blast-quote">
+                    The new direction follows the Stitch layouts: fewer noisy boxes, stronger hierarchy, and a more editorial browsing rhythm.
+                </p>
+            </aside>
+        </section>
 
-<!-- Other Resources -->
-<section class="py-8 md:py-12 px-4 md:px-6" style="background-color: #f8fafc;">
-    <div class="max-w-5xl mx-auto">
-        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">More Resources</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <a data-th-href="${baseUrl + '/results'}" href="/results"
-               class="bg-white border border-gray-200 rounded-lg p-5 text-center transition-all hover:shadow-md group">
-                <div class="w-10 h-10 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #EFF6FF; color: #1E40AF;">
-                    <i class="fas fa-file-alt"></i>
+        <section class="blast-section blast-stack">
+            <div>
+                <span class="blast-eyebrow">Browse by focus</span>
+                <h2 class="blast-section-title">Job categories with clearer visual hierarchy</h2>
+            </div>
+            <div class="blast-grid--cards">
+                <a th:each="category : ${categories}"
+                   data-th-href="${baseUrl + '/jobs/category/' + category.slug}"
+                   th:href="@{/jobs/category/{slug}(slug=${category.slug})}"
+                   class="blast-resource-card">
+                    <span class="blast-badge"><i th:class="${category.iconClass}"></i> Category</span>
+                    <h3 th:text="${category.name}">Software Engineering</h3>
+                    <p th:text="${category.description}">Backend, frontend and full-stack opportunities.</p>
+                    <div class="blast-compact-meta">
+                        <span th:text="${category.openRoles} + ' open roles'">42 open roles</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="blast-section blast-grid--double">
+            <div class="blast-stack">
+                <div>
+                    <span class="blast-eyebrow">Live openings</span>
+                    <h2 class="blast-section-title">Curated roles worth opening first</h2>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Exam Results</h3>
-                <p class="text-xs text-gray-500">NECTA, KCPE &amp; more</p>
-            </a>
-            <a data-th-href="${baseUrl + '/trends'}" href="/trends"
-               class="bg-white border border-gray-200 rounded-lg p-5 text-center transition-all hover:shadow-md group">
-                <div class="w-10 h-10 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #EFF6FF; color: #1E40AF;">
-                    <i class="fas fa-chart-bar"></i>
+                <a th:each="job, jobStat : ${recentJobs}"
+                   th:if="${jobStat.index < 4}"
+                   data-th-href="${baseUrl + '/jobs/' + job.slug}"
+                   th:href="@{/jobs/{slug}(slug=${job.slug})}"
+                   class="blast-listing">
+                    <div class="blast-listing-top">
+                        <div>
+                            <span class="blast-badge blast-badge--soft" th:text="${job.employmentType}">Full Time</span>
+                            <h3 class="blast-listing-title" th:text="${job.title}">Senior Java Engineer</h3>
+                            <p class="blast-listing-company" th:text="${job.company}">Blast Digital Labs</p>
+                        </div>
+                        <span class="blast-badge blast-badge--gold" th:text="${job.postedDate}">2 days ago</span>
+                    </div>
+                    <div class="blast-tag-row">
+                        <span class="blast-tag"><i class="fas fa-location-dot"></i><span th:text="${job.location}">Dar es Salaam</span></span>
+                        <span class="blast-tag"><i class="fas fa-layer-group"></i><span th:text="${job.categorySlug}">software-engineering</span></span>
+                    </div>
+                    <p class="blast-listing-summary" th:text="${job.shortDescription}">Lead Java services for high-traffic job and opportunity flows.</p>
+                </a>
+            </div>
+
+            <aside class="blast-stack">
+                <div class="blast-sidebar-card">
+                    <span class="blast-eyebrow">Country spotlight</span>
+                    <h3>Where BLAST is tracking opportunity</h3>
+                    <div class="blast-chip-group">
+                        <span class="blast-tag" th:each="country, countryStat : ${countries}" th:if="${countryStat.index < 8}" th:text="${country}">Tanzania</span>
+                    </div>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Latest Trends</h3>
-                <p class="text-xs text-gray-500">HESLB, TAMISEMI updates</p>
-            </a>
-            <a data-th-href="${baseUrl + '/get-started'}" href="/get-started"
-               class="bg-white border border-gray-200 rounded-lg p-5 text-center transition-all hover:shadow-md group">
-                <div class="w-10 h-10 rounded-full mx-auto mb-3 flex items-center justify-center" style="background-color: #EFF6FF; color: #1E40AF;">
-                    <i class="fas fa-rocket"></i>
+                <div class="blast-cta-band">
+                    <span class="blast-eyebrow">Need a deeper search?</span>
+                    <h3 class="blast-section-title">Move from overview into the full opportunity feed.</h3>
+                    <p class="blast-lead">Use the refined jobs interface for category browsing, cleaner meta details, and faster access to individual openings.</p>
+                    <div class="blast-actions">
+                        <a data-th-href="${baseUrl + '/tanzania-jobs'}" href="/tanzania-jobs" class="blast-button blast-button--secondary">Tanzania Jobs</a>
+                        <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="blast-button blast-button--primary">Browse Opportunities</a>
+                    </div>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Get Started</h3>
-                <p class="text-xs text-gray-500">Your career guide</p>
-            </a>
-        </div>
+            </aside>
+        </section>
     </div>
 </section>
 </th:block>

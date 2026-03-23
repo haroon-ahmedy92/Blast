@@ -1,169 +1,69 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<!-- Breadcrumb Navigation -->
-<section class="py-6 border-b border-gray-200">
-    <div class="max-w-6xl mx-auto">
-        <nav class="flex items-center gap-2 text-sm">
-            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" 
-               class="text-gray-500 hover:text-blue-600 transition-colors">Opportunities</a>
-            <i class="fas fa-chevron-right text-gray-300"></i>
-            <span class="font-medium" style="color: #1E40AF;" th:text="${category.name}">Category</span>
-        </nav>
-    </div>
-</section>
-
-<!-- Category Header -->
-<section class="py-12 md:py-16">
-    <div class="max-w-6xl mx-auto">
-        <div class="bg-white border border-gray-200 rounded-xl p-8 md:p-12 mb-8 shadow-sm">
-            <div class="max-w-4xl">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium mb-4" style="background-color:#EFF6FF;color:#1E40AF;">
-                    <i class="fas fa-briefcase mr-2"></i>
-                    Job Category
-                </span>
-                <h1 class="text-3xl md:text-4xl font-bold mb-4" style="color: #1E40AF;" th:text="${category.name}">Category Name</h1>
-                <p class="text-base md:text-lg text-gray-600 leading-relaxed mb-6" th:text="${category.description}">Category description goes here with detailed information about this field.</p>
-                
-                <div class="flex flex-wrap gap-4">
-                    <div class="flex items-center gap-2 text-sm text-gray-600">
-                        <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background-color: #EFF6FF;">
-                            <i class="fas fa-chart-bar text-xs" style="color: #1E40AF;"></i>
-                        </div>
-                        <span><span th:text="${#lists.size(jobs)}" class="font-semibold">0</span> active positions</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-gray-600">
-                        <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background-color: #DCFCE7;">
-                            <i class="fas fa-trending-up text-xs" style="color: #166534;"></i>
-                        </div>
-                        <span>Growing demand</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-gray-600">
-                        <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background-color: #FEF9C3;">
-                            <i class="fas fa-globe-africa text-xs" style="color: #B45309;"></i>
-                        </div>
-                        <span>Pan-African opportunities</span>
-                    </div>
+<section class="blast-page">
+    <div class="blast-shell blast-stack">
+        <section class="blast-grid--hero">
+            <div class="blast-panel blast-panel--accent">
+                <span class="blast-eyebrow"><i th:class="${category.iconClass}"></i> Category page</span>
+                <h1 class="blast-display" th:text="${category.name}">Software Engineering</h1>
+                <p class="blast-lead" th:text="${category.description}">Backend, frontend and full-stack opportunities.</p>
+                <div class="blast-actions">
+                    <span class="blast-badge blast-badge--green" th:text="${category.openRoles} + ' open roles'">42 open roles</span>
+                    <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="blast-button blast-button--secondary">Back to Opportunities</a>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- Jobs Listing -->
-<section class="pb-12">
-    <div class="max-w-6xl mx-auto">
-        <!-- Filter and Sort Bar -->
-        <div class="bg-white border border-gray-200 rounded-lg p-4 mb-6 shadow-sm">
-            <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
-                <div class="flex flex-wrap gap-3 items-center w-full md:w-auto">
-                    <select class="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option>All Countries</option>
-                        <option>Kenya</option>
-                        <option>Nigeria</option>
-                        <option>South Africa</option>
-                        <option>Ghana</option>
-                    </select>
-                    <select class="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option>All Types</option>
-                        <option>Full Time</option>
-                        <option>Part Time</option>
-                        <option>Contract</option>
-                        <option>Internship</option>
-                    </select>
-                </div>
-                <div class="flex items-center gap-2 text-sm text-gray-600">
-                    <span>Sort by:</span>
-                    <select class="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option>Newest First</option>
-                        <option>Oldest First</option>
-                        <option>Relevance</option>
-                    </select>
-                </div>
+            <div class="blast-sidebar-card">
+                <span class="blast-eyebrow">How to use this page</span>
+                <h3>Each role now reads like a focused opportunity brief.</h3>
+                <ul class="blast-value-list">
+                    <li>Scan title, company, location, and job type quickly</li>
+                    <li>Open details without losing the page hierarchy</li>
+                    <li>Jump back to broader discovery whenever you need it</li>
+                </ul>
             </div>
-        </div>
+        </section>
 
-        <!-- Jobs Grid -->
-        <div class="space-y-4">
-            <!-- No Jobs State -->
-            <div th:if="${#lists.isEmpty(jobs)}" class="text-center py-16">
-                <div class="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center" style="background-color: #F3F4F6;">
-                    <i class="fas fa-search text-2xl text-gray-400"></i>
+        <section class="blast-grid--sidebar">
+            <aside class="blast-filter-card blast-stack">
+                <div class="blast-filter-group">
+                    <div class="blast-filter-title">Signals</div>
+                    <div class="blast-filter-items">
+                        <div class="blast-filter-item"><span>Open roles</span><span th:text="${category.openRoles}">42</span></div>
+                        <div class="blast-filter-item"><span>Category</span><span th:text="${category.name}">Software Engineering</span></div>
+                    </div>
                 </div>
-                <h3 class="text-xl font-semibold mb-3" style="color: #1E40AF;">No Jobs Available</h3>
-                <p class="text-gray-600 max-w-md mx-auto mb-8">There are currently no active positions in this category. Check back soon or explore other categories.</p>
-                <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" 
-                       class="inline-flex items-center px-5 py-3 rounded-lg text-white font-medium transition-shadow hover:shadow-md" 
-                       style="background-color: #1E40AF;">
-                        <i class="fas fa-search mr-2"></i>
-                        Browse All Opportunities
-                    </a>
-                    <a data-th-href="${baseUrl + '/opportunities#alerts'}" href="/opportunities#alerts" 
-                       class="inline-flex items-center px-5 py-3 rounded-lg border border-gray-300 bg-white font-medium text-gray-700 transition-colors hover:bg-gray-50">
-                        <i class="fas fa-bell mr-2"></i>
-                        Set Job Alert
-                    </a>
+                <div class="blast-filter-group">
+                    <div class="blast-filter-title">Explore more</div>
+                    <a data-th-href="${baseUrl + '/countries'}" href="/countries" class="blast-button blast-button--secondary">Browse Countries</a>
                 </div>
-            </div>
+            </aside>
 
-            <!-- Job Cards -->
-            <div th:each="job : ${jobs}" class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all">
-                <a data-th-href="${baseUrl + '/jobs/' + job.slug}"
+            <div class="blast-stack">
+                <div th:if="${#lists.isEmpty(jobs)}" class="blast-empty">
+                    <h3 class="blast-section-title">No jobs are listed in this category right now.</h3>
+                    <p>Check the wider opportunities page for the latest updates.</p>
+                    <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="blast-button blast-button--primary">Open Opportunities</a>
+                </div>
+
+                <a th:each="job : ${jobs}"
+                   data-th-href="${baseUrl + '/jobs/' + job.slug}"
                    th:href="@{/jobs/{slug}(slug=${job.slug})}"
-                   class="block p-6">
-                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                        <div class="flex-1">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF;">
-                                    <i class="fas fa-building text-lg" style="color: #1E40AF;"></i>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <h2 class="text-lg md:text-xl font-semibold mb-2 hover:underline line-clamp-2" style="color: #1E40AF;" th:text="${job.title}">Job Title Goes Here</h2>
-                                    <div class="flex flex-wrap items-center gap-3 mb-3 text-sm text-gray-600">
-                                        <span class="flex items-center gap-1">
-                                            <i class="fas fa-building text-xs"></i>
-                                            <span th:text="${job.company}">Company Name</span>
-                                        </span>
-                                        <span class="flex items-center gap-1">
-                                            <i class="fas fa-map-marker-alt text-xs"></i>
-                                            <span th:text="${job.location}">Location</span>
-                                        </span>
-                                        <span class="flex items-center gap-1">
-                                            <i class="fas fa-clock text-xs"></i>
-                                            <span th:text="${'Posted ' + job.postedDate}">Posted Date</span>
-                                        </span>
-                                    </div>
-                                    <p class="text-sm text-gray-600 leading-relaxed line-clamp-3" th:text="${job.shortDescription}">Job description and summary goes here with key information about the role.</p>
-                                </div>
-                            </div>
+                   class="blast-listing">
+                    <div class="blast-listing-top">
+                        <div>
+                            <span class="blast-badge" th:text="${job.employmentType}">Full Time</span>
+                            <h2 class="blast-listing-title" th:text="${job.title}">Senior Java Engineer</h2>
+                            <p class="blast-listing-company" th:text="${job.company}">Blast Digital Labs</p>
                         </div>
-                        
-                        <div class="flex flex-col items-start lg:items-end gap-3 lg:text-right flex-shrink-0">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium" 
-                                      style="background-color: #EFF6FF; color: #1E40AF;" 
-                                      th:text="${job.employmentType}">Full Time</span>
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium" 
-                                      style="background-color: #DCFCE7; color: #166534;">
-                                    Active
-                                </span>
-                            </div>
-                            <div class="flex items-center gap-2 text-sm font-medium" style="color: #1E40AF;">
-                                <span>View Details</span>
-                                <i class="fas fa-arrow-right transform transition-transform group-hover:translate-x-1"></i>
-                            </div>
-                        </div>
+                        <span class="blast-badge blast-badge--gold" th:text="${job.postedDate}">2 days ago</span>
                     </div>
+                    <div class="blast-listing-meta">
+                        <span class="blast-tag"><i class="fas fa-location-dot"></i><span th:text="${job.location}">Dar es Salaam</span></span>
+                        <span class="blast-tag"><i class="fas fa-suitcase"></i><span th:text="${job.employmentType}">Full Time</span></span>
+                    </div>
+                    <p class="blast-listing-summary" th:text="${job.shortDescription}">Lead Java services for high-traffic job and opportunity flows.</p>
                 </a>
             </div>
-        </div>
-
-        <!-- Load More Section (if needed) -->
-        <div th:if="${!#lists.isEmpty(jobs)}" class="text-center mt-12">
-            <button class="px-6 py-3 rounded-lg border border-gray-300 bg-white font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:shadow-sm">
-                <i class="fas fa-plus mr-2"></i>
-                Load More Jobs
-            </button>
-        </div>
+        </section>
     </div>
 </section>
 </th:block>

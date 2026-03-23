@@ -34,10 +34,8 @@
     <th:block data-th-replace="~{fragments/header :: content}"></th:block>
     
     <!-- Main Content -->
-    <main>
-        <div class="container">
-            <th:block data-th-replace="~{${body} :: body}"></th:block>
-        </div>
+    <main class="blast-site-main">
+        <th:block data-th-replace="~{${body} :: body}"></th:block>
     </main>
 
     <!-- Include Footer Component -->

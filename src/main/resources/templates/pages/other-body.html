@@ -1,143 +1,69 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<!-- Hero Section -->
-<section class="py-12 md:py-16 px-4 md:px-6" style="background-color: #EFF6FF;">
-    <div class="max-w-5xl mx-auto text-center">
-        <p class="text-sm font-medium mb-2" style="color: #1E40AF;">Resources &amp; Tools</p>
-        <h1 class="text-2xl md:text-4xl font-bold mb-4 leading-tight" style="color: #1E40AF;">
-            Career Tools &amp; Resources
-        </h1>
-        <p class="text-sm md:text-base text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed">
-            Essential tools to advance your career. From CV building to interview preparation, scholarships and government services.
-        </p>
-    </div>
-</section>
-
-<!-- Career Tools Grid -->
-<section class="py-8 md:py-12 px-4 md:px-6">
-    <div class="max-w-5xl mx-auto">
-        <div class="mb-6">
-            <p class="text-xs font-medium uppercase tracking-wide mb-1" style="color: #1E40AF;">Career Development</p>
-            <h2 class="text-xl md:text-2xl font-bold text-gray-900">Professional Tools</h2>
+<section class="blast-page">
+    <div class="blast-shell blast-stack">
+        <div class="blast-panel blast-panel--accent">
+            <span class="blast-eyebrow"><i class="fas fa-toolbox"></i> Career Tools</span>
+            <h1 class="blast-display">Replacing the vague “Other” page with useful tools people actually expect.</h1>
+            <p class="blast-lead">
+                This section now acts like a practical career workspace: alerts, saved roles, application support, and platform utilities presented in a clear, dashboard-like layout.
+            </p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            <!-- CV Builder -->
-            <a data-th-href="${baseUrl + '/get-started'}" href="/get-started"
-               class="block bg-white border border-gray-200 rounded-lg p-6 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: #EFF6FF; color: #1E40AF;">
-                    <i class="fas fa-file-alt"></i>
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">CV Builder</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Create a professional CV with our step-by-step career guide.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color: #1E40AF;">
-                    Get started <i class="fas fa-arrow-right text-xs"></i>
-                </span>
-            </a>
 
-            <!-- Interview Prep -->
-            <a data-th-href="${baseUrl + '/get-started'}" href="/get-started"
-               class="block bg-white border border-gray-200 rounded-lg p-6 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: #EFF6FF; color: #1E40AF;">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">Interview Prep</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Tips and strategies to ace your next interview with confidence.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color: #1E40AF;">
-                    Start prep <i class="fas fa-arrow-right text-xs"></i>
-                </span>
-            </a>
+        <section class="blast-grid--tools">
+            <div class="blast-resource-card">
+                <span class="blast-badge"><i class="fas fa-bell"></i> Alerts</span>
+                <h3>Opportunity alerts</h3>
+                <p>Track job categories, country updates, and timely opportunity releases.</p>
+            </div>
+            <div class="blast-resource-card">
+                <span class="blast-badge"><i class="fas fa-bookmark"></i> Saved roles</span>
+                <h3>Shortlist key openings</h3>
+                <p>Keep a clean shortlist of openings you want to revisit before applying.</p>
+            </div>
+            <div class="blast-resource-card">
+                <span class="blast-badge"><i class="fas fa-layer-group"></i> Tracking</span>
+                <h3>Application progress</h3>
+                <p>Follow your application journey with clearer status awareness and fewer distractions.</p>
+            </div>
+            <div class="blast-resource-card">
+                <span class="blast-badge"><i class="fas fa-signal"></i> Briefings</span>
+                <h3>Results and trend updates</h3>
+                <p>Stay close to new results, market signals, and hiring movement across BLAST.</p>
+            </div>
+        </section>
 
-            <!-- Career Guide -->
-            <a data-th-href="${baseUrl + '/get-started'}" href="/get-started"
-               class="block bg-white border border-gray-200 rounded-lg p-6 transition-all hover:shadow-md hover:border-blue-200 group">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: #EFF6FF; color: #1E40AF;">
-                    <i class="fas fa-compass"></i>
+        <section class="blast-grid--double">
+            <div class="blast-panel blast-stack">
+                <span class="blast-eyebrow">Saved opportunity style</span>
+                <h2 class="blast-section-title">A curated board instead of a messy miscellaneous page</h2>
+                <a th:each="job, jobStat : ${recentJobs}" th:if="${jobStat.index < 3}"
+                   data-th-href="${baseUrl + '/jobs/' + job.slug}"
+                   th:href="@{/jobs/{slug}(slug=${job.slug})}"
+                   class="blast-listing">
+                    <div class="blast-chip-group">
+                        <span class="blast-badge blast-badge--gold">Saved</span>
+                        <span class="blast-badge" th:text="${job.employmentType}">Full Time</span>
+                    </div>
+                    <h3 class="blast-listing-title" th:text="${job.title}">Senior Java Engineer</h3>
+                    <p class="blast-listing-company" th:text="${job.company}">Blast Digital Labs</p>
+                    <p class="blast-listing-summary" th:text="${job.shortDescription}">Lead Java services for high-traffic job and opportunity flows.</p>
+                </a>
+            </div>
+            <div class="blast-stack">
+                <div class="blast-sidebar-card">
+                    <span class="blast-eyebrow">Quick actions</span>
+                    <h3>Use BLAST more effectively</h3>
+                    <div class="blast-actions">
+                        <a data-th-href="${baseUrl + '/trends'}" href="/trends" class="blast-button blast-button--secondary">View Trends</a>
+                        <a data-th-href="${baseUrl + '/results'}" href="/results" class="blast-button blast-button--secondary">Check Results</a>
+                    </div>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">Career Guide</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Navigate your career path with our comprehensive guidance.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color: #1E40AF;">
-                    View guide <i class="fas fa-arrow-right text-xs"></i>
-                </span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Government & Education Services -->
-<section class="py-8 md:py-12 px-4 md:px-6" style="background-color: #f8fafc;">
-    <div class="max-w-5xl mx-auto">
-        <div class="mb-6">
-            <p class="text-xs font-medium uppercase tracking-wide mb-1" style="color: #166534;">Government Services</p>
-            <h2 class="text-xl md:text-2xl font-bold text-gray-900">Education &amp; Public Services</h2>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            <!-- NECTA Results -->
-            <a data-th-href="${baseUrl + '/results'}" href="/results"
-               class="block bg-white border border-gray-200 rounded-lg p-6 transition-all hover:shadow-md group">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: #DCFCE7; color: #166534;">
-                    <i class="fas fa-award"></i>
+                <div class="blast-cta-band">
+                    <span class="blast-eyebrow">Cleaner navigation</span>
+                    <h3 class="blast-section-title">The header now points to real use cases, not placeholder sections.</h3>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">NECTA Results</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Check Form Four and Form Six national examination results.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color: #1E40AF;">
-                    Check results <i class="fas fa-arrow-right text-xs"></i>
-                </span>
-            </a>
-
-            <!-- HESLB / Scholarships -->
-            <a data-th-href="${baseUrl + '/trends'}" href="/trends"
-               class="block bg-white border border-gray-200 rounded-lg p-6 transition-all hover:shadow-md group">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: #DCFCE7; color: #166534;">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">HESLB &amp; Scholarships</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Loan applications, bursaries, and scholarship opportunities.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color: #1E40AF;">
-                    View updates <i class="fas fa-arrow-right text-xs"></i>
-                </span>
-            </a>
-
-            <!-- TAMISEMI / Form Five Selection -->
-            <a data-th-href="${baseUrl + '/trends'}" href="/trends"
-               class="block bg-white border border-gray-200 rounded-lg p-6 transition-all hover:shadow-md group">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: #DCFCE7; color: #166534;">
-                    <i class="fas fa-school"></i>
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">TAMISEMI Updates</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Form Five selection, Selform updates, and school placements.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color: #1E40AF;">
-                    View updates <i class="fas fa-arrow-right text-xs"></i>
-                </span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Explore More -->
-<section class="py-8 md:py-12 px-4 md:px-6">
-    <div class="max-w-5xl mx-auto">
-        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Explore More</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
-               class="bg-white border border-gray-200 rounded-lg p-4 text-center transition-all hover:shadow-md group">
-                <i class="fas fa-briefcase text-lg mb-2" style="color: #1E40AF;"></i>
-                <h3 class="font-semibold text-sm text-gray-900 group-hover:text-blue-700 transition-colors">Opportunities</h3>
-            </a>
-            <a data-th-href="${baseUrl + '/tenders'}" href="/tenders"
-               class="bg-white border border-gray-200 rounded-lg p-4 text-center transition-all hover:shadow-md group">
-                <i class="fas fa-file-contract text-lg mb-2" style="color: #1E40AF;"></i>
-                <h3 class="font-semibold text-sm text-gray-900 group-hover:text-blue-700 transition-colors">Tenders</h3>
-            </a>
-            <a data-th-href="${baseUrl + '/countries'}" href="/countries"
-               class="bg-white border border-gray-200 rounded-lg p-4 text-center transition-all hover:shadow-md group">
-                <i class="fas fa-globe text-lg mb-2" style="color: #1E40AF;"></i>
-                <h3 class="font-semibold text-sm text-gray-900 group-hover:text-blue-700 transition-colors">Countries</h3>
-            </a>
-            <a data-th-href="${baseUrl + '/about'}" href="/about"
-               class="bg-white border border-gray-200 rounded-lg p-4 text-center transition-all hover:shadow-md group">
-                <i class="fas fa-info-circle text-lg mb-2" style="color: #1E40AF;"></i>
-                <h3 class="font-semibold text-sm text-gray-900 group-hover:text-blue-700 transition-colors">About Blast</h3>
-            </a>
-        </div>
+            </div>
+        </section>
     </div>
 </section>
 </th:block>

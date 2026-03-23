@@ -1,82 +1,95 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-<section class="opportunities-page py-8 md:py-12">
-    <div class="max-w-6xl mx-auto">
-        <header class="opportunities-hero bg-white border border-gray-200 rounded-lg p-6 md:p-8 mb-8">
-            <div class="opportunities-hero__content">
-                <p class="opportunities-kicker">Opportunity Desk</p>
-                <h1 class="text-2xl md:text-3xl font-bold mb-3 leading-tight" style="color: #1E40AF;">Explore Opportunities</h1>
-                <p class="text-sm md:text-base text-gray-600 mb-6 max-w-3xl leading-relaxed">
-                    Search through curated openings, filter by location and category, and discover your next move across Tanzania and Africa.
+<section class="blast-page">
+    <div class="blast-shell blast-stack">
+        <section class="blast-grid--hero">
+            <div class="blast-panel blast-panel--accent">
+                <span class="blast-eyebrow"><i class="fas fa-star"></i> Browse Opportunities</span>
+                <h1 class="blast-display">Editorial browsing for jobs, not a crowded list of links.</h1>
+                <p class="blast-lead">
+                    Categories, countries, and recent openings now work together in a calmer layout that lets people discover opportunities without fighting the interface.
                 </p>
-            </div>
-            <form class="opportunities-search grid grid-cols-1 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)_auto] gap-3 md:gap-4">
-                <input type="text" placeholder="Keyword or role" class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white">
-                <input type="text" placeholder="Location" class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white">
-                <button type="button" class="px-5 py-3 rounded-lg text-white font-medium text-sm transition-shadow transition-colors hover:shadow-md whitespace-nowrap" style="background-color: #1E40AF;">
-                    Search Opportunities
-                </button>
-            </form>
-        </header>
-
-        <section class="mb-10">
-            <div class="opportunities-section-head flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5">
-                <div>
-                    <p class="opportunities-kicker mb-1">Browse by Focus</p>
-                    <h2 class="text-xl md:text-2xl font-semibold" style="color: #1E40AF;">Featured Categories</h2>
+                <div class="blast-actions">
+                    <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs" class="blast-button blast-button--secondary">Overview Page</a>
+                    <a data-th-href="${baseUrl + '/countries'}" href="/countries" class="blast-button blast-button--ghost">Countries</a>
+                    <a data-th-href="${baseUrl + '/job-form'}" href="/job-form" class="blast-button blast-button--primary">Post a Job</a>
                 </div>
-                <a data-th-href="${baseUrl + '/countries'}" href="/countries" class="text-sm font-medium hover:underline self-start sm:self-auto" style="color: #1E40AF;">Browse Countries</a>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
+            <div class="blast-panel blast-stack">
+                <span class="blast-eyebrow">Quick signal</span>
+                <h2 class="blast-section-title">Everything important is surfaced up front.</h2>
+                <div class="blast-grid--stats">
+                    <div class="blast-stat">
+                        <span class="blast-stat-label">Live categories</span>
+                        <p class="blast-stat-value" th:text="${#lists.size(categories)}">6</p>
+                    </div>
+                    <div class="blast-stat">
+                        <span class="blast-stat-label">Recent jobs</span>
+                        <p class="blast-stat-value" th:text="${#lists.size(recentJobs)}">6</p>
+                    </div>
+                    <div class="blast-stat">
+                        <span class="blast-stat-label">Coverage</span>
+                        <p class="blast-stat-value">TZ+</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blast-section blast-stack">
+            <div>
+                <span class="blast-eyebrow">Categories</span>
+                <h2 class="blast-section-title">Start with the lane that matches your work</h2>
+            </div>
+            <div class="blast-grid--cards">
                 <a th:each="category : ${categories}"
                    data-th-href="${baseUrl + '/jobs/category/' + category.slug}"
                    th:href="@{/jobs/category/{slug}(slug=${category.slug})}"
-                   class="opportunities-category-card block h-full">
-                    <div class="opportunities-category-card__top">
-                        <div class="opportunities-category-card__icon" style="background-color: #EFF6FF; color: #1E40AF;">
-                            <i th:class="${category.iconClass}"></i>
-                        </div>
-                        <span class="opportunities-category-card__count" th:text="${category.openRoles + ' open roles'}">0 open roles</span>
-                    </div>
-                    <div class="opportunities-category-card__body">
-                        <h3 class="opportunities-category-card__title" th:text="${category.name}">Category</h3>
-                        <p class="opportunities-category-card__description" th:text="${category.description}">Description</p>
-                    </div>
-                    <div class="opportunities-category-card__footer">
-                        <span>View category</span>
-                        <i class="fas fa-arrow-right text-xs"></i>
+                   class="blast-hero-card">
+                    <span class="blast-badge"><i th:class="${category.iconClass}"></i> Focus</span>
+                    <h3 th:text="${category.name}">Software Engineering</h3>
+                    <p th:text="${category.description}">Backend, frontend and full-stack opportunities.</p>
+                    <div class="blast-compact-meta">
+                        <span th:text="${category.openRoles} + ' open roles'">42 open roles</span>
                     </div>
                 </a>
             </div>
         </section>
 
-        <section>
-            <div class="opportunities-section-head mb-5">
-                <p class="opportunities-kicker mb-1">Fresh Listings</p>
-                <h2 class="text-xl md:text-2xl font-semibold" style="color: #1E40AF;">Recent Jobs</h2>
-            </div>
-            <div class="space-y-3">
-                <a th:each="job : ${recentJobs}"
+        <section class="blast-section blast-grid--double">
+            <div class="blast-stack">
+                <div>
+                    <span class="blast-eyebrow">Recent jobs</span>
+                    <h2 class="blast-section-title">Openings with clear next steps</h2>
+                </div>
+                <a th:each="job, jobStat : ${recentJobs}"
+                   th:if="${jobStat.index < 3}"
                    data-th-href="${baseUrl + '/jobs/' + job.slug}"
                    th:href="@{/jobs/{slug}(slug=${job.slug})}"
-                   class="opportunities-job-row block">
-                    <div class="opportunities-job-row__content">
-                        <div class="opportunities-job-row__main">
-                            <div class="opportunities-job-row__header">
-                                <h3 class="opportunities-job-row__title" th:text="${job.title}">Job title</h3>
-                                <span class="opportunities-job-row__type" th:text="${job.employmentType}">Full Time</span>
-                            </div>
-                            <p class="opportunities-job-row__meta" th:text="${job.company + ' • ' + job.location}">Company • Location</p>
-                            <p class="opportunities-job-row__summary" th:text="${job.shortDescription}">Summary</p>
-                        </div>
-                        <div class="opportunities-job-row__aside">
-                            <p class="opportunities-job-row__date" th:text="${'Posted ' + job.postedDate}">Posted date</p>
-                            <span class="opportunities-job-row__cta">
-                                <span>View details</span>
-                                <i class="fas fa-arrow-right text-xs"></i>
-                            </span>
-                        </div>
+                   class="blast-listing">
+                    <span class="blast-badge" th:text="${job.employmentType}">Full Time</span>
+                    <h3 class="blast-listing-title" th:text="${job.title}">Senior Java Engineer</h3>
+                    <p class="blast-listing-company" th:text="${job.company}">Blast Digital Labs</p>
+                    <div class="blast-listing-meta">
+                        <span class="blast-tag"><i class="fas fa-location-dot"></i><span th:text="${job.location}">Dar es Salaam</span></span>
+                        <span class="blast-tag"><i class="fas fa-clock"></i><span th:text="${job.postedDate}">2 days ago</span></span>
                     </div>
+                    <p class="blast-listing-summary" th:text="${job.shortDescription}">Lead Java services for high-traffic job and opportunity flows.</p>
                 </a>
+            </div>
+            <div class="blast-stack">
+                <div class="blast-sidebar-card">
+                    <span class="blast-eyebrow">Use cases</span>
+                    <h3>Designed around what BLAST actually offers</h3>
+                    <ul class="blast-value-list">
+                        <li>Job discovery across Tanzania and selected African markets</li>
+                        <li>Cleaner category browsing for quick navigation</li>
+                        <li>Direct handoff into detailed job pages and employer posting</li>
+                    </ul>
+                </div>
+                <div class="blast-cta-band">
+                    <span class="blast-eyebrow">Need location-first browsing?</span>
+                    <h3 class="blast-section-title">Switch to the country explorer and scan opportunity by geography.</h3>
+                    <a data-th-href="${baseUrl + '/countries'}" href="/countries" class="blast-button blast-button--secondary">Open Countries</a>
+                </div>
             </div>
         </section>
     </div>

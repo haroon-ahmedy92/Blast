@@ -1,247 +1,98 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="body">
-
-<!-- Page Header -->
-<section class="py-8 md:py-12">
-    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium mb-4" style="background-color:#EFF6FF; color:#1E40AF;">
-        <i class="fas fa-map-marker-alt mr-1.5"></i> Tanzania
-    </span>
-    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Find Your Next Opportunity</h1>
-    <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-8" style="max-width: 640px;">
-        Explore thousands of jobs across Dar es Salaam, Arusha, Dodoma, Mbeya, and beyond.
-    </p>
-
-    <!-- Search -->
-    <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-3 mb-6" style="max-width: 760px;">
-        <form class="flex flex-col sm:flex-row gap-2">
-            <div class="flex-1 relative">
-                <i class="fas fa-search absolute left-3 top-3 text-gray-400 text-sm"></i>
-                <input type="text" placeholder="Job title, keywords, or company"
-                       class="w-full pl-9 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"/>
+<section class="blast-page">
+    <div class="blast-shell blast-stack">
+        <div class="blast-panel blast-panel--accent">
+            <span class="blast-eyebrow"><i class="fas fa-location-dot"></i> Tanzania Jobs</span>
+            <h1 class="blast-display">A focused Tanzania jobs board with better spacing, smarter hierarchy, and faster scanning.</h1>
+            <p class="blast-lead">
+                Inspired by the Stitch search design, this page now prioritizes clarity: a dedicated filter rail, stronger job cards, and a streamlined application path.
+            </p>
+            <div class="blast-search-strip">
+                <label class="blast-search-field">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Job title, keywords, or company">
+                </label>
+                <label class="blast-search-field">
+                    <i class="fas fa-map-pin"></i>
+                    <input type="text" placeholder="City or remote">
+                </label>
+                <button type="button" class="blast-button blast-button--primary" onclick="window.location.href='/opportunities'">Search</button>
             </div>
-            <div class="sm:w-48 relative">
-                <i class="fas fa-map-marker-alt absolute left-3 top-3 text-gray-400 text-sm"></i>
-                <input type="text" placeholder="City or region"
-                       class="w-full pl-9 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"/>
-            </div>
-            <button type="submit" class="px-5 py-2 rounded-lg text-white font-medium text-sm transition-colors hover:shadow-md" style="background-color:#1E40AF;">
-                Search
-            </button>
-        </form>
-    </div>
-
-    <!-- Stats -->
-    <div class="flex flex-wrap gap-6 text-sm border-t border-gray-100 pt-6">
-        <div><span class="font-bold text-lg text-gray-900">2,400+</span> <span class="text-gray-500">Active Jobs</span></div>
-        <div><span class="font-bold text-lg text-gray-900">150+</span> <span class="text-gray-500">Companies</span></div>
-        <div><span class="font-bold text-lg text-gray-900">6</span> <span class="text-gray-500">Major Cities</span></div>
-    </div>
-</section>
-
-<!-- Category Chips -->
-<section class="pb-6">
-    <nav class="flex flex-wrap gap-2">
-        <a data-th-href="${baseUrl + '/tanzania-jobs'}" href="/tanzania-jobs"
-           class="px-3 py-2 rounded-full border text-sm font-medium" style="border-color:rgba(30,64,175,.25); background:rgba(30,64,175,.08); color:#1E40AF;">
-            All Jobs
-        </a>
-        <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs"
-           class="px-3 py-2 rounded-full border border-gray-200 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:border-gray-300">
-            Government
-        </a>
-        <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs"
-           class="px-3 py-2 rounded-full border border-gray-200 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:border-gray-300">
-            Healthcare
-        </a>
-        <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs"
-           class="px-3 py-2 rounded-full border border-gray-200 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:border-gray-300">
-            Technology
-        </a>
-        <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs"
-           class="px-3 py-2 rounded-full border border-gray-200 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:border-gray-300">
-            Finance
-        </a>
-        <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs"
-           class="px-3 py-2 rounded-full border border-gray-200 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:border-gray-300">
-            Education
-        </a>
-        <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs"
-           class="px-3 py-2 rounded-full border border-gray-200 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:border-gray-300">
-            Internships
-        </a>
-    </nav>
-</section>
-
-<!-- Job Listings -->
-<section class="pb-12">
-    <div class="flex items-center justify-between mb-4">
-        <p class="text-sm text-gray-600"><span class="font-semibold text-gray-900">248</span> jobs found</p>
-        <div class="flex items-center gap-2 text-sm">
-            <span class="text-gray-500">Sort:</span>
-            <select class="py-1 pl-2 pr-7 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <option>Most Recent</option>
-                <option>Relevance</option>
-            </select>
         </div>
-    </div>
 
-    <div class="space-y-4">
+        <div class="blast-grid--sidebar">
+            <aside class="blast-filter-card blast-stack">
+                <div class="blast-filter-group">
+                    <div class="blast-filter-title">Category</div>
+                    <div class="blast-filter-items">
+                        <div class="blast-filter-item"><span>Editorial &amp; Writing</span><span>24</span></div>
+                        <div class="blast-filter-item"><span>Content Strategy</span><span>12</span></div>
+                        <div class="blast-filter-item"><span>Marketing</span><span>9</span></div>
+                    </div>
+                </div>
+                <div class="blast-filter-group">
+                    <div class="blast-filter-title">Job Type</div>
+                    <div class="blast-filter-items">
+                        <div class="blast-filter-item"><span>Full Time</span><span>18</span></div>
+                        <div class="blast-filter-item"><span>Contract</span><span>7</span></div>
+                        <div class="blast-filter-item"><span>Internship</span><span>3</span></div>
+                    </div>
+                </div>
+                <div class="blast-filter-group">
+                    <div class="blast-filter-title">Work Setting</div>
+                    <div class="blast-filter-items">
+                        <div class="blast-filter-item"><span>Remote Friendly</span><span><i class="fas fa-laptop-house"></i></span></div>
+                        <div class="blast-filter-item"><span>On-site</span><span><i class="fas fa-building"></i></span></div>
+                    </div>
+                </div>
+                <div class="blast-filter-group">
+                    <div class="blast-filter-title">Need more coverage?</div>
+                    <p class="blast-note">Use the wider opportunity explorer when you want all countries, more categories, and richer role filtering.</p>
+                    <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities" class="blast-button blast-button--secondary">Open Explorer</a>
+                </div>
+            </aside>
 
-        <!-- Job 1 -->
-        <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
-           class="block bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:border-gray-300 hover:shadow-md transition-colors transition-shadow">
-            <div class="flex justify-between items-start gap-4 mb-1">
-                <h3 class="text-lg font-semibold mb-1" style="color:#1E40AF;">Administrative Officer</h3>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium flex-shrink-0" style="background-color:#DCFCE7; color:#166534;">New</span>
+            <div class="blast-stack">
+                <div class="blast-compact-meta">
+                    <span>Showing <strong th:text="${#lists.size(recentJobs)}">6</strong> curated Tanzania opportunities</span>
+                </div>
+                <a th:each="job : ${recentJobs}"
+                   data-th-href="${baseUrl + '/jobs/' + job.slug}"
+                   th:href="@{/jobs/{slug}(slug=${job.slug})}"
+                   class="blast-listing">
+                    <div class="blast-listing-top">
+                        <div>
+                            <div class="blast-chip-group">
+                                <span class="blast-badge" th:text="${job.employmentType}">Full Time</span>
+                                <span class="blast-badge blast-badge--gold" th:if="${job.company == 'Blast'}">Featured</span>
+                            </div>
+                            <h2 class="blast-listing-title" th:text="${job.title}">Senior Java Engineer</h2>
+                            <p class="blast-listing-company" th:text="${job.company}">Blast Digital Labs</p>
+                        </div>
+                        <span class="blast-badge blast-badge--green">Easy Review</span>
+                    </div>
+                    <div class="blast-listing-meta">
+                        <span class="blast-tag"><i class="fas fa-building"></i><span th:text="${job.company}">Blast</span></span>
+                        <span class="blast-tag"><i class="fas fa-location-dot"></i><span th:text="${job.location}">Dar es Salaam</span></span>
+                        <span class="blast-tag"><i class="fas fa-clock"></i><span th:text="${job.postedDate}">2 days ago</span></span>
+                    </div>
+                    <p class="blast-listing-summary" th:text="${job.shortDescription}">Lead Java services for high-traffic job and opportunity flows.</p>
+                    <div class="blast-actions">
+                        <span class="blast-tag" th:each="requirement, reqStat : ${job.requirements}" th:if="${reqStat.index < 2}" th:text="${requirement}">Spring Boot</span>
+                        <span style="flex:1 1 auto;"></span>
+                        <span class="blast-button blast-button--primary">View Role</span>
+                    </div>
+                </a>
+                <div class="blast-cta-band">
+                    <span class="blast-eyebrow">Next move</span>
+                    <h3 class="blast-section-title">Jump into category pages or specific job details without visual clutter.</h3>
+                    <div class="blast-actions">
+                        <a data-th-href="${baseUrl + '/all-jobs'}" href="/all-jobs" class="blast-button blast-button--secondary">All Jobs</a>
+                        <a data-th-href="${baseUrl + '/countries'}" href="/countries" class="blast-button blast-button--primary">Browse Countries</a>
+                    </div>
+                </div>
             </div>
-            <p class="text-sm font-medium text-gray-900">Tanzania Revenue Authority (TRA)</p>
-            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
-                <span><i class="fas fa-map-marker-alt mr-1"></i>Dar es Salaam</span>
-                <span><i class="fas fa-briefcase mr-1"></i>Full-time</span>
-                <span><i class="fas fa-clock mr-1"></i>2 days ago</span>
-            </div>
-            <p class="text-sm text-gray-600 leading-relaxed mt-3">Manage administrative operations, coordinate with departments, handle documentation and reporting for regional office efficiency.</p>
-        </a>
-
-        <!-- Job 2 -->
-        <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
-           class="block bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:border-gray-300 hover:shadow-md transition-colors transition-shadow">
-            <div class="flex justify-between items-start gap-4 mb-1">
-                <h3 class="text-lg font-semibold mb-1" style="color:#1E40AF;">Clinical Officer</h3>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium flex-shrink-0" style="background-color:#FEE2E2; color:#DC2626;">Urgent</span>
-            </div>
-            <p class="text-sm font-medium text-gray-900">Muhimbili National Hospital</p>
-            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
-                <span><i class="fas fa-map-marker-alt mr-1"></i>Dar es Salaam</span>
-                <span><i class="fas fa-briefcase mr-1"></i>Contract</span>
-                <span><i class="fas fa-clock mr-1"></i>1 day ago</span>
-            </div>
-            <p class="text-sm text-gray-600 leading-relaxed mt-3">Provide clinical care, patient assessments, treatment plans, and work with medical teams in outpatient department.</p>
-        </a>
-
-        <!-- Job 3 -->
-        <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
-           class="block bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:border-gray-300 hover:shadow-md transition-colors transition-shadow">
-            <div class="flex justify-between items-start gap-4 mb-1">
-                <h3 class="text-lg font-semibold mb-1" style="color:#1E40AF;">Software Developer</h3>
-            </div>
-            <p class="text-sm font-medium text-gray-900">Vodacom Tanzania</p>
-            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
-                <span><i class="fas fa-map-marker-alt mr-1"></i>Dar es Salaam</span>
-                <span><i class="fas fa-briefcase mr-1"></i>Full-time</span>
-                <span><i class="fas fa-clock mr-1"></i>3 days ago</span>
-            </div>
-            <p class="text-sm text-gray-600 leading-relaxed mt-3">Build and maintain mobile and web applications, work with product teams, and contribute to digital transformation projects.</p>
-        </a>
-
-        <!-- Job 4 -->
-        <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
-           class="block bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:border-gray-300 hover:shadow-md transition-colors transition-shadow">
-            <div class="flex justify-between items-start gap-4 mb-1">
-                <h3 class="text-lg font-semibold mb-1" style="color:#1E40AF;">Secondary School Teacher</h3>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium flex-shrink-0" style="background-color:#EFF6FF; color:#1E40AF;">Government</span>
-            </div>
-            <p class="text-sm font-medium text-gray-900">TAMISEMI</p>
-            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
-                <span><i class="fas fa-map-marker-alt mr-1"></i>Dodoma Region</span>
-                <span><i class="fas fa-briefcase mr-1"></i>Permanent</span>
-                <span><i class="fas fa-clock mr-1"></i>4 days ago</span>
-            </div>
-            <p class="text-sm text-gray-600 leading-relaxed mt-3">Teach assigned subjects, prepare lesson plans, assess student progress, and participate in school development activities.</p>
-        </a>
-
-        <!-- Job 5 -->
-        <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
-           class="block bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:border-gray-300 hover:shadow-md transition-colors transition-shadow">
-            <div class="flex justify-between items-start gap-4 mb-1">
-                <h3 class="text-lg font-semibold mb-1" style="color:#1E40AF;">Bank Teller</h3>
-            </div>
-            <p class="text-sm font-medium text-gray-900">CRDB Bank</p>
-            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
-                <span><i class="fas fa-map-marker-alt mr-1"></i>Arusha</span>
-                <span><i class="fas fa-briefcase mr-1"></i>Full-time</span>
-                <span><i class="fas fa-clock mr-1"></i>5 days ago</span>
-            </div>
-            <p class="text-sm text-gray-600 leading-relaxed mt-3">Handle customer transactions, process deposits and withdrawals, provide account information, and maintain accurate records.</p>
-        </a>
-
-        <!-- Job 6 -->
-        <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
-           class="block bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:border-gray-300 hover:shadow-md transition-colors transition-shadow">
-            <div class="flex justify-between items-start gap-4 mb-1">
-                <h3 class="text-lg font-semibold mb-1" style="color:#1E40AF;">Accountant</h3>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium flex-shrink-0" style="background-color:#DCFCE7; color:#166534;">New</span>
-            </div>
-            <p class="text-sm font-medium text-gray-900">NMB Bank</p>
-            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
-                <span><i class="fas fa-map-marker-alt mr-1"></i>Mwanza</span>
-                <span><i class="fas fa-briefcase mr-1"></i>Full-time</span>
-                <span><i class="fas fa-clock mr-1"></i>1 day ago</span>
-            </div>
-            <p class="text-sm text-gray-600 leading-relaxed mt-3">Manage financial records, prepare reports, handle budgeting, and ensure compliance with accounting standards.</p>
-        </a>
-
-        <!-- Job 7 -->
-        <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
-           class="block bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:border-gray-300 hover:shadow-md transition-colors transition-shadow">
-            <div class="flex justify-between items-start gap-4 mb-1">
-                <h3 class="text-lg font-semibold mb-1" style="color:#1E40AF;">Human Resources Officer</h3>
-            </div>
-            <p class="text-sm font-medium text-gray-900">TANESCO</p>
-            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
-                <span><i class="fas fa-map-marker-alt mr-1"></i>Dar es Salaam</span>
-                <span><i class="fas fa-briefcase mr-1"></i>Contract</span>
-                <span><i class="fas fa-clock mr-1"></i>6 days ago</span>
-            </div>
-            <p class="text-sm text-gray-600 leading-relaxed mt-3">Support recruitment, employee relations, training coordination, and HR policy implementation.</p>
-        </a>
-
-        <!-- Job 8 -->
-        <a data-th-href="${baseUrl + '/opportunities'}" href="/opportunities"
-           class="block bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:border-gray-300 hover:shadow-md transition-colors transition-shadow">
-            <div class="flex justify-between items-start gap-4 mb-1">
-                <h3 class="text-lg font-semibold mb-1" style="color:#1E40AF;">Graduate Intern</h3>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium flex-shrink-0" style="background-color:#FEF9C3; color:#B45309;">Internship</span>
-            </div>
-            <p class="text-sm font-medium text-gray-900">Bank of Tanzania</p>
-            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
-                <span><i class="fas fa-map-marker-alt mr-1"></i>Dar es Salaam</span>
-                <span><i class="fas fa-briefcase mr-1"></i>Internship</span>
-                <span><i class="fas fa-clock mr-1"></i>2 days ago</span>
-            </div>
-            <p class="text-sm text-gray-600 leading-relaxed mt-3">6-month graduate training program covering banking operations, research support, and professional development.</p>
-        </a>
-
-    </div>
-
-    <!-- Pagination -->
-    <div class="flex justify-center items-center gap-2 mt-8 pt-6 border-t border-gray-100">
-        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors">Previous</a>
-        <a href="#" class="px-4 py-2 rounded-lg text-sm font-medium text-white" style="background-color:#1E40AF;">1</a>
-        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 bg-white hover:bg-gray-50 transition-colors">2</a>
-        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 bg-white hover:bg-gray-50 transition-colors">3</a>
-        <span class="px-2 text-gray-400">...</span>
-        <a href="#" class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors">Next</a>
-    </div>
-</section>
-
-<!-- Employer CTA -->
-<section class="py-12 border-t border-gray-200">
-    <div class="bg-white border border-gray-200 rounded-lg p-8 md:p-12 shadow-sm text-center">
-        <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Hiring in Tanzania?</h2>
-        <p class="text-gray-600 text-sm mb-6" style="max-width: 480px; margin-left: auto; margin-right: auto;">
-            Post your job listing and connect with qualified candidates across Dar es Salaam, Arusha, and beyond.
-        </p>
-        <div class="flex flex-wrap justify-center gap-3">
-            <a data-th-href="${baseUrl + '/job-form'}" href="/job-form"
-               class="px-5 py-2 rounded-lg text-white font-medium transition-colors transition-shadow hover:shadow-md" style="background-color:#1E40AF;">
-                Post a Job
-            </a>
-            <a data-th-href="${baseUrl + '/about'}" href="/about"
-               class="px-5 py-2 rounded-lg border border-gray-300 text-gray-700 font-medium bg-white transition-colors transition-shadow hover:bg-gray-50 hover:shadow-sm">
-                Learn More
-            </a>
         </div>
     </div>
 </section>
-
 </th:block>
